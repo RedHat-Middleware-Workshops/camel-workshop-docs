@@ -11,8 +11,8 @@
 
 
 
-//:url-docserver: https://docserver-webapp.{openshift-app-host}
-:url-docserver: https://docserver-webapp.apps.cluster-mqpjp.dynamic.redhatworkshops.io/
+:url-docserver: https://docserver-webapp.{openshift-app-host}
+//:url-docserver: https://docserver-webapp.apps.cluster-mqpjp.dynamic.redhatworkshops.io/
 //:url-docserver: http://0.0.0.0:8080
 
 :docserver-status: pass:a[<img hidden="true" src="invalid-image.jpg" onerror=" \
