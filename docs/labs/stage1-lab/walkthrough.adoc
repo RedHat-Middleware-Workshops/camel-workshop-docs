@@ -374,7 +374,7 @@ About the variable `matrix`:
 Open in your editor your `matrix.properties` file and add the following entries:
 +
 --
-{copypaste}configuration/matrix/{user-username}
+{copypaste}/configuration/matrix/{user-username}
 ----
 # Matrix credentials
 matrix.token=REPLACE
@@ -503,7 +503,7 @@ Copy and Paste the values below to define the given field entries:
 ... `string[@key = channel]`: 
 +
 --
-{copypaste}roomid/{user-username}
+{copypaste}/roomid/{user-username}
 ----
 "REPLACE"
 ----
@@ -610,7 +610,7 @@ Copy from below the step definition, and paste it at the end of your Camel route
 Open in your editor your `rocketchat.properties` file and add the following entries:
 +
 --
-{copypaste}configuration/rocketchat/{user-username}
+{copypaste}/configuration/rocketchat/{user-username}
 ----
 # Rocket.Chat credentials
 rocketchat.token=REPLACE

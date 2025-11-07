@@ -54,9 +54,17 @@
     return result; \
 }]
 
+//:fdocserver: pass:a[function docserver(target,template,params) { \
+//    {freplace} \
+//    fetch('{url-docserver}/roomid?user='+params) \
+//        .then(response => response.text()) \
+//        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
+//        .catch(error => room = 'Error fetching data: ' + error.message); \
+//}]
+
 :fdocserver: pass:a[function docserver(target,template,params) { \
     {freplace} \
-    fetch('{url-docserver}/roomid?user='+params) \
+    fetch('{url-docserver}'+params.trim()) \
         .then(response => response.text()) \
         .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
         .catch(error => room = 'Error fetching data: ' + error.message); \
@@ -873,7 +881,7 @@ Copy and Paste the values below to define the given field entries:
 ... `string[@key = channel]`: 
 +
 --
-{copypaste}{user-username}
+{copypaste}/roomid/{user-username}
 ----
 "REPLACE"
 ----

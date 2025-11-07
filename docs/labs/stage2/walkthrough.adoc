@@ -59,9 +59,17 @@
     return result; \
 }]
 
+//:fdocserver: pass:a[function docserver(target,template,params) { \
+//    {freplace} \
+//    fetch('{url-docserver}/roomid/params) \
+//        .then(response => response.text()) \
+//        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
+//        .catch(error => room = 'Error fetching data: ' + error.message); \
+//}]
+
 :fdocserver: pass:a[function docserver(target,template,params) { \
     {freplace} \
-    fetch('{url-docserver}/roomid?user='+params) \
+    fetch('{url-docserver}'+params.trim()) \
         .then(response => response.text()) \
         .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
         .catch(error => room = 'Error fetching data: ' + error.message); \

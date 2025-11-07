@@ -228,7 +228,7 @@ image::images/matrix-login-credentials.jpg[align="left", width=50%]
 * `Password`
 +
 --
-{copypaste}credentials/im/{user-username}
+{copypaste}/credentials/im/{user-username}
 ----
 REPLACE
 ----
@@ -314,7 +314,7 @@ image::images/rchat-login-credentials.png[align="left", width=50%]
 * `Password`
 +
 --
-{copypaste}credentials/im/{user-username}
+{copypaste}/credentials/im/{user-username}
 ----
 REPLACE
 ----
