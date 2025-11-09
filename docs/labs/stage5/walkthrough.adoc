@@ -322,7 +322,7 @@ Review the notes above and study the sequence diagram again.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -599,7 +599,7 @@ NOTE: Do not hesitate to navigate back to previous chapters to have a second loo
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -848,7 +848,7 @@ Follow the instructions below to recreate different execution scenarios which wi
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -1223,7 +1223,7 @@ PENDING TO BE DEFINED
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces

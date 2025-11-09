@@ -177,52 +177,14 @@ _Apache Camel_ keeps making major evolution steps improving its usability and re
 
 
 [time=1]
-[id="workshop-progression"]
-== Tech and Workshop progression
+[id="workshop-overview"]
+== Workshop overview
 
-This is a quick overview of the technologies included in the workshop and what to expect as you progress with the completion of the workshop.
-
-{empty} +
-
-=== Technology Stack
-
-Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, Red Hat Application Foundations, and other tools can help automate the workflow of data ingestion, preparation, and management building data pipelines for hybrid cloud deployments that automate data processing upon acquisition.
-
-* Red Hat Application Foundations
-
-** **Red Hat build of Apache Camel**: Utilize the integration capabilities of Apache Camel and its vast component library in the Quarkus runtime, optimizing for peak application performance with fast start up time.
-
-** **Red Hat streams for Apache Kafka**: Based on the Apache Kafka project, streams for Apache Kafka offers a distributed backbone that allows microservices and other applications to share data with extremely high throughput and extremely low latency.
-
-* Red Hat Dev Spaces
-
-* Red Hat OpenShift
-
-* Red Hat OpenShift Data Foundation
+This is a quick overview of the workshop goals and what to expect from the lab exercices as you make progress by completing the tasks.
 
 {empty} +
 
-
-=== Workshop progression
-
-If you haven't used Apache Camel before, you'll see how lightweight and powerful it is. And now, easier than ever to get started.
-
-The latest improvements in developer experience and clean constructs bring two main benefits. They make it simpler to use and maintain over time (something seasoned Camel developers really value) while also making it easy for newcomers to jump in and discover its versatility and power.
-
-The workshop takes you on a journey. It starts with simple data flows to show how easy it is, then step by step introduces constructs for more complex scenarios.
-
-As you move through the hands-on labs, the examples grow and show you how to apply best-practice architectures. Each new case needs more control, an area where experienced *Camel* developers shine.
-
-Every lab step you finish adds real value to the platform being built. The further you go, the more powerful features you uncover. But it all starts with the clean simplicity of no-code building blocks that let anyone set up data flows from A to B.
-
-{empty} +
-
-image::images/workshop-progress-value.png[align="center", width=60%]
-
-
-[time=1]
-[id="workshop-goals"]
-== Workshop goals
+=== Workshop goals
 
 The list below summarises, among others, the main goals the workshop sets for you:
 
@@ -246,6 +208,33 @@ Understand the justification behind certain design/architecture principles. Expe
 Get to know the architecture of a collaboration platform, an increasingly needed capability, strategic for any industry/organisation, to connect internally and externally with colleagues and customers. +
 {empty} +
 
+=== Workshop progression
+
+Apache Camel has evolved significantly, with cleaner constructs and a vastly improved developer experience. This delivers two key benefits: simpler usage and long-term maintainability (a big win for seasoned developers), while enabling newcomers to quickly explore its versatility and power.
+
+The workshop takes you on a journey. It starts with simple data flows to show how easy it is and then, step by step, introduces constructs for more complex scenarios.
+
+As you move forward in the workshop, you'll see the solution grow and how to adopt best-practice architectures. Each new case needs more control, an area where experienced *Camel* developers shine.
+
+Every lab step you finish adds real value to the platform being built. The further you go, the more powerful features you uncover. But it all starts with the clean simplicity of no-code building blocks that let anyone set up data flows from A to B.
+
+{empty} +
+
+image::images/workshop-progress-value.png[align="center", width=60%]
+
+
+[time=1]
+[id="tech-overview"]
+== Technologies overview
+
+If you're unfamilar with Apache Camel, in a nutshell, it is an integration framework to define data flows connecting sources to destinations, applying _EIPs_ (enterprise integration patterns) as mediation processes between the two ends.
+
+The image below illustrates typical integration flows connecting sources to detinations:
+
+image::images/new/camel-nutshell.jpg[align="center", width=60%]
+
+{empty} +
+
 === Building blocks in Camel
 
 _Apache Camel_ is unique in how you construct data flows and how you extend it by creating customized building blocks.
@@ -261,10 +250,27 @@ image::images/new/camel-abstraction-levels.jpg[align="center", width=60%]
 
 {empty} +
 
-The workshop will center its attention around those most commonly used: _Kamelets_ and _Camel_ routes.
+The workshop will center its attention around those most commonly used: *_Camel routes_* and *_Kamelets_*.
 
 {empty} +
 
+=== Full technology stack
+
+Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, Red Hat Application Foundations, and other tools can help automate the workflow of data ingestion, preparation, and management building data pipelines for hybrid cloud deployments that automate data processing upon acquisition.
+
+* Red Hat Application Foundations
+
+** **Red Hat build of Apache Camel**: Utilize the integration capabilities of Apache Camel and its vast component library in the Quarkus runtime, optimizing for peak application performance with fast start up time.
+
+** **Red Hat streams for Apache Kafka**: Based on the Apache Kafka project, streams for Apache Kafka offers a distributed backbone that allows microservices and other applications to share data with extremely high throughput and extremely low latency.
+
+* Red Hat Dev Spaces
+
+* Red Hat OpenShift
+
+* Red Hat OpenShift Data Foundation
+
+{empty} +
 
 
 [time=1]
@@ -297,12 +303,15 @@ Under such solution, The _Service Agent_ would be abstracted from all external p
 [time=2]
 [id='dev-environment']
 == Development environment
+{style-all}
 
 The following instructions introduce you to your development environment, and the cluster where you'll deploy your applications throughout this workshop.
 
 === Overview
 
 Built on the open Eclipse Che project, Red Hat OpenShift Dev Spaces uses Kubernetes and containers to provide any member of the development or IT team with a consistent, secure, and zero-configuration development environment. The experience is as fast and familiar as an integrated development environment on your laptop.
+
+image::images/new/devspaces-ide-developer.jpg[align="center", width=70%]
 
 OpenShift Dev Spaces is included with your OpenShift subscription and is available in the Operator Hub. It provides development teams a faster and more reliable foundation on which to work, and it gives operations centralized control and peace of mind.
 
@@ -338,11 +347,39 @@ OpenShift Dev Spaces is included with your OpenShift subscription and is availab
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 
 // :sectnums:
 {empty} +
+
+
+=== Tools and components overview
+
+If you haven't recently used _Apache Camel_ or any of the other tools before, it's important you read below all the pieces that are at play, and understand they are conceived to converge into providing a unified development experience.
+
+Below you have a brief introduction to the set of tools and components you're about to use and to help you all along the workshop:
+
+NOTE: It's a long list, but don't worry, the workshop will present them one at a time and guide you on every step of the way.
+
+- *Dev Spaces / VS Code*: the IDE you'll be using to create the _Camel_ processes.
+- *Apache Camel*: the integration framework you'll use packed with Enterprise Integration Patterns and Components (connectors).
+- *Kaoto*: visual editor for _Apache Camel_ to create your _Camel_ routes and processes in VS Code.
+- *Camel JBang*: _Camel_ CLI (command line interface) designed to boost prototyping and accelerate your work to create, test and deploy your applications.
+- *Quarkus*: The runtime used by _Camel_ to deploy your integration processes on _OpenShift_
+- *OpenShift*: _Kubernetes_ environment where you will deploy your _Camel_ project.
+- *OpenShift client*: OpenShift's CLI (command line interface) to help users manage projects in the environment.
+
+{empty} +
+
+=== Java-Lite
+
+One big highlight of the exercises you're about to embark on is that although _Apache Camel_ is _Java_ based, there will be little need in using _Java_, nor having to define or manage dependencies. Those concerns are kept hidden to allow the developer become more productive by focussing on the business case at hand.
+
+NOTE: It goes without saying that at any moment in time _Java_ code can be injected within your _Apache Camel_ processes to incorporate the custom handling you need. _Apache Camel_ excels in this respect thanks to its open framework architecture and extensibility. The workshop will show you a great example of that.
+
+{empty} +
+
 
 === Accessing a Development Environment
 
@@ -356,15 +393,17 @@ To access your development environment:
 
 . Click this link:{codeready-url}[Console, window="_blank"] link. +
 (Also accessible from the *Resources* panel on the right, under *Red Hat OpenShift Dev Spaces*).
++
+{empty} +
 
 . You'll be first prompted to choose _OpenShift_ to log in. +
 Click the button `Log in with OpenShift`:
 +
 image:images/000-codeready-login-with-ocp.png[align="left", width=40%]
 +
-{blank}
-+
-. Then, log in using your username (`{user-username}`) and password (`{user-password}`)
+{empty} +
+
+. Then, log in using your username (`{user-username}`) and your lab password.
 +
 image:images/000-codeready-login.png[OpenShift Dev Spaces Login, role="integr8ly-img-responsive"]
 +
@@ -416,65 +455,87 @@ This IDE is based on _Microsoft VSCode_. It will look familiar if you have alrea
 +
 {empty} +
 
-=== Accessing a Terminal
 
-During the workshop you will use the OpenShift CLI along with other developer-focused Command Line Interface (CLI) tools.
-These CLI tools are available directly inside your Workspace via tools containers.
+=== Open a terminal
 
-Access the *tools* container(s) like so:
+From DevSpaces, open a terminal following the steps illustrated below:
 
-. Click on the _hamburger-icon_ button on the upper-left corner of your IDE.
-. Then, select *Terminal* -> *New Terminal*.
-+
-{blank}
-+
-image::images/02-crw-tools-container.png[Open Terminal, role="integr8ly-img-responsive"]
-+
-{blank}
-+
-A terminal window should open at the bottom of the screen. This terminal is attached to the running tools container and is also running on _OpenShift_. This is the place where you will issue most of the commands from this workshop.
+image::images/new/toggle-terminal.png[width=40%]
 
 {empty} +
 
-=== Login into OpenShift using the CLI
+=== Copy/Paste commands
 
-. Open a terminal using the instructions from the previous section.
+You'll use command actions all along the lab. +
+When the lab's instructions present a command to execute, perform the steps described below, as illustrated:
 
+image::images/new/copypaste.png[width=60%]
 
-. In the terminal tab, issue the following command:
+{blank}
+
+. Click the button _Copy to clipboard_
+. Paste the command in the terminal:
+- on Linux: kbd:[Ctrl+Shift+v]
+- on Mac: kbd:[⌘+v]
 +
-[source,bash,subs=attributes]
+. Try it with:
++
+--
+{copypaste}
 ----
-oc project {namespace}
+echo "this is a copy/paste test"
 ----
+--
++
+--
+WARNING: It's been reported that these key-combos not always work. Your machine may not respond to the above descriptions. Please try other key or mouse click alternatives, for example, right-click, or middle-click.
+--
+
+. If the paste action fails and you see _DevSpaces_ showing the following notification:
++
+image::images/new/clipboard-notification.png[width=30%]
 +
 {blank}
 +
-[TIP]
-====
-* To copy the content of snippets of code, as above, click on the copy button on the right side of snippet box.
-* Perform the same copy action for other snippets along the workshop to complete the exercises.
-====
+Find in your web browser's settings where to enable clipboard permissions. The image below shows how to enable them using _Chrome_:
++
+image::images/new/clipboard-settings.png[width=100%]
 
-. You should see something like the following:
-+
-[subs="attributes+"]
-----
-message-hub (main) $ oc project {namespace}
-Now using project "{user-username}" on server "https://172.30.0.1:443".
-message-hub (main) $ 
-----
-+
-{empty} +
-+
-. Most of the work will be deployed into your own `{namespace}` project namespace.
+// +
+// [TIP]
+// ====
+// If the paste action fails and you see DevSpaces showing the following notification:
+
+// image::images/clipboard-notification.png[width=50%]
+
+// {blank}
+
+// Find in your web browser's settings where to enable clipboard permissions. The image below shows how to enable them using _Chrome_:
+
+// image::images/clipboard-settings.png[width=100%]
+
+// ====
 
 {empty} +
+
+=== Tips for a better learning
+
+If you have a wide or multi-monitor setup, it is mostly recommended to organise your browser tabs with the _DevSpaces_ view next to your lab instructions side by side, as per the image below:
+
+image::images/new/better-learning.png[width=80%, align=center]
+
+{empty} +
+
+You're now all set and ready to start your ride.
+
+{empty} +
+
+
 
 
 
 [type=verification]
-Did your terminal show you are connected to _OpenShift_ and pointing to the project `{namespace}`?
+Did your terminal show and your copy/paste action worked?
 
 [type=verificationFail]
 Make sure you follow the commands above. Try again.

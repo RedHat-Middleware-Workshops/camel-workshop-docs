@@ -703,7 +703,7 @@ Keep exploring the workshop to see more.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 
 

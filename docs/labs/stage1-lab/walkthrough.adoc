@@ -208,7 +208,7 @@ The instructions below are divided in two segments:
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -280,6 +280,11 @@ pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"></m
 --
 
 {blank}
+
+IMPORTANT: All the commands you'll be asked to run all along the workshop are designed to be executed from your root `lab` folder. +
+Stay always on your `lab` folder, there's no need to change directories.
+
+{empty} +
 
 From your UI terminal...
 
@@ -582,6 +587,8 @@ At this stage you're ready to forward messages to _RocketChat_ using its dedicat
 +
 Copy from below the step definition, and paste it at the end of your Camel route.
 +
+TIP: Right-click over the _Log_ step and select  `📋 Paste as next step`.
++
 --
 {copypaste}
 ----
@@ -601,6 +608,8 @@ Copy from below the step definition, and paste it at the end of your Camel route
 }
 ----
 --
++
+NOTE: In the next release of Kaoto, copy/paste actions into the canvas will be done in YAML. The current format is still JSON.
 +
 {empty} +
 
@@ -685,7 +694,7 @@ Did you see the message in _Matrix_ showing up in _Rocket.Chat_?
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -886,7 +895,7 @@ Inspect in the pod logs to investigate possible failure causes.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces

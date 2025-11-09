@@ -232,7 +232,7 @@ Luckily, you've already done all the necessary onboarding setup with both chat s
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -465,7 +465,7 @@ Inspect in the pod logs to troubleshoot.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -744,7 +744,7 @@ Inspect in the pod logs to troubleshoot.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -1002,7 +1002,7 @@ Inspect in the pod logs to investigate possible failure causes.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces

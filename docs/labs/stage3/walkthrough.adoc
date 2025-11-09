@@ -241,7 +241,7 @@ image::images/standard-data-model.png[align="center", width=90%]
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -313,7 +313,7 @@ Make sure the syntax of the commands are compatible with with your environment a
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -677,7 +677,7 @@ Very straightforward, nothing else to be done here.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -1056,7 +1056,7 @@ Again, very simple updates, nothing else required for the _Kafka → Matrix_ pro
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces

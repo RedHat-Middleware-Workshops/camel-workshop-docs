@@ -416,7 +416,7 @@ Were you able to join the _Discord_ room successfully?
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -940,7 +940,7 @@ Press `ctrl`+`c` to stop _Camel JBang_.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -1471,7 +1471,7 @@ Inspect in the pod logs to troubleshoot.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
@@ -1970,7 +1970,7 @@ Press kbd:[Ctrl+C], from your terminal, to stop the running _Camel_ process.
 .Credentials
 ****
 * *username:* `{user-username}`
-* *password:* `{user-password}`
+//* *password:* `{user-password}`
 ****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
