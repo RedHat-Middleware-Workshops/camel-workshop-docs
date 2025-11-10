@@ -603,7 +603,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("<b>",$rocketchat-x/xf:map/xf:string[@key='user_name'],"@rocketchat</b>: ",$rocketchat-x/xf:map/xf:string[@key='text'])
+concat("<b>",$rocketchat-x/fn:map/fn:string[@key='user_name'],"@rocketchat</b>: ",$rocketchat-x/fn:map/fn:string[@key='text'])
 ----
 --
 +

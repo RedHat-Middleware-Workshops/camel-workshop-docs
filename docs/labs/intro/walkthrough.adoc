@@ -316,23 +316,10 @@ image::images/new/devspaces-ide-developer.jpg[align="center", width=70%]
 OpenShift Dev Spaces is included with your OpenShift subscription and is available in the Operator Hub. It provides development teams a faster and more reliable foundation on which to work, and it gives operations centralized control and peace of mind.
 
 
-// [type=walkthroughResource,serviceName=codeready]
-// .Red Hat OpenShift Dev Spaces
-// ****
-// * link:{codeready-url}[Console, window="_blank", , id="resources-codeready-url"]
-// ****
-// [type=walkthroughResource]
-// .Red Hat OpenShift Developer Console
-// ****
-// * link:{openshift-host}/topology/ns/{namespace}[Topology View, window="_blank"]
-// ****
-// [type=walkthroughResource]
-// .Credentials
-// ****
-// * *username:* `{user-username}`
-// * *password:* `{user-password}`
-// ****
-
+[type=taskResource]
+.{blank}
+****
+****
 [type=taskResource]
 .Red Hat OpenShift Dev Spaces
 ****
@@ -399,36 +386,36 @@ To access your development environment:
 . You'll be first prompted to choose _OpenShift_ to log in. +
 Click the button `Log in with OpenShift`:
 +
-image:images/000-codeready-login-with-ocp.png[align="left", width=40%]
+image:images/000-codeready-login-with-ocp.png[align="left", width=30%]
 +
 {empty} +
 
 . Then, log in using your username (`{user-username}`) and your lab password.
 +
 //image:images/000-codeready-login.png[OpenShift Dev Spaces Login, role="integr8ly-img-responsive"]
-image:images/new/devspaces-login.jpg[align="left", width=60%]
+image:images/new/devspaces-login.jpg[align="left", width=50%]
 +
 {empty} +
 +
 . Next, authorise access, click `Allow selected permissions`
 +
-image::images/00-crw-dashboard-auth.png[align="left", width=50%]
+image::images/00-crw-dashboard-auth.png[align="left", width=40%]
 +
 {empty} +
 +
-Once you are logged in, you'll see the CodeReady dashboard. This lists available workspaces.
+Once you are logged in, you'll see the _Dev Spaces_ dashboard. This lists available workspaces.
 +
-image::images/00-crw-dashboard.png[CodeReady Dashboard, role="integr8ly-img-responsive"]
+image::images/new/devspaces-dashboard.png[Dev Spaces Dashboard, role="integr8ly-img-responsive"]
 
 {empty} +
 
-=== Accessing your DevSpaces Workspace
+=== Accessing your Dev Spaces Workspace
 
 This workshop provides a single, pre-configured workspace with plugins, source code, and even container images that have various Command-Line Interface (CLI) tools installed.
 
-. Click the *Open* link for the workspace named `dayinthelife-workspace`.
+. Click the *Open* link for the workspace named `camel-lab`.
 +
-image::images/001-open-workspace.png[Open CodeReady Workspace, role="integr8ly-img-responsive"]
+image::images/new/devspaces-dashboard-open.png[Open Dev Spaces Workspace, role="integr8ly-img-responsive"]
 +
 {blank}
 +
@@ -438,28 +425,32 @@ This will start an instance of the workspace. Please wait a few moments while it
 
 . When the IDE appears:
 +
-Ensure you click `Yes, I trust the authors` when the following message shows on your screen:
+.. Ensure you click `Yes, I trust the authors` when the following message shows on your screen:
 +
-image::images/crw-trust-project.png[Trust Workshop Project, role="integr8ly-img-responsive", align="left", width=50%]
+image::images/new/devspaces-trust-authors.png[Trust Workshop Project, role="integr8ly-img-responsive", align="left", width=40%]
++
+{empty} +
++
+.. Also, ensure you click `Trust Publisher & Install`
++
+image::images/new/devspaces-trust-redhat.png[Trust Publisher Red Hat, role="integr8ly-img-responsive", align="left", width=40%]
 +
 {empty} +
 
-. Close the `welcome` tab by clicking the *x*. +
-The Explorer shows you the *MESSAGE-HUB* folder where you will be working.
+
+. Close the `Get Started...` tab by clicking the pass:[<span style="background-color: black; color: white;">&nbsp;&nbsp;x&nbsp;&nbsp;</span>]. +
+The Explorer shows you the *workshop* folder where you will be working.
 +
-image::images/01-crw-welcome.png[CodeReady Welcome screen, role="integr8ly-img-responsive"]
+image::images/new/devspaces-get-started.png[Dev Spaces Get Started screen, role="integr8ly-img-responsive"]
 +
-[NOTE]
-====
-This IDE is based on _Microsoft VSCode_. It will look familiar if you have already used it.
-====
+NOTE: This IDE is based on _Microsoft VS Code_. It will look familiar if you have already used it.
 +
 {empty} +
 
 
 === Open a terminal
 
-From DevSpaces, open a terminal following the steps illustrated below:
+From _Dev Spaces_, open a terminal following the steps illustrated below:
 
 image::images/new/toggle-terminal.png[width=40%]
 
@@ -484,15 +475,24 @@ image::images/new/copypaste.png[width=60%]
 --
 {copypaste}
 ----
-echo "this is a copy/paste test"
+echo "this is a multiline \
+copy/paste test"
 ----
 --
++
+[NOTE]
+====
+You'll be asked to share the clipboard and next to confirm the action.
+
+Click `Allow` -> image:images/new/devspaces-share-clipboard.png[width=20%] -> next, tick `[✓] Do not ask me again` -> `Paste` ->  
+image:images/new/devspaces-paste-confirm.png[width=30%] 
+====
 +
 --
 WARNING: It's been reported that these key-combos not always work. Your machine may not respond to the above descriptions. Please try other key or mouse click alternatives, for example, right-click, or middle-click.
 --
 
-. If the paste action fails and you see _DevSpaces_ showing the following notification:
+. If the paste action fails and you see _Dev Spaces_ showing the following notification:
 +
 image::images/new/clipboard-notification.png[width=30%]
 +
@@ -505,7 +505,7 @@ image::images/new/clipboard-settings.png[width=100%]
 // +
 // [TIP]
 // ====
-// If the paste action fails and you see DevSpaces showing the following notification:
+// If the paste action fails and you see Dev Spaces showing the following notification:
 
 // image::images/clipboard-notification.png[width=50%]
 
@@ -521,7 +521,7 @@ image::images/new/clipboard-settings.png[width=100%]
 
 === Tips for a better learning
 
-If you have a wide or multi-monitor setup, it is mostly recommended to organise your browser tabs with the _DevSpaces_ view next to your lab instructions side by side, as per the image below:
+If you have a wide or multi-monitor setup, it is mostly recommended to organise your browser tabs with the _Dev Spaces_ view next to your lab instructions side by side, as per the image below:
 
 image::images/new/better-learning.png[width=80%, align=center]
 

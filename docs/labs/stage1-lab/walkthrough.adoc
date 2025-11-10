@@ -517,7 +517,7 @@ From the DataMapper editor:
 {blank}
 --
 +
-{blank}
+{empty} +
 +
 .. Define the data mappings
 +
@@ -634,7 +634,7 @@ If you don't see the data connections above try again as follows:
 --
 {copypaste}
 ----
-concat('*', $matrix-x/xf:map/xf:map[@key='fromUser']/xf:string[@key='username'],'@matrix:* ', $matrix-x/xf:map/xf:string[@key='text'])
+concat('*', $matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='username'],'@matrix:* ', $matrix-x/fn:map/fn:string[@key='text'])
 ----
 --
 ====

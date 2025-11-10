@@ -1153,7 +1153,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("**",$common-x/xf:map/xf:string[@key='user'], "@", $common-x/xf:map/xf:string[@key='source'],"**: ", $common-x/xf:map/xf:string[@key='text'])
+concat("**",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"**: ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
 +
@@ -2175,7 +2175,7 @@ current-dateTime()
 --
 {copypaste}
 ----
-$discord-x/xf:map/xf:map[@key='d']/xf:map[@key='author']/xf:string[@key='global_name']
+$discord-x/fn:map/fn:map[@key='d']/fn:map[@key='author']/fn:string[@key='global_name']
 ----
 --
 +
@@ -2186,7 +2186,7 @@ $discord-x/xf:map/xf:map[@key='d']/xf:map[@key='author']/xf:string[@key='global_
 --
 {copypaste}
 ----
-$discord-x/xf:map/xf:map[@key='d']/xf:string[@key='content']
+$discord-x/fn:map/fn:map[@key='d']/fn:string[@key='content']
 ----
 --
 +

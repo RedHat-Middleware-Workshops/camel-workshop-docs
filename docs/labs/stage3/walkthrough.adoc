@@ -453,7 +453,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-$matrix-x/xf:map/xf:string[@key='sent']
+$matrix-x/fn:map/fn:string[@key='sent']
 ----
 --
 +
@@ -475,7 +475,7 @@ $matrix-x/xf:map/xf:string[@key='sent']
 --
 {copypaste}
 ----
-$matrix-x/xf:map/xf:map[@key='fromUser']/xf:string[@key='displayName']
+$matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='displayName']
 ----
 --
 +
@@ -486,7 +486,7 @@ $matrix-x/xf:map/xf:map[@key='fromUser']/xf:string[@key='displayName']
 --
 {copypaste}
 ----
-$matrix-x/xf:map/xf:string[@key='text']
+$matrix-x/fn:map/fn:string[@key='text']
 ----
 --
 +
@@ -592,7 +592,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-$rocketchat-x/xf:map/xf:string[@key='timestamp']
+$rocketchat-x/fn:map/fn:string[@key='timestamp']
 ----
 --
 +
@@ -614,7 +614,7 @@ $rocketchat-x/xf:map/xf:string[@key='timestamp']
 --
 {copypaste}
 ----
-$rocketchat-x/xf:map/xf:string[@key='user_name']
+$rocketchat-x/fn:map/fn:string[@key='user_name']
 ----
 --
 +
@@ -625,7 +625,7 @@ $rocketchat-x/xf:map/xf:string[@key='user_name']
 --
 {copypaste}
 ----
-$rocketchat-x/xf:map/xf:string[@key='text']
+$rocketchat-x/fn:map/fn:string[@key='text']
 ----
 --
 +
@@ -894,7 +894,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("*",$common-x/xf:map/xf:string[@key='user'], "@", $common-x/xf:map/xf:string[@key='source'],"*", $common-x/xf:map/xf:string[@key='text'])
+concat("*",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"*", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
 +
@@ -1037,7 +1037,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("<b>",$common-x/xf:map/xf:string[@key='user'], "@", $common-x/xf:map/xf:string[@key='source'],"</b>", $common-x/xf:map/xf:string[@key='text'])
+concat("<b>",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"</b>", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
 +
