@@ -405,7 +405,8 @@ image:images/000-codeready-login-with-ocp.png[align="left", width=40%]
 
 . Then, log in using your username (`{user-username}`) and your lab password.
 +
-image:images/000-codeready-login.png[OpenShift Dev Spaces Login, role="integr8ly-img-responsive"]
+//image:images/000-codeready-login.png[OpenShift Dev Spaces Login, role="integr8ly-img-responsive"]
+image:images/new/devspaces-login.jpg[align="left", width=60%]
 +
 {empty} +
 +

@@ -406,7 +406,7 @@ Use the following command to run locally your _Camel_ route:
 camel run \
 --source-dir m2r \
 --properties matrix.properties \
---local-kamelet-dir ../support/deploy/kamelets
+--local-kamelet-dir ../support/kamelets
 ----
 --
 +
@@ -565,7 +565,7 @@ Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
 camel run \
 --source-dir m2r \
 --properties matrix.properties \
---local-kamelet-dir ../support/deploy/kamelets
+--local-kamelet-dir ../support/kamelets
 </pre></p>
 </details>
 +
@@ -657,7 +657,7 @@ Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
 camel run \
 --source-dir m2r \
 --properties matrix.properties,rocketchat.properties \
---local-kamelet-dir ../support/deploy/kamelets
+--local-kamelet-dir ../support/kamelets
 </pre></p>
 </details>
 +
@@ -761,7 +761,7 @@ camel kubernetes run m2r/* \
 matrix.properties rocketchat.properties \
 --name m2r \
 --property quarkus.config.locations=rocketchat.properties,matrix.properties \
---local-kamelet-dir ../support/deploy/kamelets \
+--local-kamelet-dir ../support/kamelets \
 --cluster-type openshift
 ----
 --

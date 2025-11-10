@@ -805,7 +805,7 @@ camel kubernetes run m2r/* \
 matrix.properties rocketchat.properties \
 --name m2r \
 --property quarkus.config.locations=matrix.properties,rocketchat.properties \
---local-kamelet-dir ../support/deploy/kamelets \
+--local-kamelet-dir ../support/kamelets \
 --cluster-type openshift
 </pre></p>
 </details>
@@ -868,7 +868,7 @@ camel kubernetes run r2m/* \
 rocketchat.properties matrix.properties \
 --name r2m \
 --property quarkus.config.locations=rocketchat.properties,matrix.properties \
---local-kamelet-dir ../support/deploy/kamelets \
+--local-kamelet-dir ../support/kamelets \
 --cluster-type openshift
 </pre></p>
 </details>
