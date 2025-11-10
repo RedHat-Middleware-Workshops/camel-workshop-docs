@@ -10,6 +10,8 @@
 
 :experimental:
 
+:pen-btn: pass:[<svg height="1em" width="1em" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#444" d="M1 11.9l-1 4.1 4.1-1 9.2-9.2-3.1-3.1-9.2 9.2zM1.5 15l-0.4-0.5 0.4-2 2 2-2 0.5zM10.9 4.4l-8.1 8-0.6-0.6 8.1-8 0.6 0.6z"></path><path fill="#444" d="M15.3 0.7c-1.1-1.1-2.6-0.5-2.6-0.5l-1.5 1.5 3.1 3.1 1.5-1.5c0-0.1 0.6-1.5-0.5-2.6zM13.4 1.6l-0.5-0.5c0.6-0.6 1.1-0.1 1.1-0.1l-0.6 0.6z"></path></svg>]
+
 // WORKS
 :style-kbd: kbd { \
   color: black; \
@@ -278,7 +280,7 @@ At first, your `lab` directory is empty:
 
 --
 [.indent2]
-📁 message-hub +
+📁 workshop +
 &nbsp;&nbsp;📁 *lab* +
 pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"></mark>] [empty]
 --
@@ -335,7 +337,7 @@ After initialisation, under the `lab` directory, you'll find the following sourc
 
 --
 [.indent2]
-📁 message-hub +
+📁 workshop +
 &nbsp;&nbsp;📁 lab +
 &nbsp;&nbsp;&nbsp;&nbsp;📁 m2r +
 pass:[<mark style="padding-left: 2rem; background-color: white; color: purple"><b><i>&nbsp;!&nbsp;&nbsp;</i></b></mark>] *m2r.camel.yaml* +
@@ -358,7 +360,16 @@ Feel free to inspect the files in your editor. +
 +
 {blank}
 +
-PENDING to include IMAGE of Kaoto flow]
+The image below shows the Camel route you should see in the canvas:
++
+[TIP]
+====
+Click the Horizontal layout to match the documentation pictures.
+
+image::images/new/canvas-horizontal-layout.jpg[align="left", width=40%]
+====
++
+image::images/new/route-matrix-log.jpg[align="left", width=30%]
 +
 [NOTE]
 --
@@ -478,12 +489,14 @@ Now we need to extend the _Camel_ route definition to include data transformatio
 From Kaoto: 
 
 . Click the `+` button in the transition
-. Find and select the _Kaoto DataMapper_
-. Click to open the configuration panel
+. Type `mapper` in the filter to find the _Kaoto DataMapper_
+. Click the _Kaoto DataMapper_ tile
+. Click the mapper to open the configuration panel
 . Click the `🔧Configure` button
+
+image::images/new/canvas-create-mapper.jpg[align="left", width=100%]
+
 --
-+
-{blank}
 +
 .. Attach schemas
 +
@@ -491,14 +504,15 @@ From Kaoto:
 From the DataMapper editor: 
 
 . Define the source:
-.. On `Parameters` click the `+` to add new parameter
+.. On **Parameters** click the button kbd:[+] to add new parameter
 .. Enter `matrix` and click the checkmark button kbd:[√]
-.. Click first the Attach schema button, then the blue button, and pick `matrix-in.json`.
+.. Click first the **Attach schema** button, then the blue button, and pick `matrix-in.json`.
+.. Click **Attach** to complete the action.
 +
 {blank}
 +
 . Define the target
-.. Find the target Body and click on "Attach schema", then the blue button, and pick `rocketchat-out.json`
+.. Find the target Body and click on **Attach schema**, then the blue button, and pick `rocketchat-out.json`
 
 {blank}
 --
@@ -518,9 +532,104 @@ Copy and Paste the values below to define the given field entries:
 ----
 --
 +
+[TIP]
+====
+To paste the value, click `⠇` and select **Add selector expression**, as shown below:
+
+image::images/new/mapper-add-expression.jpg[align="left", width=60%]
+====
++
 {blank}
 +
 ... `string[@key = text]`:
++
+To map the field, click and drag kbd:[string [@key = text\]] from the source (left) to the target (right).
++
+You should see the connection rendered as follows:
++
+image::images/new/mapper-text.jpg[align="left", width=80%]
++
+{blank}
++
+The mapping above would simply copy the message from source to target, as in the _hello_ example below:
++
+--
+* `hello` -> `hello`
+--
++
+{blank}
++
+However, we also want to include information about user and origin, like this:
++
+--
+* `hello` -> `*{user-username}@matrix:* hello`
++
+NOTE: The message above includes **bold** letters. +
+As the target system understands _Markdown_, we will use it to format the message, as follows: +
+`pass:a[*{user-username}@matrix:* hello]`
+--
++
+Redefine the mapping rule following the steps below:
++
+====
+[loweralpha]
+.... At the end of the row, click the [ {pen-btn} ] button to open the XPath editor (pop up window).
++
+.... Delete all contents (current expression).
+.... Copy and paste:
++
+--
+{copypaste}
+----
+'*'
+----
+--
++
+.... Drag and drop from the left to the editor +
+kbd:[string [@key = username\]] -> `editor`
++
+{blank}
++
+.... Copy and paste (including the comma and new line):
++
+--
+{copypaste}
+----
+,
+'@matrix:* '
+----
+--
++
+.... Drag and drop from the left to the editor +
+kbd:[string [@key = text\]] -> `editor`
++
+{blank}
++
+.... On the editor's left panel click the tab: +
+ **[    Function    ]**
++
+.... Drag and drop the _String_ function _Concatenate_ from left to right +
+kbd:[Concatenate] -> `editor`
++
+{blank}
++
+.... The definition is complete +
+Click the **Close** button.
+====
++
+{empty} +
++
+When you close the editor you should see the field connections in your mapper as follows:
++
+image::images/new/mapper-user-text.jpg[align="left", width=90%]
++
+[TIP]
+====
+If you don't see the data connections above try again as follows: 
+
+. Click the trash button to delete the current expression
+. Click the dots to add a new expression
+. Copy and paste the expression below:
 +
 --
 {copypaste}
@@ -528,8 +637,9 @@ Copy and Paste the values below to define the given field entries:
 concat('*', $matrix-x/xf:map/xf:map[@key='fromUser']/xf:string[@key='username'],'@matrix:* ', $matrix-x/xf:map/xf:string[@key='text'])
 ----
 --
+====
 +
-NOTE: The field `text` concatenates various fields from the input _Matrix_ event.
+Your data mapping definition is now complete with multiple input fields mapped to output fields.
 +
 {empty} +
 
