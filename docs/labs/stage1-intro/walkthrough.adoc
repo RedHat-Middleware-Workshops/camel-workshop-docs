@@ -173,7 +173,7 @@ The above process bridges chat messages from _Matrix_ to _Rocket.Chat_.
 
 They are both deployed in _OpenShift_ with convenient web access, making them ideal for students to use in this workshop.
 
-The tasks to complete in this lab will guide you on how to onboard to both chat systems.
+The tasks to complete in this lab will guide you on how to onboard to both messaging systems.
 
 {empty} +
 
@@ -367,23 +367,21 @@ Produces events to _Rocket.Chat_.
 
 {empty} +
 
-=== User profiles
+=== Prototyping workflow
 
-This workshop has been designed to attend two different user profiles:
+NOTE: This workshop has been designed with the prototyping workflow in mind.
 
-* *The Camel developer* +
-The traditional _Camel_ developer would typically, first, use his local environment for the inner loop development cycle. This strategy allows speeding up the process of prototyping and validating the code. Once the basics covered, it would follow the same deployment flow as the Kubernetes user.
-+
+The prototyping phase is very important as it allows the developer to quickly iterate with fast trial and error runs. Fast iterations translate into fast learning, not only for those new to Camel, but also for experienced developers finding their way by trying out different approaches to solve a problem.
+
+The image below ilustrates the process:
+
 image::images/workflow-camel-user.png[align="center", width=80%]
 
-* *The Kubernetes user* (no previous Camel experience) +
-The way this user consumes _Camel_ is by selecting catalog _Kamelets_ and creating _Kamelet Bindings_ in YAML definitions. The user creates local YAML files and then pushes them to _OpenShift_. The _Camel K_ operator automates the process of building, creating images and deploying the integrations.
-+
-image::images/workflow-kube-user.png[align="center", width=80%]
+First, developers use a local environment for rapid inner-loop development cycles. This approach accelerates prototyping and code validation. Once the foundational elements are in place, the application is deployed to an OpenShift environment to validate containerized execution. Any necessary adjustments can then revert to the fast inner-loop cycle.
 
 {empty} +
 
-You'll start working as the _Camel_ developer for your first task to familiarise yourself with the developer tools to run locally, and later you'll continue as the Kubernetes user, creating and deploying data flows directly on _OpenShift_.
+=== Get ready!
 
 You've reached the end of Part 1. Complete Lab 1 by choosing the next tile (part 2) on your main tutorial dashboard:
 

@@ -151,8 +151,11 @@ image::images/camel-jbang.png[align="left", width=40%]
 
 This chapter is optional but recommended to understand how _Camel JBang_ helps you work fast with _Apache Camel_
 
+{empty} +
+
+
 [type=walkthroughResource,serviceName=openshift]
-.Invite System
+.Doc System
 ****
 [subs=attributes]
 ++++
@@ -161,13 +164,32 @@ This chapter is optional but recommended to understand how _Camel JBang_ helps y
 ****
 
 
-{empty} +
-
-
 [time=15]
 [id='intro-camel-jbang']
 == Camel JBang at play
 {style-all}
+
+[type=taskResource]
+.{blank}
+****
+****
+[type=taskResource]
+.Red Hat OpenShift Dev Spaces
+****
+* link:{codeready-url}[Console, window="_blank", , id="resources-codeready-url"]
+****
+[type=taskResource]
+.Red Hat OpenShift Developer Console
+****
+* link:{openshift-host}/topology/ns/{namespace}[Topology View, window="_blank"]
+****
+[type=taskResource]
+.Credentials
+****
+* *username:* `{user-username}`
+//* *password:* `{user-password}`
+****
+[type=walkthroughResource,serviceName=openshift]
 
 This workshop puts substantial focus on the prototyping phase. When a developer is tasked to deliver a solution, prototyping and experimentation are crucial to finding the best path forward, especially when adopting new, unfamiliar tools and techniques.
 
@@ -220,6 +242,14 @@ Pretend we're about to organise a tennis tournament.
 Let us introduce to you **player1**:
 
 TIP: Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `player1.yaml` file.
+
+[NOTE]
+====
+You'll be asked to confirm the paste action, tick _"✓ Do not ask me again"_ and click `Paste`.
+
+image::images/paste-multiline.jpg[align="left", width=30%]
+====
+
 --
 {copypaste}
 ----
@@ -265,7 +295,7 @@ In your terminal you'll see `player1` ready:
 
 Also, watching closely your folder structure, you'll see on which side `player1` stands waiting for balls:
 
-* `court/side1`
+pass:[<div style="padding-left: 1rem;"><code style="background-color: black; color: lightgrey"> ❯ lab ❯ court/side1 </code></div>]
 
 {empty} +
 
@@ -657,8 +687,8 @@ Now you'll notice more clearly, the funny sound from the rackets, and the game s
 === Abrupt end
 
 That's unfortunate... +
-`player1` slips in the wet court, were his laces well tied up? +
-We fear he got injured. After close inspection its confirmed, he needs to quit the game.
+`player1` slips on the wet court. Were his shoe laces tied well? +
+We hope he is not hurt. After a close look, it is clear: he is injured and must leave the game.
 
 --
 {copypaste}
@@ -688,23 +718,6 @@ We're sorry it ended this way, but don't let it spoil your day, there are many o
 Keep exploring the workshop to see more.
 🥎🥎🥎
 
-
-[type=taskResource]
-.Red Hat OpenShift Dev Spaces
-****
-* link:{codeready-url}[Console, window="_blank", , id="resources-codeready-url"]
-****
-[type=taskResource]
-.Red Hat OpenShift Developer Console
-****
-* link:{openshift-host}/topology/ns/{namespace}[Topology View, window="_blank"]
-****
-[type=taskResource]
-.Credentials
-****
-* *username:* `{user-username}`
-//* *password:* `{user-password}`
-****
 
 
 {empty} +

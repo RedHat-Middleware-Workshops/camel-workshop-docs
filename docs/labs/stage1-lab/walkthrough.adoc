@@ -205,6 +205,10 @@ The instructions below are divided in two segments:
 {style-all}
 
 [type=taskResource]
+.{blank}
+****
+****
+[type=taskResource]
 .Credentials
 ****
 * *username:* `{user-username}`
@@ -691,6 +695,10 @@ Did you see the message in _Matrix_ showing up in _Rocket.Chat_?
 {style-all}
 
 [type=taskResource]
+.{blank}
+****
+****
+[type=taskResource]
 .Credentials
 ****
 * *username:* `{user-username}`
@@ -891,6 +899,10 @@ Inspect in the pod logs to investigate possible failure causes.
 == Undeploy from OpenShift
 {style-all}
 
+[type=taskResource]
+.{blank}
+****
+****
 [type=taskResource]
 .Credentials
 ****
