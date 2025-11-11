@@ -378,7 +378,7 @@ After initialisation, under the `lab` directory, you'll find the following sourc
 
 --
 [.indent2]
-📁 message-hub +
+📁 workshop +
 &nbsp;&nbsp;📁 lab +
 &nbsp;&nbsp;&nbsp;&nbsp;📁 archive +
 pass:[<mark style="padding-left: 2rem; background-color: white; color: grey"><b>⚙</b></mark>] application-dev.properties +

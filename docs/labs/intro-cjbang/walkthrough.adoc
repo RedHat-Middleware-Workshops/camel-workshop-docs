@@ -210,14 +210,14 @@ The first time, your `lab` directory is empty:
 
 --
 [.indent2]
-📁 message-hub +
+📁 workshop +
 &nbsp;&nbsp;📁 *lab* +
 pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"></mark>] [empty]
 --
 
 {empty}
 
-For this exercise, you will work from your _DevSpaces_ terminal. +
+For this exercise, you will work from your _Dev Spaces_ terminal. +
 Find it, as shown below...
 
 image::images/crw-terminal.png[align="left", width=100%]
