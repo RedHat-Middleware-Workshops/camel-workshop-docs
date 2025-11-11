@@ -201,6 +201,49 @@ The instructions below are divided in two segments:
 
 {empty} +
 
+
+[time=10]
+[id="kaoto-overview"]
+== Quick overview of Kaoto 
+{style-all}
+
+[type=taskResource]
+.{blank}
+****
+****
+
+Most of the processing flows you'll construct during the workshop will be built using Kaoto, the integration designer for Apache Camel.
+
+Kaoto is integrated in VS Code as an extension easy to find in the marketplace and install.
+
+NOTE: The Kaoto extension is already pre-installed for you in Dev Spaces.
+
+image::images/new/vs-code-kaoto.jpg[align="left", width=40%]
+
+{empty} +
+
+With Kaoto, you will define and configure many of the well known Camel constructs using its graphical user interface. Among other tasks, Kaoto will help you to:
+
+ - Define Camel routes
+ - Define Kamelets
+ - Define data transformations
+ - Apply EIPs (Enterprise Integration Patterns)
+
+{empty} +
+
+This is how Kaoto will load on your Dev Spaces IDE:
+
+image::images/new/kaoto-overview.jpg[align="center", width=100%]
+
+{empty} +
+
+When you click, in the project explorer, one of the files with Camel definitions, Kaoto will open it as a tab and render it visually so that you can interact to work on the Camel constructs.
+
+In the next lab section you will inmediately start using Kaoto to start working on your Camel route definitions.
+
+{empty} +
+
+
 [time=10]
 [id="local"]
 == Local development 
@@ -272,7 +315,8 @@ image::images/camel-jbang.png[align="left", width=40%]
 
 {empty} +
 
-TIP: Camel JBang is an upstream tool for _Camel_. It is not supported yet by Red Hat but it is an extremely useful tool for all things Camel. It simplifies many of the common tasks a Camel developer undergoes. 
+TIP: Camel JBang is an upstream tool for _Camel_. The tool is included in Red Hat build of Apache Camel under the name _Camel CLI_. It is an extremely useful tool for all things Camel. It simplifies many of the common tasks a Camel developer undergoes. 
+ 
 
 === Start the lab
 
@@ -350,9 +394,9 @@ pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"><b>
 Make sure the files are visible in your file explorer in the left panel of _VSCode_. +
 Feel free to inspect the files in your editor. +
 
-{empty} +
-
-. Under your `lab/m2r` directory, find and open the following flow definition:
+. Open the first Camel route in the Kaoto editor. 
++
+Under your `lab/m2r` directory, find and open the following flow definition:
 +
 --
 * `m2r.camel.yaml`

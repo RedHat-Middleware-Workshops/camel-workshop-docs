@@ -241,7 +241,7 @@ NOTE: Later, we'll get serious when diving into the core of the workshop.
 Pretend we're about to organise a tennis tournament.
 Let us introduce to you **player1**:
 
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `player1.yaml` file.
+Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `player1.yaml` file.
 
 [NOTE]
 ====
@@ -351,7 +351,7 @@ Stop the action with kbd:[Ctrl+C].
 
 We introduce to you the ball boy, he will ensure the court is always tidy.
 
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `the-ballboy.yaml` file.
+Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `the-ballboy.yaml` file.
 --
 {copypaste}
 ----
@@ -433,7 +433,7 @@ Ok, practice is over, let's organise a real game.
 For a proper game to take place, you need more than just one player. +
 We introduce to you `player2`:
 
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `player2.yaml` file.
+Click the {cp-btn} button (Copy to clipboard), and paste in your terminal to create the `player2.yaml` file.
 --
 {copypaste}
 ----
@@ -739,7 +739,7 @@ Good! Time then to get back to real work !
 [id='clean-up']
 == Clean up your lab folder
 
-Make sure your `lab` folder stays clean in preparation for your lab exercices.
+Make sure your `lab` folder stays clean in preparation for your next lab exercices.
 
 Run the command below:
 

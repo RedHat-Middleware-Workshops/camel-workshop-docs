@@ -43,3 +43,16 @@ Relevant information about the environment is sent in the final email.
 
 For now, the workshop only contains one module of exercises. New modules will be added to the workshop in the future, also covering _Camel_ functionality.
 
+<br/>
+
+## Run the docs locally
+
+```
+podman run --rm -it -p 5001:5001 --name solex \
+-v $PWD/docs/labs:/opt/user-walkthroughs \
+-e NODE_ENV=production \
+-e THREESCALE_WILDCARD_DOMAIN=apps.your-domain.com \
+-e OPENSHIFT_VERSION=4 \
+-e WALKTHROUGH_LOCATIONS='/opt/user-walkthroughs' \
+quay.io/redhatintegration/tutorial-web-app:latest
+```

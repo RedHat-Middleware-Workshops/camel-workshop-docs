@@ -160,8 +160,6 @@ endif::[]
 [id='lab-intro']
 = Lab Introduction
 
-Start from here to familiarise yourself with the goals of this workshop and the scenario it is based on.
-
 [type=walkthroughResource,serviceName=openshift]
 .Invite System
 ****
@@ -171,7 +169,9 @@ Start from here to familiarise yourself with the goals of this workshop and the 
 ++++
 ****
 
-_Apache Camel_ keeps making major evolution steps improving its usability and reaching wider audiences. It also advances in delivering significant automation on _Kubernetes_ environments to provide cloud native integration.
+{empty} +
+
+Start here and complete the chapters below to familiarise yourself with the workshop goals, the scenario it’s based on, and get an introduction covering the content, key technologies, and what to expect from the lab exercises.
 
 {empty} +
 
@@ -180,7 +180,7 @@ _Apache Camel_ keeps making major evolution steps improving its usability and re
 [id="workshop-overview"]
 == Workshop overview
 
-This is a quick overview of the workshop goals and what to expect from the lab exercices as you make progress by completing the tasks.
+This is a quick overview of the workshop goals and what to expect from the lab exercises as you make progress by completing the tasks.
 
 {empty} +
 
@@ -193,7 +193,7 @@ Understand the basics of Camel and take your first steps. +
 {empty} +
 
 * *Be the Camel developer* + 
-Experience first hand powerful _Camel_ tooling that accelerates the development process, and how the _Camel DSL_ (Domain Specific Language) can help you to implement advanced use cases. +
+Experience first hand powerful _Camel_ tooling that accelerates the development process, and how the _Camel DSL_ (Domain Specific Language) helps you defining processing flows. +
 {empty} +
 
 * *Understand different levels of control* + 
@@ -227,7 +227,7 @@ image::images/workshop-progress-value.png[align="center", width=60%]
 [id="tech-overview"]
 == Technologies overview
 
-If you're unfamilar with Apache Camel, in a nutshell, it is an integration framework to define data flows connecting sources to destinations, applying _EIPs_ (enterprise integration patterns) as mediation processes between the two ends.
+If you're unfamilar with Apache Camel, in a nutshell, it is an integration framework to define data flows connecting sources to destinations, applying _EIPs_ (enterprise integration patterns) as transformational processes between the two ends.
 
 The image below illustrates typical integration flows connecting sources to detinations:
 
@@ -256,13 +256,15 @@ The workshop will center its attention around those most commonly used: *_Camel 
 
 === Full technology stack
 
-Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, Red Hat Application Foundations, and other tools can help automate the workflow of data ingestion, preparation, and management building data pipelines for hybrid cloud deployments that automate data processing upon acquisition.
+Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, and Red Hat Application Foundations unlock the potential for agile, scalable integration solutions, enabling seamless orchestration of containerized workflows, resilient data persistence across pipelines, and rapid deployment of event-driven microservices to modernize hybrid cloud architectures with minimal complexity.
 
 * Red Hat Application Foundations
 
 ** **Red Hat build of Apache Camel**: Utilize the integration capabilities of Apache Camel and its vast component library in the Quarkus runtime, optimizing for peak application performance with fast start up time.
 
 ** **Red Hat streams for Apache Kafka**: Based on the Apache Kafka project, streams for Apache Kafka offers a distributed backbone that allows microservices and other applications to share data with extremely high throughput and extremely low latency.
++
+{blank}
 
 * Red Hat Dev Spaces
 
