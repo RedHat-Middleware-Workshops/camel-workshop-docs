@@ -208,8 +208,8 @@ The instructions below are divided in two segments:
 {style-all}
 
 [type=taskResource]
-.{blank}
 ****
+something
 ****
 
 Most of the processing flows you'll construct during the workshop will be built using Kaoto, the integration designer for Apache Camel.
@@ -250,8 +250,8 @@ In the next lab section you will inmediately start using Kaoto to start working 
 {style-all}
 
 [type=taskResource]
-.{blank}
 ****
+something
 ****
 [type=taskResource]
 .Credentials
