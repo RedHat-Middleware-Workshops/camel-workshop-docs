@@ -527,6 +527,11 @@ NOTE: Find the message content highlighted in yellow.
 +
 Hopefully you've been successful in capturing _Matrix_ messages with _Camel_.
 +
+{empty} +
+
+
+. Stop Camel JBang 
++
 Press kbd:[Ctrl+C], from your terminal, to stop the running _Camel_ process.
 +
 [TIP]
@@ -540,9 +545,65 @@ _Camel JBang_ also implements the following very handy commands when running mul
 {empty} +
 
 
+This completes you first flow iteration and run consuming messages from _Matrix_.
+
+In your next exercise you keep iterating, completing the flow with the following:
+* Adding data transformation using Kaoto's DataMapper.
+* Directing the messages to _Rocket.Chat_
+
+{empty} +
+
+
+[type=verification]
+Did you see the message sent from _Matrix_ show up in your terminal?
+
+
+
+[time=10]
+[id="data-mapping"]
+== Add data transformation 
+{style-all}
+
+You next task is to add a data transformation step in your Camel route.
+
+Kaoto comes with a visual _DataMapper_ tool you will use to define your _Matrix_ to _Rocket.Chat_ data transformation, as a first introductory exposure to the tool.
+
+
+[type=taskResource]
+.Credentials
+****
+* *username:* `{user-username}`
+//* *password:* `{user-password}`
+****
+[type=taskResource]
+.Red Hat OpenShift Dev Spaces
+****
+* link:{url-codeready}[Console, window="_blank"]
+****
+[type=taskResource]
+.Red Hat OpenShift Developer Console
+****
+* link:{url-devconsole}[Topology View, window="_blank"]
+****
+[type=taskResource]
+.Matrix
+****
+* link:{url-element}[Matrix Web Client, window="_blank"]
+****
+[type=taskResource]
+.Rocket.Chat
+****
+* link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
+****
+
+
+Let's get started.
+
+
+
 . Include data transformation
 +
-Now we need to extend the _Camel_ route definition to include data transformation to match the JSON structure the target system (_Rocket.Chat_) expects.
+You will extend the _Camel_ route definition to include data transformation to match the JSON structure the target system (_Rocket.Chat_) expects.
 +
 NOTE: The first time you define a data mapping, the process feels laborious as you learn the steps. +  
 With practice, you will create data mappings quickly and intuitively.
@@ -631,9 +692,11 @@ A connection will be created between source and target, rendered as follows:
 +
 image::images/new/mapper-text.jpg[align="left", width=80%]
 +
-{blank}
+{empty} +
 +
-The mapping above would simply copy the message from source to target, as in the _hello_ example below:
+.. Refine the mapping by using a function
++
+The last mapping above simply copies the message from source to target, as in the _hello_ example below:
 +
 --
 * `hello` -> `hello`
@@ -641,7 +704,8 @@ The mapping above would simply copy the message from source to target, as in the
 +
 {blank}
 +
-However, we also want to include information about user and origin, like this:
+However, we want to see in Rocket.Chat information about the user and origin. +
+It means the mapping would need to happen as follows:
 +
 --
 * `hello` -> `*{user-username}@matrix:* hello`
@@ -651,14 +715,60 @@ As the target system understands _Markdown_, we will use it to format the messag
 `pass:a[*{user-username}@matrix:* hello]`
 --
 +
-Redefine the mapping rule following the steps below:
+For the result above to happen, the following concatenation of segments needs to occur:
 +
 ====
-[loweralpha]
-.... At the end of the row, click the [ {pen-btn} ] button to open the XPath editor (pop up window).
+* `*`: the _Markdown_ symbol to start a bold string 
+* `{user-username}`: from the source field *username*
+* ``@matrix:* ``: the originating system and the closing _Markdown_ symbol 
+* `hello`: from the source field *text*
+====
 +
-.... Delete all contents (current expression).
-.... Copy and paste:
+{blank}
++
+All the segments above can be concatenated in the Data Mapper using the XPath function `concatenate`.
++
+NOTE: XPath is a simple language for finding and selecting specific parts in a data structure. The language comes with many handy out-of-the-box functions.
++
+Open the XPath editor by clicking kbd:[{pen-btn}] at the end of the row.
++
+image::images/new/mapper-xpath-editor-view.png[align="left", width=80%]
++
+{blank}
++
+On the left you'll find fields and functions you can drag and drop into the blue text area. +
+You'll find in the text blue area the current mapping expression for the target field kbd:[string[@key = text\]] (text in Rocket.Chat).
++
+You're going to perform 2 actions:
++
+--
+. Define the string segments (as explained earlier)
+. Wrap the segments with a `concatenate` function
+--
++
+{empty} +
++
+Let's start with 1. Define the segments:
++
+[NOTE]
+====
+The *preview* below shows the expected outcome of the actions you're about to do: 
+
+++++
+<div style="background:#EAFAFA; padding:15px 15px 15px 8px; border-radius:8px; font-family:Consolas,monospace; font-size:14px; line-height:1.6; position:relative;">
+  <pre style="margin:0; background:#EAFAFA; padding-left:50px; border:none; outline:none;">
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">1</span><span style="color:#000;">'*'</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">2</span><span style="color:#000;">, $matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='username'],</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">3</span><span style="color:#000;">'@matrix:* '</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">4</span><span style="color:#000;">, $matrix-x/fn:map/fn:string[@key='text']</span></pre>
+</div>
+++++
+====
++
+====
+[lowerroman]
+. Delete current expression (blue text area empty).
+. Copy and paste:
 +
 --
 {copypaste}
@@ -667,12 +777,12 @@ Redefine the mapping rule following the steps below:
 ----
 --
 +
-.... Drag and drop from the left to the editor +
+. Drag and drop from the left to the editor +
 kbd:[string [@key = username\]] -> `editor`
 +
 {blank}
 +
-.... Copy and paste (including the comma and new line):
+. Copy and paste (including the comma and new line):
 +
 --
 {copypaste}
@@ -682,22 +792,48 @@ kbd:[string [@key = username\]] -> `editor`
 ----
 --
 +
-.... Drag and drop from the left to the editor +
+. Drag and drop from the left to the editor +
 kbd:[string [@key = text\]] -> `editor`
++
+{empty} +
+
+IMPORTANT: Your segments should now be defined matching the *preview* shown earlier. +
+Verify they match, and make corrections if necessary.
+====
++
+{empty} +
++
+Let's now do 2.
++
+--
+. On the editor's left panel click the tab: +
+ **[    Function    ]**
 +
 {blank}
 +
-.... On the editor's left panel click the tab: +
- **[    Function    ]**
-+
-.... Drag and drop the _String_ function _Concatenate_ from left to right +
+. Drag and drop the _String_ function *_Concatenate_* from left to right +
 kbd:[Concatenate] -> `editor`
 +
 {blank}
 +
-.... The definition is complete +
-Click the **Close** button.
+[NOTE]
 ====
+After you drop the function, you should see in your blue text area the following result:
+
+++++
+<div style="background:#EAFAFA; padding:15px 15px 15px 8px; border-radius:8px; font-family:Consolas,monospace; font-size:14px; line-height:1.6; position:relative;">
+  <pre style="margin:0; background:#EAFAFA; padding-left:50px; border:none; outline:none;">
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">1</span><span style="color:#000;">concat('*'</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">2</span><span style="color:#000;">, $matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='username'],</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">3</span><span style="color:#000;">'@matrix:* '</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">4</span><span style="color:#000;">, $matrix-x/fn:map/fn:string[@key='text'])</span></pre>
+</div>
+++++
+====
++
+. The definition is complete +
+Click the pass:a[<span {btn-stl-blue}>Close</span>] button.
+--
 +
 {empty} +
 +
