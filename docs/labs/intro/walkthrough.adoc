@@ -160,6 +160,9 @@ endif::[]
 [id='lab-intro']
 = Lab Introduction
 
+Start from here to familiarise yourself with the goals of this workshop and the scenario it is based on.
+
+
 [type=walkthroughResource,serviceName=openshift]
 .Invite System
 ****
@@ -168,10 +171,6 @@ endif::[]
 <div style="padding-left: 20px">{docserver-status}<div>
 ++++
 ****
-
-{empty} +
-
-Start here and complete the chapters below to familiarise yourself with the workshop goals, the scenario it’s based on, and get an introduction covering the content, key technologies, and what to expect from the lab exercises.
 
 {empty} +
 

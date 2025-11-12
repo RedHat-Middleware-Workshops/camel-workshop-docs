@@ -201,23 +201,16 @@ image::images/prereq.png[align="left", width=100%]
 
 Technical goals and milestones:
 
-* Development of a _no-code_ integration (_Kamelet_ binding)
+* Develop Camel routes with low-code tools
 * Define JSON data transformers.
 * Use of _Camel JBang_ for fast prototyping
 * Local execution and testing
-* Deployment in OpenShift
-
-{empty} +
-
-The instructions below are divided in two segments:
-
-* Local development (and testing)
-* Deployment in OpenShift
+* Deployment on OpenShift
 
 {empty} +
 
 
-[time=10]
+[time=2]
 [id="kaoto-overview"]
 == Quick overview of Kaoto 
 {style-all}
@@ -545,9 +538,10 @@ _Camel JBang_ also implements the following very handy commands when running mul
 {empty} +
 
 
-This completes you first flow iteration and run consuming messages from _Matrix_.
+This completes your first iteration and execution consuming messages from _Matrix_.
 
 In your next exercise you keep iterating, completing the flow with the following:
+
 * Adding data transformation using Kaoto's DataMapper.
 * Directing the messages to _Rocket.Chat_
 
@@ -861,6 +855,9 @@ Your data mapping definition is now complete with multiple input fields mapped t
 {empty} +
 
 . Log the body
++
+Click the **Design** view to go back to Kaoto's canvas: +
+image:images/new/kaoto-views.jpg[align="left", width=40%]
 +
 Update the log activity from:
 +

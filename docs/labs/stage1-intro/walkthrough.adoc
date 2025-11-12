@@ -146,13 +146,6 @@ image::images/prereq.png[align="left", width=100%]
 {empty} +
 --
 
-Estimated time: +
---
-* *10 mn* +
---
-
-{empty} +
-
 {empty} +
 
 [time=2]

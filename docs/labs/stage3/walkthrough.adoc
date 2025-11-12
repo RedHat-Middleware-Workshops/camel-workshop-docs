@@ -11,10 +11,13 @@
 
 :experimental:
 
+:btn-replace: pass:[<svg fill="#000000" width="1.5em" height="1.5em"  viewBox="0 0 912.193 912.193" xml:space="preserve"> \
+  <g stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g> <g> <path d="M807.193,170.092v83.973c-6.033-10.458-12.529-20.674-19.512-30.606c-24.436-34.762-54.037-65.357-87.984-90.937 c-34.352-25.885-72.34-46.014-112.908-59.827c-41.957-14.286-85.891-21.529-130.577-21.529c-46.663,0-92.432,7.883-136.03,23.431 c-42.135,15.025-81.295,36.846-116.393,64.858c-34.751,27.735-64.539,60.747-88.534,98.119 c-24.444,38.072-42.191,79.621-52.748,123.492c-6.783,28.19,10.57,56.542,38.761,63.325c4.128,0.993,8.259,1.469,12.325,1.469 c23.705,0,45.21-16.167,51-40.229c15.47-64.292,52.651-122.573,104.694-164.109c26.001-20.751,54.989-36.909,86.16-48.024 c32.249-11.5,66.151-17.331,100.765-17.331c65.672,0,128.018,20.822,180.297,60.214c35.375,26.656,64.541,61.161,85.139,100.095 h-58.166c-28.994,0-52.5,23.505-52.5,52.5s23.506,52.5,52.5,52.5h196.211c28.996,0,52.5-23.505,52.5-52.5V170.092 c0-28.995-23.504-52.5-52.5-52.5C830.699,117.592,807.193,141.097,807.193,170.092z"></path> <path d="M52.5,794.602c28.995,0,52.5-23.504,52.5-52.5v-84.326c31.275,54.438,74.821,100.955,127.654,135.994 c66.246,43.936,143.417,67.186,223.196,67.254c0.044,0,0.087,0.004,0.13,0.004c0.035,0,0.071-0.002,0.106-0.002 c0.041,0,0.083,0.002,0.124,0.002c0.056,0,0.109-0.004,0.166-0.004c46.524-0.045,92.157-7.924,135.633-23.428 c42.135-15.025,81.295-36.846,116.393-64.857c34.752-27.734,64.539-60.748,88.535-98.119 c24.443-38.072,42.191-79.621,52.748-123.492c6.783-28.189-10.57-56.541-38.762-63.324s-56.541,10.57-63.324,38.76 c-15.471,64.293-52.652,122.574-104.695,164.109c-26,20.75-54.988,36.91-86.16,48.023c-32.217,11.488-66.082,17.318-100.657,17.33 c-59.154-0.023-116.346-17.229-165.398-49.762c-42.3-28.053-76.562-66.006-100.007-110.545h58.028c28.996,0,52.5-23.506,52.5-52.5 c0-28.996-23.505-52.5-52.5-52.5H52.5c-28.995,0-52.5,23.504-52.5,52.5v198.883C0,771.098,23.505,794.602,52.5,794.602z"></path> </g> </g></svg>]
+
 // WORKS
 :style-kbd: kbd { \
   color: black; \
-  background-color: lightgrey; \
+  background-color: white; \
   border: 1px solid black; \
   box-shadow: 0px 1px black; \
   font-size: .85em; \
@@ -26,7 +29,6 @@
   white-space: nowrap; \
   border-radius:5px; \
 } \
-
 
 :style-preview: pre {background-color: #272822; color: white; padding: 5px 15px; font-size: 15px}
 :style-indent: .indent2 {padding-left: 2rem;}
@@ -164,40 +166,9 @@ image::images/prereq.png[align="left", width=100%]
 
 Lab 1 and 2 enabled _Matrix_/_Rocket.Chat_ conversations. However their connectivity was tightly coupled with dedicated data translations between both platforms. On this third lab we want to break them away to open up the architecture in order to welcome additional systems and services.
 
-
-{empty} +
-
-Target persona: +
---
-* *Kubernetes User* +
-{empty} +
---
-Difficulty level: +
---
-* *EASY* +
-{empty} +
---
-Estimated time: +
---
-* *20 mn* +
-{empty} +
---
-
-{empty} +
-
-Technical goals and milestones:
-
-* Evolve and mature the architecture.
-* Adopt a standard interface
-* Switch bindings to plug platform resources.
-
-{empty} +
-
 The picture below illustrates an asynchronous decoupled architecture, via a streaming platform (_Kafka_). This approach increases the number of data flows from two to four.
 
 TIP: At first it seems unnecessary to double the number of data flows, but the benefits outweighs complexity, we gain an easily extensible architecture. In later labs you'll see new additions to the architecture.
-
-{empty} +
 
 // image::images/processing-flow.png[title="Data flow",align="center",title-align=center, width=80%]
 image::images/data-flow.png[align="center", width=90%]
@@ -229,6 +200,14 @@ This implies that instead of applying platform specific data transformations (eg
 The illustration below describes data exchanges via _Kafka_:
 
 image::images/standard-data-model.png[align="center", width=90%]
+
+{empty} +
+
+Technical goals and milestones:
+
+* Evolve the solution into an event-driven architecture.
+* Adopt a standard interface
+* Switch bindings to plug platform resources.
 
 {empty} +
 
@@ -672,6 +651,7 @@ Very straightforward, nothing else to be done here.
 [time=5]
 [id="kafka-to-matrix-rocketchat"]
 == Kafka to Rocket.Chat/Matrix
+{style-all}
 
 [type=taskResource]
 .Credentials
@@ -781,7 +761,7 @@ The first step of the flow is where you need to define Kafka as the source syste
 NOTE: Your _OpenShift_ namespace already contains an _AMQ Streams_ cluster (_Kafka_) ready for you to use. 
 +
 
-1. Click the `+` button inside the `To do: Kafka` step
+1. Hover the `To do: Kafka` step and click the floating {btn-replace} button.
 1. Find and select the _Kafka_ component.
 1. Select the `All` configuration tab
 1. Configure the following 2 properties:
@@ -820,7 +800,7 @@ However, by decoupling the architecture using _Kafka_, we introduce another even
 +
 The filter you need to define will prevent that.
 +
-1. Click (in the blue area) `To do: Filter`
+1. Click the bar pass:[<code style="background-color: #B0380C; color: white;">&nbsp;To do: Filter&nbsp;</code>]
 +
 You should the `JQ` expression language is selected by default.
 +
@@ -848,7 +828,7 @@ In the new data transformation, the source data complies with the common schema 
 --
 From Kaoto: 
 
-. Click the `+` button in the transition
+. Click the `+` button inside the `To do: Mapping` box
 . Find and select the _Kaoto DataMapper_
 . Click to open the configuration panel
 . Click the `🔧Configure` button
@@ -907,22 +887,21 @@ And you’re done with the Kafka → Rocket.Chat changes.
 
 === Kafka to Matrix
 
-Like we did earlier, it's handy to use one of the previous flows as a base to construct the new _Kafka to Matrix_ proces as many of the steps are the same. The picture below shows the original _Rocket.Chat to Matrix_ flow you defined earlier:
+//Like we did earlier, it's handy to use one of the previous flows as a base to construct the new _Kafka to Matrix_ proces as many of the steps are the same. The picture below shows the original _Rocket.Chat to Matrix_ flow you defined earlier:
 
-image::images/new/flow-m2r.jpg[align="left", width=60%]
+//image::images/new/flow-m2r.jpg[align="left", width=60%]
 
-{blank}
+//{blank}
 
-Again, the changes you need to apply on the flow above are minimal:
+Similarly, the changes you need to apply on this flow are minimal:
 
 1. Define a _Kafka_ consumer (instead of _Rocket.Chat_)
-1. Redefine the data mapping using the common interface
+1. Redefine the filter to prevent *Rocket.Chat to Rocket.Chat* loopback events.
+1. Redefine the data mapping to use the common interface as the source schema.
 
 {blank}
 
-To simplify the work you need to do, we've prepared the flow so that you just need to fill the blanks. The picture below illustrates the two focus areas where you need to work on:
-
-image::images/new/flow-m2k-todo.jpg[align="left", width=70%]
+image::images/new/flow-k2m-todo.jpg[align="left", width=70%]
 
 {blank}
 
@@ -945,7 +924,7 @@ The first step of the flow is where you need to define _Kafka_ as the source sys
 NOTE: Your _OpenShift_ namespace already contains an _AMQ Streams_ cluster (_Kafka_) ready for you to use. 
 +
 
-1. Click the `+` button inside the `To do: Kafka` step
+1. Hover the `To do: Kafka` step and click the floating {btn-replace} button.
 1. Find and select the _Kafka_ component.
 1. Select the `All` configuration tab
 1. Configure the following 2 properties:
@@ -974,7 +953,7 @@ my-cluster-kafka-bootstrap:9092
 +
 As previously explained, you need the define a filter to prevent events flowing from _Matrix to Matrix_.
 +
-1. Click (in the blue area) `To do: Filter`
+1. Click the bar pass:[<code style="background-color: #B0380C; color: white;">&nbsp;To do: Filter&nbsp;</code>]
 +
 You should see the `JQ` expression language selected by default.
 +
@@ -1002,7 +981,7 @@ In the new data transformation, the source data complies with the common schema 
 --
 From Kaoto: 
 
-. Click the `+` button in the transition
+. Click the `+` button inside the `To do: Mapping` box
 . Find and select the _Kaoto DataMapper_
 . Click to open the configuration panel
 . Click the `🔧Configure` button

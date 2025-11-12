@@ -180,23 +180,11 @@ The clock in the diagram illustrates an on/off mechanism described as follows: t
 
 {empty} +
 
-Target persona: +
---
-* *Camel Developer* +
-{empty} +
---
 Difficulty level: +
 --
 * *MEDIUM/ADVANCED* +
 {empty} +
 --
-Estimated time: +
---
-* *20 mn* +
-{empty} +
---
-
-{empty} +
 
 Technical goals and milestones:
 

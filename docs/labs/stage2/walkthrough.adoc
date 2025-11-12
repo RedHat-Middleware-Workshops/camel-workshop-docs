@@ -165,62 +165,21 @@ image::images/prereq.png[align="left", width=100%]
 
 *Overview*
 
-Lab 1 enabled a _Matrix_ to _Rocket.Chat_ data flow. On this second lab we want the flow to work in both directions so that users from both chat platforms can exchange messages and have a conversation.
-
-{empty} + 
-
-Target persona: +
---
-* *Kubernetes User* +
-{empty} +
---
-Difficulty level: +
---
-* *EASY* +
-{empty} +
---
-Estimated time: +
---
-* *10 mn* +
-{empty} +
---
-
-{empty} +
-
-
-Technical goals and milestones:
-
-* Enable two-way communications.
-* Include event filters.
-
-{empty} +
-
-[NOTE]
---
-In the first lab you impersonated the _Camel_ developer to create and deploy _Kamelet Bindings_. Later, you will create more advanced integrations using regular Camel DSL (_Domain Specific Language_).
---
-
-In this second lab, you will work as a _Kubernetes_ user. Instead of running locally your code, you will directly push your definitions to OpenShift. 
-
-[NOTE]
---
-As you progress with the lab, notice that working as a Kubernetes user, with Camel K, allows you to create and deploy data flows without any internal knowledge of Camel, as per the diagram below:
-
-image::images/workflow-kube-user.png[align="center", width=100%]
-
-You only need to define and configure sources, steps and sinks in Kamelet Binding definitions.
---
-
-{empty} +
+Lab 1 enabled a _Matrix_ to _Rocket.Chat_ data flow. On this second lab we want the flow to work in both directions so that users from both messaging platforms can interact between each other.
 
 The picture below illustrates two data flows interconnecting both chat systems, one for each direction of communication:
 
 // image::images/processing-flow.png[title="Data flow",align="center",title-align=center, width=80%]
 image::images/data-flow.png[align="center", width=80%]
 
-Luckily, you've already done all the necessary onboarding setup with both chat systems, so this lab should be a lot faster to complete than the first one.
+
+Technical goals and milestones:
+
+* Enable two-way communications.
+* Apply message filters to prevent loops.
 
 {empty} +
+
 
 
 [time=5]
@@ -622,7 +581,8 @@ NOTE: The field `text` includes JsonPath rules extracting values from the input 
 --
 {copypaste}
 ----
-labrun r2m --dev
+labrun r2m --dev \
+--properties matrix.properties
 ----
 --
 +
