@@ -831,8 +831,7 @@ After you drop the function, you should see in your blue text area the following
 ++++
 ====
 +
-. The definition is complete +
-Click the pass:a[<span {btn-stl-blue}>Close</span>] button.
+. The definition is complete, click pass:a[<span {btn-stl-blue}>Close</span>]
 --
 +
 {empty} +
