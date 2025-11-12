@@ -45,7 +45,7 @@
     C84.947,411.878,84.947,426.419,75.98,435.38z"/> \
 </g></svg>]
 
-:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#007bff; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
+:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#0366CB; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
 
 // WORKS
 :style-kbd: kbd { \
@@ -941,7 +941,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("*",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"*", $common-x/fn:map/fn:string[@key='text'])
+concat("*",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],":* ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
 +
@@ -1089,7 +1089,7 @@ Copy and Paste the values below to define the given field entries:
 --
 {copypaste}
 ----
-concat("<b>",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"</b>", $common-x/fn:map/fn:string[@key='text'])
+concat("<b>",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],":</b> ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
 +

@@ -5,7 +5,7 @@
 :url-codeready: http://devspaces.{openshift-app-host}/
 :url-devconsole: {openshift-host}/topology/ns/{namespace}
 :url-rocketchat: https://rocketchat-rocketchat.{openshift-app-host}
-
+:url-filestash: https://filestash-filestash.{openshift-app-host}
 
 :url-docserver: https://docserver-webapp.{openshift-app-host}
 //:url-docserver: https://docserver-webapp.apps.cluster-mqpjp.dynamic.redhatworkshops.io
@@ -1357,14 +1357,15 @@ After the first run (blue color), it will terminate and wait for the next run (g
 When _Camel_ completes a run you should be able to see the S3 object in its bucket. Use an online web based S3 browser to visualise the data
 
 . Open the S3 Browser from the link below:
-
-* link:https://www.filestash.app/s3-browser.html[https://www.filestash.app/s3-browser.html, window="_blank"]
++
+//* link:https://www.filestash.app/s3-browser.html[https://www.filestash.app/s3-browser.html, window="_blank"]
+* link:{url-filestash}[S3 Browser, window="_blank"]
 +
 Provide your `Access Key`, `Secret Access Key` and the following `Endpoint`:
 +
 [source,bash,subs="attributes+"]
 ----
-https://s3-openshift-storage.{openshift-app-host}/
+http://s3.openshift-storage.svc.cluster.local
 ----
 +
 image::images/s3-browser.png[align="left", width=40%]
