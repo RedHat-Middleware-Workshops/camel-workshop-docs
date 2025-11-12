@@ -44,8 +44,8 @@
 :docserver-status: pass:a[<img hidden="true" src="invalid-image.jpg" onerror=" \
         fetch('{url-docserver}/status') \
         .then(response => response.text()) \
-        .then(data => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:lime;display:inline-block&quot;></div>') \
-        .catch(error => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:red;display:inline-block&quot;></div>') \
+        .then(data => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:lime;display:inline-block&quot;></div><p>&nbsp;</p>') \
+        .catch(error => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:red;display:inline-block&quot;></div><p>&nbsp;</p>') \
       ">]
 
 :freplace: pass:[function replaceTokens(templateString, values) { \

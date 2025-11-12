@@ -10,12 +10,27 @@
 
 :experimental:
 
-:pen-btn: pass:[<svg height="1em" width="1em" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#444" d="M1 11.9l-1 4.1 4.1-1 9.2-9.2-3.1-3.1-9.2 9.2zM1.5 15l-0.4-0.5 0.4-2 2 2-2 0.5zM10.9 4.4l-8.1 8-0.6-0.6 8.1-8 0.6 0.6z"></path><path fill="#444" d="M15.3 0.7c-1.1-1.1-2.6-0.5-2.6-0.5l-1.5 1.5 3.1 3.1 1.5-1.5c0-0.1 0.6-1.5-0.5-2.6zM13.4 1.6l-0.5-0.5c0.6-0.6 1.1-0.1 1.1-0.1l-0.6 0.6z"></path></svg>]
+:pen-btn: pass:[<svg height="2em" width="2em" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#444" d="M1 11.9l-1 4.1 4.1-1 9.2-9.2-3.1-3.1-9.2 9.2zM1.5 15l-0.4-0.5 0.4-2 2 2-2 0.5zM10.9 4.4l-8.1 8-0.6-0.6 8.1-8 0.6 0.6z"></path><path fill="#444" d="M15.3 0.7c-1.1-1.1-2.6-0.5-2.6-0.5l-1.5 1.5 3.1 3.1 1.5-1.5c0-0.1 0.6-1.5-0.5-2.6zM13.4 1.6l-0.5-0.5c0.6-0.6 1.1-0.1 1.1-0.1l-0.6 0.6z"></path></svg>]
+
+:map-att: pass:[<svg width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="bi bi-box-arrow-in-down-right"> \
+  <path d="M6.364 2.5a.5.5 0 0 1 .5-.5H13.5A1.5 1.5 0 0 1 15 3.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 13.5V6.864a.5.5 0 1 1 1 0V13.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H6.864a.5.5 0 0 1-.5-.5z" /> \
+  <path d="M11 10.5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1 0-1h3.793L1.146 1.854a.5.5 0 1 1 .708-.708L10 9.293V5.5a.5.5 0 0 1 1 0v5z" /> \
+</svg>]
+
+:map-tick: pass:[<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="1"> \
+<path d="M4.89163 13.2687L9.16582 17.5427L18.7085 8" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/> \
+</svg>]
+
+:map-import: pass:[<svg width="1em" height="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"> \
+  <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/> \
+</svg>]
+
+:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#007bff; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
 
 // WORKS
 :style-kbd: kbd { \
   color: black; \
-  background-color: lightgrey; \
+  background-color: white; \
   border: 1px solid black; \
   box-shadow: 0px 1px black; \
   font-size: .85em; \
@@ -207,11 +222,6 @@ The instructions below are divided in two segments:
 == Quick overview of Kaoto 
 {style-all}
 
-//[type=taskResource]
-//****
-//something
-//****
-
 Most of the processing flows you'll construct during the workshop will be built using Kaoto, the integration designer for Apache Camel.
 
 Kaoto is integrated in VS Code as an extension easy to find in the marketplace and install.
@@ -239,7 +249,7 @@ image::images/new/kaoto-overview.jpg[align="center", width=100%]
 
 When you click, in the project explorer, one of the files with Camel definitions, Kaoto will open it as a tab and render it visually so that you can interact to work on the Camel constructs.
 
-In the next lab section you will inmediately start using Kaoto to start working on your Camel route definitions.
+You will start using Kaoto in the next lab section to work on the Camel routes. Each Camel route defines a data flow you need to construct the solution.
 
 {empty} +
 
@@ -248,11 +258,6 @@ In the next lab section you will inmediately start using Kaoto to start working 
 [id="local"]
 == Local development 
 {style-all}
-
-//[type=taskResource]
-//****
-//something
-//****
 
 [type=taskResource]
 .Credentials
@@ -316,7 +321,8 @@ image::images/camel-jbang.png[align="left", width=40%]
 
 {empty} +
 
-TIP: Camel JBang is an upstream tool for _Camel_. The tool is included in Red Hat build of Apache Camel under the name _Camel CLI_. It is an extremely useful tool for all things Camel. It simplifies many of the common tasks a Camel developer undergoes. 
+TIP: Camel JBang is an upstream tool for _Camel_. The tool is included in Red Hat build of Apache Camel under the name _"Camel CLI"_. +
+It is an extremely useful tool for all things Camel. It simplifies many of the common tasks a Camel developer undergoes. 
  
 
 === Start the lab
@@ -388,14 +394,11 @@ After initialisation, under the `lab` directory, you'll find the following sourc
 pass:[<mark style="padding-left: 2rem; background-color: white; color: purple"><b><i>&nbsp;!&nbsp;&nbsp;</i></b></mark>] *m2r.camel.yaml* +
 pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"><b>⚙</b></mark>] matrix.properties +
 pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"><b>⚙</b></mark>] rocketchat.properties +
+
+NOTE: Make sure the files are visible in your file explorer in the left panel of _VSCode_.
 --
 
-{blank}
-
-Make sure the files are visible in your file explorer in the left panel of _VSCode_. +
-Feel free to inspect the files in your editor. +
-
-. Open the first Camel route in the Kaoto editor. 
+. Open in Kaoto the first Camel route. 
 +
 Under your `lab/m2r` directory, find and open the following flow definition:
 +
@@ -416,6 +419,11 @@ image::images/new/canvas-horizontal-layout.jpg[align="left", width=40%]
 +
 image::images/new/route-matrix-log.jpg[align="left", width=30%]
 +
+{blank}
++
+What you see above is a *_'Kamelet to Log'_* route, basically a Camel route with 2 processing steps. +
+The Kamelet source _(Matrix)_ receives message notifications. The Log activity outputs the contents of the message.
++
 [NOTE]
 --
 About the `matrix-source` _Kamelet_:
@@ -426,10 +434,10 @@ About the `matrix-source` _Kamelet_:
 +
 [NOTE]
 --
-About the variable `matrix`:
+When inspecting the route configuration in Kaoto, you'll see the following:
 
-* The Kamelet defines `variableReceive: matrix` to allocate the incoming event (`body` is ignored).
-* The route logs the incoming event using the Camel's simple expression `${variable.matrix}`
+* The Kamelet defines `variableReceive: matrix` to allocate the data of the incoming message (`body` is ignored).
+* The route logs the incoming event using the Camel's simple expression `${variable.matrix}`.
 --
 +
 {empty} +
@@ -480,6 +488,14 @@ In your terminal logs, you should see _Camel_ connecting to _Matrix_, similar to
 </span></pre>
 ++++
 +
+[NOTE]
+====
+A window notification may pop up at the bottom-right corner of your screen. +
+Close it, or simply ignore it, as it disappears after a few seconds.
+
+image::images/new/che-port-8080.png[align="left", width=40%]
+====
++
 {empty} +
 +
 Now, from the _Matrix_ chat room, send a message.
@@ -528,12 +544,15 @@ _Camel JBang_ also implements the following very handy commands when running mul
 +
 Now we need to extend the _Camel_ route definition to include data transformation to match the JSON structure the target system (_Rocket.Chat_) expects.
 +
+NOTE: The first time you define a data mapping, the process feels laborious as you learn the steps. +  
+With practice, you will create data mappings quickly and intuitively.
++
 .. Include in your Camel route a Kaoto data transformation step
 +
 --
 From Kaoto: 
 
-. Click the `+` button in the transition
+. Click the kbd:[+] button in the transition
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
@@ -541,30 +560,48 @@ From Kaoto:
 
 image::images/new/canvas-create-mapper.jpg[align="left", width=100%]
 
+
+
+When you create and open a new mapping definition, you will find it empty. +
+The picture belows shows some of the main parts you will interact with:
+
+image::images/new/mapper-empty.png[align="left", width=100%]
+
+{empty} +
+
 --
 +
-.. Attach schemas
+.. Next, define the inputs and outputs
 +
 --
 From the DataMapper editor: 
 
 . Define the source:
 .. On **Parameters** click the button kbd:[+] to add new parameter
-.. Enter `matrix` and click the checkmark button kbd:[√]
-.. Click first the **Attach schema** button, then the blue button, and pick `matrix-in.json`.
-.. Click **Attach** to complete the action.
+.. Enter `matrix` and click the checkmark button kbd:[{map-tick}]
+.. Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*matrix-in.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 +
 {blank}
 +
 . Define the target
-.. Find the target Body and click on **Attach schema**, then the blue button, and pick `rocketchat-out.json`
+.. On the right hand side of the DataMapper screen: +
+Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*rocketchat-out.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 
-{blank}
+{empty} +
+
+Once your in and out schemas have been attached your DataMapper should look as follows:
+
+image::images/new/mapper-m2r.png[align="center", width=90%]
+
 --
 +
 {empty} +
 +
-.. Define the data mappings
+.. Define the data mappings from source to target
 +
 Copy and Paste the values below to define the given field entries:
 +
@@ -590,7 +627,7 @@ image::images/new/mapper-add-expression.jpg[align="left", width=60%]
 +
 To map the field, click and drag kbd:[string [@key = text\]] from the source (left) to the target (right).
 +
-You should see the connection rendered as follows:
+A connection will be created between source and target, rendered as follows:
 +
 image::images/new/mapper-text.jpg[align="left", width=80%]
 +
@@ -850,10 +887,6 @@ Did you see the message in _Matrix_ showing up in _Rocket.Chat_?
 {style-all}
 
 [type=taskResource]
-.{blank}
-****
-****
-[type=taskResource]
 .Credentials
 ****
 * *username:* `{user-username}`
@@ -1054,10 +1087,7 @@ Inspect in the pod logs to investigate possible failure causes.
 == Undeploy from OpenShift
 {style-all}
 
-[type=taskResource]
-.{blank}
-****
-****
+
 [type=taskResource]
 .Credentials
 ****
