@@ -1248,6 +1248,7 @@ Copy the snippet below into the process:
 +
 --
 {copypaste}
+[subs=attributes]
 ----
         - setHeader:
             name: CamelAwsS3Key
