@@ -817,10 +817,10 @@ After you drop the function, you should see in your blue text area the following
 ++++
 <div style="background:#EAFAFA; padding:15px 15px 15px 8px; border-radius:8px; font-family:Consolas,monospace; font-size:14px; line-height:1.6; position:relative;">
   <pre style="margin:0; background:#EAFAFA; padding-left:50px; border:none; outline:none;">
-<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">1</span><span style="color:#000;">concat('*'</span>
-<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">2</span><span style="color:#000;">, $matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='username'],</span>
-<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">3</span><span style="color:#000;">'@matrix:* '</span>
-<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">4</span><span style="color:#000;">, $matrix-x/fn:map/fn:string[@key='text'])</span></pre>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">1</span><span style="color:#999;"><b style="color:#000;">concat(</b>'*'</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">2</span><span style="color:#999;">, $matrix-x/fn:map/fn:map[@key='fromUser']/fn:string[@key='username'],</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">3</span><span style="color:#999;">'@matrix:* '</span>
+<span style="counter-increment:line; position:absolute; left:10px; width:30px; text-align:right; color:#888; user-select:none;">4</span><span style="color:#999;">, $matrix-x/fn:map/fn:string[@key='text']<b style="color:#000;">)</b></span></pre>
 </div>
 ++++
 ====
@@ -902,7 +902,7 @@ You should see an incoming event now transformed and looking similar to this:
 {snippet}{user-username}
 [subs="attributes+"]
 ----
-{"channel":"REPLACE","text":"*{user-username}@matrix*: Hello Camel"}
+{"channel":"REPLACE","text":"*{user-username}@matrix:* Hello Camel"}
 ----
 --
 +
