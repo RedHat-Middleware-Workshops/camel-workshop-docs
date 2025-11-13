@@ -1358,15 +1358,16 @@ When _Camel_ completes a run you should be able to see the S3 object in its buck
 
 . Open the S3 Browser from the link below:
 +
-//* link:https://www.filestash.app/s3-browser.html[https://www.filestash.app/s3-browser.html, window="_blank"]
 * link:{url-filestash}[S3 Browser, window="_blank"]
 +
 Provide your `Access Key`, `Secret Access Key` and the following `Endpoint`:
 +
-[source,bash,subs="attributes+"]
+--
+{copypaste}
 ----
 http://s3.openshift-storage.svc.cluster.local
 ----
+--
 +
 image::images/s3-browser.png[align="left", width=40%]
 +
@@ -1376,7 +1377,7 @@ image::images/s3-browser.png[align="left", width=40%]
 Ensure you select your bucket:
 +
 --
-- `chatrooms-{user-username}.bucket`
+- `chatrooms-{user-username}`
 --
 +
 {blank}
@@ -1386,7 +1387,7 @@ You should find a CSV file (comma separated values) containing the exchanges you
 image::images/s3-browser-data.png[align="left", width=100%]
 +
 --
-. Select your bucket: `chatrooms-{user-username}.bucket`
+. Select your bucket: `chatrooms-{user-username}`
 . Navigate the folders and open the CSV file.
 --
 +
@@ -1396,101 +1397,7 @@ NOTE: When no new Kafka messages are available, no aggregation occurs and theref
 
 {empty} +
 
-Alternatively, you can very quickly create a _Camel_ consumer to visually confirm the data was correctly uploaded. Here's how:
-
-. Add a new `.view` property in `stage5.properties`
-+
-```properties
-camel.uri.s3.parameters.view=\
-accessKey=YOUR_ACCESS_KEY\
-&secretKey=RAW(YOUR_SECRET_KEY)\
-&region=us-east-1\
-&uriEndpointOverride=http://s3.openshift-storage.svc:80\
-&overrideEndpoint=true\
-&useDefaultCredentialsProvider=false\
-&autoCreateBucket=true\
-&deleteAfterRead=false
-```
-+
-[WARNING]
-====
-Make sure you configure the `accessKey` and `secretKey` in the new property above.
-====
-+
-NOTE: The above property is the same as the S3 consumer, but adds a new flag `deleteAfterRead=false` to ensure the S3 object stays intact in the bucket.
-+
-{empty} +
-
-. Initialise a new Camel source file:
-+
-Execute the following _Camel JBang_ command:
-+
-```bash
-camel init view.xml
-```
-+
-{empty} +
-
-. Include the S3 consumer route
-+
-Replace in your `view.xml` the existing _Camel_ route, by the following one:
-+
-----
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- camel-k: language=xml -->
-
-<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://camel.apache.org/schema/spring"
-        xsi:schemaLocation="
-            http://camel.apache.org/schema/spring
-            https://camel.apache.org/schema/spring/camel-spring.xsd">
-----
-+
-
-[source, xml, subs="verbatim,attributes"]
-----
-    <route id="view-data">
-      <from uri="aws2-s3:chatrooms-{user-username}.bucket?{{camel.uri.s3.parameters.view}}"/>
-      <log message="${header.CamelAwsS3Key}:\n${body}"/>
-    </route>
-----
-+
-----
-</routes>
-----
-+
-{empty} +
-+
-[NOTE] 
---
-In the Camel route above:
-
-* The S3 consumer is configured with the new `.view` parameter
-
-* A log activity prints the S3 key, and its data.
---
-+
-{empty} +
-
-. Execute the new Camel route:
-+
-Execute the following _Camel JBang_ command:
-+
-```bash
-camel run view.xml stage5.properties \
---deps=mvn:org.apache.camel:camel-aws2-s3:3.19.0
-```
-+
-[NOTE] 
---
-We include an explicit dependency (`3.19.0`) because the component is currently not behaving properly on its head version. This problem will be addressed and fixed.
---
-+
-{empty} +
-+
-The execution should output (endlessly until you stop it with `Ctrl`+`c`) the bucket's S3 objects.
-+
-{empty} +
+MAYBE HERE USE CAMEL JBANG ALSO TO CONSUME CSVs FROM S3
 
 {empty} +
 

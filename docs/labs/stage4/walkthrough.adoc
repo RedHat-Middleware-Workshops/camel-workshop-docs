@@ -472,17 +472,6 @@ image::images/camel-jbang.png[align="left", width=40%]
 
 {empty} +
 
-For those resuming work from a previous day, ensure the _working_ project in _OpenShift_ is selected by executing the following command:
-
---
-{copypaste}
-[subs=attributes]
-----
-oc project {namespace}
-----
---
-
-{empty} +
 
 ==== Clean up your environment
 
