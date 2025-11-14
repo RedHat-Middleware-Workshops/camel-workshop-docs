@@ -362,8 +362,11 @@ After initialisation, under the `lab` directory, you'll find the following sourc
 &nbsp;&nbsp;📁 lab +
 &nbsp;&nbsp;&nbsp;&nbsp;📁 archive +
 pass:[<mark style="padding-left: 2rem; background-color: white; color: grey"><b>⚙</b></mark>] application-dev.properties +
+pass:[<mark style="padding-left: 2rem; background-color: white; color: grey"><b>⚙</b></mark>] application.properties +
 pass:[<mark style="padding-left: 2rem; background-color: white; color: purple"><b><i>&nbsp;!&nbsp;&nbsp;</i></b></mark>]*archive.camel.yaml* +
-pass:[<mark style="padding-left: 2rem; background-color: white; color: red"><b>J</b></mark>] *helper.java*
+pass:[<mark style="padding-left: 2rem; background-color: white; color: red"><b>J</b></mark>] *helper.java* +
+pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"><b>⚙</b></mark>] matrix.properties +
+pass:[<mark style="padding-left: 1rem; background-color: white; color: grey"><b>⚙</b></mark>] rocketchat.properties +
 --
 
 {blank}
@@ -373,18 +376,6 @@ Feel free to inspect the files in your editor. +
 
 {empty} +
 
-
-
-{empty} +
-{empty} +
-{empty} +
-{empty} +
-{empty} +
-{empty} +
-
-
-
-{empty} +
 
 [time=2]
 [id="inspect-controller"]
@@ -644,7 +635,7 @@ The action above should open the empty source code file in text mode.
 +
 Append in your `archive.camel.yaml` the main _Camel_ route.
 +
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -716,7 +707,7 @@ The following route is triggered by the _Controller_ to ensure the _Camel_ insta
 +
 Append in your `archive.camel.yaml` the following _Camel_ route.
 +
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -758,7 +749,7 @@ The following route is triggered by the _Aggregator_ when the aggregation is clo
 +
 Append in your `archive.camel.yaml` the following _Camel_ route.
 +
-TIP: Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -845,6 +836,10 @@ Follow the instructions below to recreate different execution scenarios which wi
 
 Before you put the wheels in motion, inspect the configuration file provided:
 
+* `applications-dev.properties`
++
+NOTE: The `dev` profile indicates this configuration is used locally during the development phase.
+
 ++++
 <code style="font-family:Consolas,Monaco,'Courier New',monospace;font-size:14px;line-height:0.6;background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:6px;display:inline-block;overflow:auto;white-space:pre">
 <span style="color:#6a9955"># When idle, time Camel will wait before shutting down</span><br>
@@ -859,11 +854,7 @@ Before you put the wheels in motion, inspect the configuration file provided:
 <span style="color:#9cdcfe">messege.controller.cutoff.time</span> = <span style="color:#ffffff">2000</span><br>
 <br>
 <span style="color:#6a9955"># Kafka configuration</span><br>
-<span style="color:#9cdcfe">camel.component.kafka.clientId</span>=<span style="color:#ce9178">archiver</span><br>
-<span style="color:#9cdcfe">camel.component.kafka.groupId</span>=<span style="color:#ce9178">archiver</span><br>
-<span style="color:#9cdcfe">camel.component.kafka.autoOffsetReset</span>=<span style="color:#ce9178">earliest</span><br>
-<span style="color:#9cdcfe">camel.component.kafka.autoCommitEnable</span>=<span style="color:#569cd6">false</span><br>
-<span style="color:#9cdcfe">camel.component.kafka.allowManualCommit</span>=<span style="color:#569cd6">true</span><br>
+<span style="color:#9cdcfe">kafka.topic</span>=<span style="color:#ce9178">dev</span><br>
 </code>
 ++++
 
@@ -877,6 +868,8 @@ They've been purposefully chosen to allow you understand the execution.
 * The property `message.aggregator.timeout` sets the time limit to wrap up the aggregation process.
 * The property `messege.controller.cutoff.time` defines the time window to accept Kafka events.
 ====
+
+NOTE: The property `kafka.topic` configures a topic dedicated to testing purposes.
 
 {empty} +
 
@@ -1181,14 +1174,9 @@ Observe the following facts:
 * The messages are processed, coverted to CSV and sent to be archived.
 ====
 +
-Camel finishes this round and shutsdown.
+Camel finishes this round and shutsdown automatically.
 +
 {empty} +
-
-Stop the action with kbd:[Ctrl+C].
-
-The first time you run the process, 
-
 
 
 [time=2]
@@ -1221,22 +1209,17 @@ PENDING TO BE DEFINED
 * link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
 ****
 
-During local testing you simulated messages sending them to _Kafka_, and bypassed pushing the CSV data to the Storage layer.
+While your deployed data flows with _Matrix_ and _Rocket.Chat_ are using _Kafka_ to exchange messages, during your previous local testing you simulated messages sending them to a `dev` _Kafka_ topic. You also bypassed the action of uploading the CSV data into the storage layer (powered by _OpenShift Data Foundation_).
 
-You will now deploy the process on OpenShift. Let's add the final S3 integration step and deploy.
-
-[NOTE] 
---
-As _Camel JBang_ is an upstream tool (not Red Hat supported), it runs on a slight upper version of _Camel_.
-
-Now we intend to run the code with _Red Hat Camel K_ which is a version behind. Generally the syntax is the same, but from time to time you might bump into the occasional difference.
---
+Your next task is to complete the Camel route by adding the final integration step with S3, and to deploy the process on _OpenShift_.
 
 {empty} +
 
 . Include S3 integration
 +
-Copy the snippet below into the process:
+In your `archive.camel.yaml` file (in text mode), include at the very end the snippet below.
++
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -1261,7 +1244,9 @@ Copy the snippet below into the process:
 
 . Configure the integration
 +
-Open the file and add the following properties:
+Include in your configuration the properties provided below:
++
+IMPORTANT: Ensure you edit `application.properties` (deployment configuration).
 +
 --
 {copypaste}/configuration/s3/access/secret
@@ -1271,10 +1256,6 @@ camel.component.aws2-s3.accessKey=REPLACE
 camel.component.aws2-s3.secretKey=REPLACE
 ----
 --
-+
-Right at the start we created a properties file with some default values. Let's complete its configuration and fine tune some of the settings.
-+
-Open your `application.properties` and edit the following settings:
 +
 {empty} +
 
