@@ -8,7 +8,7 @@
 :url-filestash: https://filestash-filestash.{openshift-app-host}
 
 :url-docserver: https://docserver-webapp.{openshift-app-host}
-//:url-docserver: https://docserver-webapp.apps.cluster-mqpjp.dynamic.redhatworkshops.io
+//:url-docserver: https://docserver-webapp.apps.cluster-d9jg6.dynamic.redhatworkshops.io
 
 :experimental:
 
@@ -52,14 +52,6 @@
     } \
     return result; \
 }]
-
-//:fdocserver: pass:a[function docserver(target,template,params) { \
-//    {freplace} \
-//    fetch('{url-docserver}/roomid?user='+params) \
-//        .then(response => response.text()) \
-//        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
-//        .catch(error => room = 'Error fetching data: ' + error.message); \
-//}]
 
 :fdocserver: pass:a[function docserver(target,template,params) { \
     {freplace} \
@@ -1269,41 +1261,20 @@ Copy the snippet below into the process:
 
 . Configure the integration
 +
+Open the file and add the following properties:
++
+--
+{copypaste}/configuration/s3/access/secret
+----
+# S3 credentials
+camel.component.aws2-s3.accessKey=REPLACE
+camel.component.aws2-s3.secretKey=REPLACE
+----
+--
++
 Right at the start we created a properties file with some default values. Let's complete its configuration and fine tune some of the settings.
 +
 Open your `application.properties` and edit the following settings:
-
-.. Configure your S3 credentials
-+
-You need to obtain the following credentials to configure _Camel_:
-+
---
-* S3's Access Key
-* S3's Secret Key
---
-+
-{blank}
-+
-They have been made available in _Rocket.Chat_. +
-Find them in the `#general` channel:
-+
-image::images/rc-s3-credentials.png[align="left", width=80%]
-+
---
-. Click on the `#general` channel.
-. Copy the credentials to configure _Camel_.
---
-+
-{empty} +
-+
-Use the values above to update `accessKey` and `secretKey` in Camel's configuration file, as follows:
-+
-----
-accessKey=S3_ACCESS_KEY\
-&secretKey=RAW(S3_SECRET_KEY)\
-----
-+
-NOTE: Make sure your secret key is defined inside the `RAW()` statement.
 +
 {empty} +
 
@@ -1360,7 +1331,30 @@ When _Camel_ completes a run you should be able to see the S3 object in its buck
 +
 * link:{url-filestash}[S3 Browser, window="_blank"]
 +
-Provide your `Access Key`, `Secret Access Key` and the following `Endpoint`:
+{blank}
+
+. Provide the following values:
++
+====
+* **Access Key ID**:
++
+--
+{copypaste}/configuration/s3/access/none
+----
+REPLACE
+----
+--
+
+* **Secret Access Key**:
++
+--
+{copypaste}/configuration/s3/secret/none
+----
+REPLACE
+----
+--
+
+* **Endpoint**:
 +
 --
 {copypaste}
@@ -1369,7 +1363,16 @@ http://s3.openshift-storage.svc.cluster.local
 ----
 --
 +
-image::images/s3-browser.png[align="left", width=40%]
+{blank}
+====
++
+Paste them into the S3 login prompt:
++
+image::images/new/filestash-creds.jpg[align="left", width=40%]
++
+{blank}
++
+And click pass:[<code style="background-color: #456172; color: white;">&nbsp;CONNECT&nbsp;</code>]
 +
 {empty} +
 

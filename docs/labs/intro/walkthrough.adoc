@@ -259,7 +259,7 @@ Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, and
 
 * Red Hat Application Foundations
 
-** **Red Hat build of Apache Camel**: A versatile framework for streamlined application integration that simplifies and standardizes the practices of connecting diverse systems that runs in both Quarkus and Spring Boot runtimes.
+** **Red Hat build of Apache Camel**: A versatile toolkit for streamlined application integration that simplifies and standardizes the practices of connecting diverse systems that runs in both Quarkus and Spring Boot runtimes.
 
 ** **Red Hat streams for Apache Kafka**: Based on the Apache Kafka project, streams for Apache Kafka offers a distributed backbone that allows microservices and other applications to share data with extremely high throughput and extremely low latency.
 +
