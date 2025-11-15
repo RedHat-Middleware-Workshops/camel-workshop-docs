@@ -15,10 +15,50 @@
 
 :experimental:
 
+:btn-trash: pass:[<svg width="2em" height="2em" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"> \
+<rect x="0" y="0" width="2em" height="2em"  fill="#B0380C" rx="8" ry="8" /> \
+<g transform="translate(4,4)"> \
+  <path d="M8 1.5V2.5H3C2.44772 2.5 2 2.94772 2 3.5V4.5C2 5.05228 2.44772 5.5 3 5.5H21C21.5523 5.5 22 5.05228 22 4.5V3.5C22 2.94772 21.5523 2.5 21 2.5H16V1.5C16 0.947715 15.5523 0.5 15 0.5H9C8.44772 0.5 8 0.947715 8 1.5Z" fill="#FFFFFF"/> \
+    <path d="M3.9231 7.5H20.0767L19.1344 20.2216C19.0183 21.7882 17.7135 23 16.1426 23H7.85724C6.28636 23 4.98148 21.7882 4.86544 20.2216L3.9231 7.5Z" fill="#FFFFFF"/> \
+</g></svg>]
+
+:btn-duplicate: pass:[<svg fill="#000000" width="2em" height="2em" viewBox="0 0 32 32" data-name="Layer 1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"><title/><path d="M27.2,8.22H23.78V5.42A3.42,3.42,0,0,0,20.36,2H5.42A3.42,3.42,0,0,0,2,5.42V20.36a3.43,3.43,0,0,0,3.42,3.42h2.8V27.2A2.81,2.81,0,0,0,11,30H27.2A2.81,2.81,0,0,0,30,27.2V11A2.81,2.81,0,0,0,27.2,8.22ZM5.42,21.91a1.55,1.55,0,0,1-1.55-1.55V5.42A1.54,1.54,0,0,1,5.42,3.87H20.36a1.55,1.55,0,0,1,1.55,1.55v2.8H11A2.81,2.81,0,0,0,8.22,11V21.91ZM28.13,27.2a.93.93,0,0,1-.93.93H11a.93.93,0,0,1-.93-.93V11a.93.93,0,0,1,.93-.93H27.2a.93.93,0,0,1,.93.93Z"/></svg>]
+
+:btn-paste: pass:[<svg fill="#000000" width="1em" height="1em" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M128 184c0-30.879 25.122-56 56-56h136V56c0-13.255-10.745-24-24-24h-80.61C204.306 12.89 183.637 0 160 0s-44.306 12.89-55.39 32H24C10.745 32 0 42.745 0 56v336c0 13.255 10.745 24 24 24h104V184zm32-144c13.255 0 24 10.745 24 24s-10.745 24-24 24-24-10.745-24-24 10.745-24 24-24zm184 248h104v200c0 13.255-10.745 24-24 24H184c-13.255 0-24-10.745-24-24V184c0-13.255 10.745-24 24-24h136v104c0 13.2 10.8 24 24 24zm104-38.059V256h-96v-96h6.059a24 24 0 0 1 16.97 7.029l65.941 65.941a24.002 24.002 0 0 1 7.03 16.971z"></path></g></svg>]
+
+:map-att: pass:[<svg width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="bi bi-box-arrow-in-down-right"> \
+  <path d="M6.364 2.5a.5.5 0 0 1 .5-.5H13.5A1.5 1.5 0 0 1 15 3.5v10a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 13.5V6.864a.5.5 0 1 1 1 0V13.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5H6.864a.5.5 0 0 1-.5-.5z" /> \
+  <path d="M11 10.5a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1 0-1h3.793L1.146 1.854a.5.5 0 1 1 .708-.708L10 9.293V5.5a.5.5 0 0 1 1 0v5z" /> \
+</svg>]
+
+:map-tick: pass:[<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="1"> \
+<path d="M4.89163 13.2687L9.16582 17.5427L18.7085 8" stroke="#000000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/> \
+</svg>]
+
+:map-import: pass:[<svg width="1em" height="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"> \
+  <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/> \
+</svg>]
+
+:map-wrench: pass:[<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" \
+   height="1em" fill="white" viewBox="0 0 479.79 479.79" style="enable-background:new 0 0 479.79 479.79;" \
+   xml:space="preserve"> \
+<g> \
+  <path d="M478.409,116.617c-0.368-4.271-3.181-7.94-7.2-9.403c-4.029-1.472-8.539-0.47-11.57,2.556l-62.015,62.011l-68.749-21.768 \
+    l-21.768-68.748l62.016-62.016c3.035-3.032,4.025-7.543,2.563-11.565c-1.477-4.03-5.137-6.837-9.417-7.207 \
+    c-37.663-3.245-74.566,10.202-101.247,36.887c-36.542,36.545-46.219,89.911-29.083,135.399c-1.873,1.578-3.721,3.25-5.544,5.053 \
+    L19.386,373.152c-0.073,0.071-0.145,0.149-0.224,0.219c-24.345,24.346-24.345,63.959,0,88.309 \
+    c24.349,24.344,63.672,24.048,88.013-0.298c0.105-0.098,0.201-0.196,0.297-0.305l193.632-208.621 \
+    c1.765-1.773,3.404-3.628,4.949-5.532c45.5,17.167,98.9,7.513,135.474-29.056C468.202,191.181,481.658,154.275,478.409,116.617z \
+     M75.98,435.38c-8.971,8.969-23.5,8.963-32.47,0c-8.967-8.961-8.967-23.502,0-32.466c8.97-8.963,23.499-8.963,32.47,0 \
+    C84.947,411.878,84.947,426.419,75.98,435.38z"/> \
+</g></svg>]
+
+:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#0366CB; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
+
 // WORKS
 :style-kbd: kbd { \
   color: black; \
-  background-color: lightgrey; \
+  background-color: white; \
   border: 1px solid black; \
   box-shadow: 0px 1px black; \
   font-size: .85em; \
@@ -31,9 +71,16 @@
   border-radius:5px; \
 } \
 
+:cp-btn: pass:[<svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"> <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>]
+
+:style-summary: summary {cursor: pointer; list-style: none;}
+:style-triangle: .triangle {margin-right: .5em;} summary:hover .sumtext {text-decoration: underline;}
+:style-details:  .triangle::before {content: "▶";} details[open] .triangle::before {content: "▼";}
+:style-open-close: {style-summary}{style-triangle}{style-details} 
+
 :style-preview: pre {background-color: #272822; color: white; padding: 5px 15px; font-size: 15px}
 :style-indent: .indent2 {padding-left: 2rem;}
-:style-all: pass:a[<style>{style-kbd}{style-preview}{style-indent}</style>]
+:style-all: pass:a[<style>{style-kbd}{style-preview}{style-indent}{style-open-close}</style>]
 
 
 :docserver-status: pass:a[<img hidden="true" src="invalid-image.jpg" onerror=" \
@@ -600,7 +647,8 @@ channel
 
 . Delete the Log step
 +
-Delete the _Log_ step that was auto-generated by _Camel JBang_.
+.. Hover your mouse pointer over the log step.
+.. Click {btn-trash} to delete the _Log_ step that was auto-generated by _Camel JBang_.
 
 {empty} +
 
@@ -647,7 +695,7 @@ NOTE: This step prevents sending residual headers to _Discord_.
 ====
 To add headers, follow the steps:
 
-. click the `->` sign at the end of flow
+. Hover the mouse pointer over the last step and click the `->` sign
 . Browse the catalogue to find and select the `setHeader` processor
 ====
 +
@@ -677,7 +725,8 @@ application/json
 +
 .. Add the second header to be authorized by _Discord_:
 +
-TIP: You can `Duplicate` the previous header to go faster.
+TIP: You can `⧉ Duplicate` the previous header to go faster. +
+Hover your mouse over the last step and click on the floating {btn-duplicate} button
 +
 Configure with:
 +
@@ -707,7 +756,7 @@ NOTE: The property `token` in the expression refers to the input parameter defin
 
 . Add a call to communicate with _Discord_
 +
-.. Click the `+` sign to add a step
+.. Click the kbd:[->] sign to add a step
 .. In the catalogue, find and select the `HTTPS(Secure)` component, and configure with:
 +
 ====
@@ -876,13 +925,25 @@ image::images/discord-room-hello.png[align="left", width=30%]
 +
 {empty} +
 
-
-MAKE SURE WE INCLUDE AN INSTRUCTION TO STOP THE BACKGROUND KAMELET
+. Stop your Kamelet running in the background
++
+--
+{copypaste}
+----
+camel stop
+----
+--
++
+TIP: You can verify no background processes are running with `camel ps` as seen earlier.
 
 {empty} +
 
+=== Your Kamelet is now ready
 
-=== End of prototyping
+Assuming all went well, you have now created your own _Discord Kamelet_, and used it in a _Camel_ route to push messages to _Discord_.
+
+{empty} +
+
 
 [type=verification]
 Did you see the message showing in _Discord_?
@@ -891,17 +952,7 @@ Did you see the message showing in _Discord_?
 The second goal has been accomplished. image:images/emoji-clap.png[width=3%]
 
 [type=verificationFail]
-Verify the snippet copy/paste actions were well followed.
-
-{empty} +
-
-Assuming all went well, you have now created your own _Discord Kamelet_, and used it in a _Camel_ route to push messages to _Discord_.
-
-MAKE SURE WE INCLUDE AN INSTRUCTION TO STOP THE BACKGROUND KAMELET
-
-Press `ctrl`+`c` to stop _Camel JBang_.
-
-{empty} +
+Review the instructions above and try again.
 
 
 [time=5]
@@ -1063,7 +1114,7 @@ The flows above can occur because we have processes taking originating messages 
 +
 The filter you need to define will prevent that for _Discord -> Discord_ cases.
 +
-1. Click (in the blue area) `To do: Filter`
+1. Click the bar pass:[<code style="background-color: #B0380C; color: white;">&nbsp;To do: Filter&nbsp;</code>]
 +
 You should see the `JQ` expression language selected by default.
 +
@@ -1086,41 +1137,48 @@ NOTE: Flows pushing events to _Kafka_ populate the field `source` to indicate wh
 +
 In the new data transformation, the source data complies with the common schema (from _Kafka_) while the target system needs to map data going to _Discord_.
 +
-.. Include in your _Camel_ route a _Kaoto_ data transformation step
+.. Include in your Camel route a Kaoto data transformation step
 +
 --
-From _Kaoto_: 
+From Kaoto: 
 
-. Click the `+` button in the transition
-. Find and select the _Kaoto DataMapper_
-. Click to open the configuration panel
-. Click the `🔧Configure` button
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Type `mapper` in the filter to find the _Kaoto DataMapper_
+. Click the _Kaoto DataMapper_ tile
+. Click the mapper to open the configuration panel
+. Click the pass:a[<span {btn-stl-blue}>{map-wrench}  Configure</span>] button
 --
 +
 {empty} +
 
-.. Attach schemas
+.. Next, define the inputs and outputs
 +
 --
 From the DataMapper editor: 
 
 . Define the source:
-.. On `Parameters` click the `+` to add new parameter
-.. Enter `common` and click the checkmark button kbd:[√]
-.. Click first the "Attach schema" button, then the blue button, and pick `common.json`.
+.. On **Parameters** click the button kbd:[+] to add new parameter
+.. Enter `common` and click the checkmark button kbd:[{map-tick}]
+.. Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*common.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 +
 {blank}
 +
 . Define the target
-.. Find the target Body and click on "Attach schema", then the blue button, and pick `discord-out.json`
+.. On the right hand side of the DataMapper screen: +
+Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*discord-out.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 +
 {empty} +
 --
 
 .. Define the data mappings rules
 +
+====
 Copy and Paste the values below to define the given field entries:
-+
+
 ... `string[@key = content]`:
 +
 --
@@ -1129,6 +1187,12 @@ Copy and Paste the values below to define the given field entries:
 concat("**",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"**: ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
+====
+{blank}
++
+The mapping rendering should be similar to:
++
+image::images/new/mapping-discord.png[align="left", width=70%]
 +
 {empty} +
 
@@ -1158,8 +1222,8 @@ Copy from below the step definition, and paste it at the end of your Camel route
 +
 Then perform the actions below:
 +
-1. Right-click the blue bar where it reads: `To do: Discord`
-1. Click the option: `⧉ Paste as child`
+1. Right-click the blue bar where it reads: pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Discord&nbsp;</code>]
+1. Click the option: kbd:[{btn-paste} Paste as child]
 +
 {empty} +
 
@@ -1264,7 +1328,7 @@ Make sure you have selected in Discord the channel: +
 `# {user-username}` {room}
 ====
 +
-image::images/discord-room-hello.png[align="left", width=30%]
+image::images/new/discord-room-test.png[align="left", width=30%]
 +
 {empty} +
 
@@ -1276,7 +1340,7 @@ Execute the command below:
 --
 {copypaste}
 ----
-camel stop k2d
+camel stop
 ----
 --
 +
@@ -1288,24 +1352,53 @@ Shutting down Camel integration (PID: 2492)
 +
 {empty} +
 
+{empty} +
+
 
 === Deploy on OpenShift
 
+{blank}
+
 When happy with your previous local run, proceed to deploy the flow on OpenShift.
+
+{empty} +
 
 . Use the command below to deploy the process:
 +
 --
 {copypaste}
 ----
-cp discord.properties k2d/application.properties && \
-labdeploy k2d
+labdeploy k2d \
+discord.properties
 ----
 --
 +
-NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run k2d/* \
+discord.properties \
+--name k2d \
+--property quarkus.config.locations=discord.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
 +
-NOTE: `discord.properties` is copied inside the project to ensure it's included in the deployment.
+{blank}
++
+NOTE: Be patient, this action may take some time to complete.
++
+{empty} +
+
+
+. Inspect the deployment status
 +
 You can monitor the state of the resource with the following command:
 +
@@ -1320,7 +1413,7 @@ When the deployment is ready, the command outputs something similar to:
 +
 ----
 NAME   READY   UP-TO-DATE   AVAILABLE   AGE
-k2d    1/1     1            1           10m 
+k2d    1/1     1            1           41s 
 ----
 +
 {empty} +
@@ -1372,7 +1465,7 @@ Make sure you have selected in Discord the channel: +
 `# {user-username}` {room}
 ====
 +
-image::images/discord-room-hello.png[align="left", width=30%]
+image::images/new/discord-room-test.png[align="left", width=30%]
 +
 {empty} +
 
@@ -1437,7 +1530,7 @@ Inspect in the pod logs to troubleshoot.
 
 [time=5]
 [id="discord-source-consumer"]
-== Part 3 - Create the source consumer
+== Part 3 - Create the Source consumer
 {style-all}
 
 [type=taskResource]
@@ -1658,11 +1751,13 @@ The action above should open the empty source code file in text mode.
 [start=1]
 1. Include a (_Discord_) identification process
 +
-_Discord_ sends an identification request when you open a new _Websocket_ session. 
-+
 The _Camel_ route below provides the actions to identify our _Camel_ system with _Discord_.
 +
-Copy/paste the snippet, click the `Copy to clipboard` button and paste the code in your editor:
+NOTE: We need it because _Discord_ sends an identification request when you open a new _Websocket_ session. 
++
+Append in your `discord-source.camel.yaml` the identification _Camel_ route.
++
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -1717,7 +1812,9 @@ Copy/paste the snippet, click the `Copy to clipboard` button and paste the code 
 
 1. Include the pulsating heartbeat process
 +
-Include in your `discord-source.camel.yaml` the additional _Camel_ route below:
+Include in your `discord-source.camel.yaml` the additional _Camel_ route below.
++
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
@@ -1765,7 +1862,9 @@ Include in your `discord-source.camel.yaml` the additional _Camel_ route below:
 
 1. Include the event listener
 +
-Include in your `discord-source.camel.yaml` yet another _Camel_ route:
+Include in your `discord-source.camel.yaml` yet another _Camel_ route.
++
+Click the {cp-btn} button (Copy to clipboard), and paste the code in the text editor.
 +
 --
 {copypaste}
