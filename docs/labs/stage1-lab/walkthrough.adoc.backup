@@ -25,21 +25,7 @@
   <path d="M16 288c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h112v-64zm489-183L407.1 7c-4.5-4.5-10.6-7-17-7H384v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-153 31V0H152c-13.3 0-24 10.7-24 24v264h128v-65.2c0-14.3 17.3-21.4 27.4-11.3L379 308c6.6 6.7 6.6 17.4 0 24l-95.7 96.4c-10.1 10.1-27.4 3-27.4-11.3V352H128v136c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H376c-13.2 0-24-10.8-24-24z"/> \
 </svg>]
 
-:map-wrench: pass:[<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" \
-   height="1em" fill="white" viewBox="0 0 479.79 479.79" style="enable-background:new 0 0 479.79 479.79;" \
-   xml:space="preserve"> \
-<g> \
-  <path d="M478.409,116.617c-0.368-4.271-3.181-7.94-7.2-9.403c-4.029-1.472-8.539-0.47-11.57,2.556l-62.015,62.011l-68.749-21.768 \
-    l-21.768-68.748l62.016-62.016c3.035-3.032,4.025-7.543,2.563-11.565c-1.477-4.03-5.137-6.837-9.417-7.207 \
-    c-37.663-3.245-74.566,10.202-101.247,36.887c-36.542,36.545-46.219,89.911-29.083,135.399c-1.873,1.578-3.721,3.25-5.544,5.053 \
-    L19.386,373.152c-0.073,0.071-0.145,0.149-0.224,0.219c-24.345,24.346-24.345,63.959,0,88.309 \
-    c24.349,24.344,63.672,24.048,88.013-0.298c0.105-0.098,0.201-0.196,0.297-0.305l193.632-208.621 \
-    c1.765-1.773,3.404-3.628,4.949-5.532c45.5,17.167,98.9,7.513,135.474-29.056C468.202,191.181,481.658,154.275,478.409,116.617z \
-     M75.98,435.38c-8.971,8.969-23.5,8.963-32.47,0c-8.967-8.961-8.967-23.502,0-32.466c8.97-8.963,23.499-8.963,32.47,0 \
-    C84.947,411.878,84.947,426.419,75.98,435.38z"/> \
-</g></svg>]
-
-:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#0366CB; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
+:btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#007bff; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
 
 // WORKS
 :style-kbd: kbd { \
@@ -88,6 +74,14 @@
     } \
     return result; \
 }]
+
+//:fdocserver: pass:a[function docserver(target,template,params) { \
+//    {freplace} \
+//    fetch('{url-docserver}/roomid?user='+params) \
+//        .then(response => response.text()) \
+//        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
+//        .catch(error => room = 'Error fetching data: ' + error.message); \
+//}]
 
 :fdocserver: pass:a[function docserver(target,template,params) { \
     {freplace} \
@@ -255,7 +249,7 @@ You will start using Kaoto in the next lab section to work on the Camel routes. 
 
 [time=10]
 [id="local"]
-== Start local development 
+== Local development 
 {style-all}
 
 [type=taskResource]
@@ -617,7 +611,7 @@ From Kaoto:
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
-. Click the pass:a[<span {btn-stl-blue}>{map-wrench}  Configure</span>] button
+. Click the `🔧Configure` button
 
 image::images/new/canvas-create-mapper.jpg[align="left", width=100%]
 
@@ -901,22 +895,7 @@ camel run \
 +
 {empty} +
 
-
-. From Matrix send another chat message and inspect your terminal output.
-+
-Try one more time:
-+
---
-{copypaste}
-----
-Hello Camel
-----
---
-+
-image::images/gitter-send-message.png[align="left", width=60%]
-+
-{blank}
-+
+. From Matrix send another chat message and inspect your terminal output. +
 You should see an incoming event now transformed and looking similar to this:
 +
 --
@@ -927,56 +906,9 @@ You should see an incoming event now transformed and looking similar to this:
 ----
 --
 +
+At this stage you're ready to forward messages to _RocketChat_ using its dedicated _Kamelet_.
++
 {empty} +
-
-Hopefully your test worked. +
-Your next task will be to complete the process by connecting the flow to _Rocket.Chat_.
-
-{empty} +
-
-
-
-[type=verification]
-Did you see the message successfully transformed into Rocket.Chat format?
-
-
-[time=10]
-[id="connect-backend"]
-== Connect the backend 
-{style-all}
-
-You're almost there. +
-
-Your last task on this chapter will be to integrate _Rocket.Chat_ in the process so that messages can flow end-to-end, from _Matrix_ to _Rocket.Chat_.
-
-{empty} +
-
-[type=taskResource]
-.Credentials
-****
-* *username:* `{user-username}`
-//* *password:* `{user-password}`
-****
-[type=taskResource]
-.Red Hat OpenShift Dev Spaces
-****
-* link:{url-codeready}[Console, window="_blank"]
-****
-[type=taskResource]
-.Red Hat OpenShift Developer Console
-****
-* link:{url-devconsole}[Topology View, window="_blank"]
-****
-[type=taskResource]
-.Matrix
-****
-* link:{url-element}[Matrix Web Client, window="_blank"]
-****
-[type=taskResource]
-.Rocket.Chat
-****
-* link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
-****
 
 
 . [[step-rocketchat-sink]]Include the Rocket.Chat Kamelet.
@@ -1072,23 +1004,291 @@ Hopefully you'll see a successful interaction between both chat systems, similar
 +
 Press kbd:[Ctrl+C] to stop your Camel instance.
 +
-'''
-
 {empty} +
-
-If all went well, you can consider the local development for this first flow done.
-
-However, this flow only moves messages in one direction. In the next chapter you will enable a bi-directional data flow between the two systems, but it won’t be as straightforward as you might think.
-
-Jump to the next chapter to find out !
++
+We can consider the local development done. We have a full data flow definition that routes messages from _Matrix_ to _Rocket.Chat_. The next step is to deploy the definition in _OpenShift_
 
 {empty} +
 
 [type=verification]
 Did you see the message in _Matrix_ showing up in _Rocket.Chat_?
 
+[time=5]
+[id="openshift"]
+== Deployment in OpenShift
+{style-all}
+
+[type=taskResource]
+.Credentials
+****
+* *username:* `{user-username}`
+//* *password:* `{user-password}`
+****
+[type=taskResource]
+.Red Hat OpenShift Dev Spaces
+****
+* link:{url-codeready}[Console, window="_blank"]
+****
+[type=taskResource]
+.Red Hat OpenShift Developer Console
+****
+* link:{url-devconsole}[Topology View, window="_blank"]
+****
+[type=taskResource]
+.Matrix
+****
+* link:{url-element}[Matrix Web Client, window="_blank"]
+****
+[type=taskResource]
+.Rocket.Chat
+****
+* link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
+****
+
+Up until now you've only worked locally (in your dev UI and terminal). This phase has allowed you to prototype fast and produce code you feel confident with.
+
+As per the diagram below, the _Camel_ developer can work at accelerated speed by editing sources and running locally.
+
+image::images/workflow-camel-user.png[align="center", width=80%]
+
+{empty} +
+
+Now that you have validated your code locally, you can proceed to deploy and run in _OpenShift_.
+
+The definitions that you have implemented can be taken as-is into _OpenShift_. +
+
+NOTE: We have configured _Camel JBang_ to include its _Kubernetes_ plugin that allows users to easily deploy into _OpenShift_. +
+Below you'll see how it's used.
+
+
+{empty} +
+
+. To start with, make sure you have stopped you local Camel instance. +
+If it is still running, press kbd:[Ctrl+C] to stop it.
++
+{empty} +
+
+. Deploy your _Matrix_ to _RocketChat_ integration
++
+{blank}
++
+.. Use the _Kubernetes_ plugin to deploy your application, as shown below:
++
+--
+{copypaste}
+----
+camel kubernetes run m2r/* \
+matrix.properties rocketchat.properties \
+--name m2r \
+--property quarkus.config.locations=rocketchat.properties,matrix.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+----
+--
++
+NOTE: Deployment actions like the one above will be integrated in future releases _Kaoto_.
++
+NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
++
+{empty} +
++
+.. You can monitor the state of the resource with the following command:
++
+--
+{copypaste}
+----
+oc get deployment/m2r
+----
+--
++
+When the deployment is ready, the command outputs something similar to:
++
+----
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+m2r    1/1     1            1           10m 
+----
++
+{empty} +
+
+.. Check the logs from your terminal.
++
+You can use different commands to inspect the logs of your deployed `m2r` integration:
++
+====
+* Using the Camel CLI
++
+--
+{copypaste}
+----
+camel kubernetes logs m2r
+----
+--
++
+* Or, using OpenShift's CLI
++
+--
+{copypaste}
+----
+oc logs deployment/m2r -f
+----
+--
+====
++
+{blank}
++
+After a while, when the operator deploys the integration, you should see Camel connecting to Matrix and starting the streaming listener:
++
+----
+... : Apache Camel 4.14.0 (m2r) started in 323ms (build:0ms init:0ms start:323ms boot:2s201ms)
+...
+... : Opening connection to Matrix...
+... : Matrix HTTP Streaming started
+----
++
+{empty} +
+
+
+.. Check your deployment from the _Developer_ console
++
+Inspect in your link:{openshift-host}/topology/ns/{namespace}[OpenShift Developer view, window="_blank"] your pod is in healthy state and running:
++
+image::images/ocp-dev-pod-healthy.png[align="left", width=80%]
++
+{blank}
++
+TIP: You can zoom in/out the canvas by using your mouse scrolling function, and move it around by clicking and dragging the background.
++
+NOTE: You will observe your project also includes a pre-deployed _Kafka_ cluster. +
+Later in the workshop, you will use this dedicated _Kafka_ cluster to stream data in and out.
++
+{empty} +
+
+.. Check the logs.
++
+You can open the logs of the _Camel_ instance by:
++
+--
+. Clicking in the pod's icon
+. From the right pane, click `Resources`
+. Click `View logs`
+--
++
+{blank}
++
+image::images/ocp-dev-pod-logs.png[align="left", width=90%]
++
+{blank}
++
+You should see _Camel_ connecting to _Matrix_ and indicating the stream has started:
++
+----
+... : Apache Camel 3.14.2.redhat-00047 (camel-1) started in 825ms (build:0ms init:708ms start:117ms)
+...
+... : Opening connection to Matrix...
+... : Matrix HTTP Streaming started
+----
++
+{empty} +
+
+
+. Test your deployment
++
+One more time, from Matrix send one last message. If all goes well you should see the message listed in your Rocket.Chat chat window
++
+image::images/stage1-msg-gitter-slack.png[align="left", width=80%]
++
+{empty} +
+
+
+
+[type=verification]
+Did you see the message going from _Matrix_ to _Rocket.Chat_?
+
+[type=verificationSuccess]
+Great! Jump to the next section to clean your namespace.
+
+[type=verificationFail]
+Inspect in the pod logs to investigate possible failure causes.
+
+
+
+
+
+[time=2]
+[id="clean"]
+== Undeploy from OpenShift
+{style-all}
+
+
+[type=taskResource]
+.Credentials
+****
+* *username:* `{user-username}`
+//* *password:* `{user-password}`
+****
+[type=taskResource]
+.Red Hat OpenShift Dev Spaces
+****
+* link:{url-codeready}[Console, window="_blank"]
+****
+[type=taskResource]
+.Red Hat OpenShift Developer Console
+****
+* link:{url-devconsole}[Topology View, window="_blank"]
+****
+[type=taskResource]
+.Matrix
+****
+* link:{url-element}[Matrix Web Client, window="_blank"]
+****
+[type=taskResource]
+.Rocket.Chat
+****
+* link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
+****
+
+You're almost done on this lab episode.
+In preparation for your next lab exercise, this last section helps you clean your _OpenShift_ project and, more importantly, shows you how to use _Camel JBang_ when it comes to undeploy integrations.
+
+{empty} +
+
+. Undeploy your _"Matrix to RocketChat"_ integration
++
+The _Kubernetes_ plugin in _Camel JBang_ makes it super simple to undeploy _Camel_. +
+Issue the command below to undeploy `m2r`:
++
+--
+{copypaste}
+----
+camel kubernetes delete --name m2r
+----
+--
++
+You'll see the following command output in your terminal:
++
+[subs=attributes]
+----
+Deleting resources in namespace '{user-username}-devspaces' with name: m2r
+Deleted: apps/Deployment 'm2r'
+Deleted: v1/Service 'm2r'
+Deleted: build.openshift.io/BuildConfig 'm2r-s2i'
+Deleted: image.openshift.io/ImageStream 'm2r'
+Deleted: route.openshift.io/Route 'm2r'
+----
++
+NOTE: The process is thorough when cleaning the deployment by removing all the artifacts originally created.
++
+{empty} +
+
+
+
+{empty} +
+
+[type=verification]
+Do you see your _Camel_ applications absent in your _OpenShift_ project?
+
 [type=verificationSuccess]
 You have now completed Stage 1 !!
 
 [type=verificationFail]
-Review your steps in the exercise and try again.
+Inspect in the pod logs to troubleshoot.

@@ -153,7 +153,7 @@ endif::[]
 
 [id='lab4-discord-integration']
 // = Lab 4 - Discord Integration
-= Lab 4 - Integrate a new platform
+= Lab 4 - Extend the platform with new systems
 
 Extend the solution by integrating Discord using the common interface
 
@@ -358,19 +358,17 @@ You will need to create your own _App_ (Bot) to send/fetch messages from the roo
 {empty} +
 
 
-=== Join a Discord room (channel).
+=== Join your Discord room (channel).
 
 . Your dedicated _Discord_ room
 + 
 A number of rooms have been made available for this workshop. 
 +
-To work on a room number that nobody uses and avoid noisy conversations, please choose a room matching your username. +
-For example, if your username is:
+To work on a room number that nobody uses and avoid noisy conversations, please make sure you operate from your given room. +
+Your assigned room number is:
 +
 --
-* `user1` -> use `room1`
-* `user2` -> use `room2`
-* `userN` -> use `roomN`
+* You are `{user-username}` -> use `{user-username}` {room}
 --
 +
 {empty} +
@@ -381,10 +379,7 @@ To connect from _Camel_ to the chat platform, an App needs to be registered in _
 
 * An App has been made available for all students to share.
 +
-[TIP]
---
-To configure _Camel_ you will need the _Discord_ App credentials. Later, you will find the credentials following the lab instructions.
---
+TIP: To configure _Camel_ you will need the _Discord_ App credentials. Later, you will find the credentials following the lab instructions.
 
 {empty} +
 
@@ -557,11 +552,11 @@ TIP: Sink _Kamelets_ can be configured to enforce input parameters.
 +
 When pushing events, _Discord_ requires some fields to be provided, follow the steps below to configure them:
 +
-.. Click the container's blue bar
+.. Click the container's blue bar pass:[<code style="background-color: #4494E5; color: white;">&nbsp;A sink that logs...&nbsp;&nbsp;&nbsp;</code>]
 +
 The panel configuration opens on the side.
 +
-... Click on the `Required` configuration group
+... Click on the pass:[<code style="background-color: #0366CB; color: white;">&nbsp;Required&nbsp;</code>] configuration group
 +
 Scroll down the panel and you'll find an area where to configure properties.
 +
@@ -637,7 +632,7 @@ For a manual creation process:
 
 . Add a step to clean all headers
 +
-.. Click the `+` sign to add a step
+.. Click the kbd:[+] sign to add a step
 .. In the catalogue, find and select the `removeHeaders` processor
 +
 NOTE: this step removes all headers (`*`) by default.

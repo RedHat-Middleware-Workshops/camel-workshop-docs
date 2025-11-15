@@ -63,9 +63,14 @@
   border-radius:5px; \
 } \
 
+:style-summary: summary {cursor: pointer; list-style: none;}
+:style-triangle: .triangle {margin-right: .5em;} summary:hover .sumtext {text-decoration: underline;}
+:style-details:  .triangle::before {content: "▶";} details[open] .triangle::before {content: "▼";}
+:style-open-close: {style-summary}{style-triangle}{style-details} 
+
 :style-preview: pre {background-color: #272822; color: white; padding: 5px 15px; font-size: 15px}
 :style-indent: .indent2 {padding-left: 2rem;}
-:style-all: pass:a[<style>{style-kbd}{style-preview}{style-indent}</style>]
+:style-all: pass:a[<style>{style-kbd}{style-preview}{style-indent}{style-open-close}</style>]
 
 
 :url-docserver: https://docserver-webapp.{openshift-app-host}
@@ -263,7 +268,6 @@ Technical goals and milestones:
 
 {empty} +
 
-We use Lab-2 as the base for this next stage.
 
 The following set of instructions prepare the set of files you will be working with: 
 
@@ -444,7 +448,7 @@ A. Include in your Camel route a Kaoto data transformation step
 --
 From Kaoto: 
 
-. Click the `+` button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
@@ -589,7 +593,7 @@ A. Include in your Camel route a Kaoto data transformation step
 --
 From Kaoto: 
 
-. Click the `+` button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
@@ -803,6 +807,23 @@ image::images/new/flow-k2r-todo.jpg[align="left", width=70%]
 
 {blank}
 
+NOTE: You might find this exercice repetitive. You can fast-foward to accelerate your work.
+
+[TIP]
+====
+⏩ *Fast-Forward*
+
+[.underline]#*Only*# if you want to skip (fast-forward) this section, execute in your terminal the commands below:
+
+--
+{copypaste}
+----
+ff
+----
+--
+====
+
+For a manual creation process, continue with the instructions below. +
 Find in your directory tree the following resource:
 
 * `k2r.camel.yaml`
@@ -889,7 +910,7 @@ In the new data transformation, the source data complies with the common schema 
 --
 From Kaoto: 
 
-. Click the `+` button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
@@ -972,6 +993,23 @@ image::images/new/flow-k2m-todo.jpg[align="left", width=70%]
 
 {blank}
 
+NOTE: You might find the remaining task repetitive. You can skip it to accelerate your work.
+
+[TIP]
+====
+⏩ *Skip step*
+
+[.underline]#*Only*# if you want to skip this section, execute in your terminal the commands below:
+
+--
+{copypaste}
+----
+step 6
+----
+--
+====
+
+For a manual creation process, continue with the instructions below. +
 Find in your directory tree the following resource:
 
 * `k2m.camel.yaml`
@@ -1048,7 +1086,7 @@ In the new data transformation, the source data complies with the common schema 
 --
 From Kaoto: 
 
-. Click the `+` button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
 . Type `mapper` in the filter to find the _Kaoto DataMapper_
 . Click the _Kaoto DataMapper_ tile
 . Click the mapper to open the configuration panel
@@ -1103,6 +1141,7 @@ Again, very simple updates, nothing else required for the _Kafka → Matrix_ pro
 [time=8]
 [id="deploy-test"]
 == Deploy and test
+{style-all}
 
 [type=taskResource]
 .Credentials
@@ -1131,122 +1170,298 @@ Again, very simple updates, nothing else required for the _Kafka → Matrix_ pro
 * link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
 ****
 
-{empty} +
+You've covered a lot of ground. Now it is time to deploy the new data flows.
 
-THIS CHAPTER IS YET TO BE UPDATED
-IGNORE THE CONTENT BELOW. DEPLOY AS IN PREVIOUS CHAPTERS.
-
-We've covered a lot of ground. It would be normal to make mistakes. Hopefully the helper guide kept those to a minimum and, once deployed, you can see your integrations working in healthy state and delivering the expected outcome.
-
-. Select your _OpenShift_ project
-+
-For those resuming work from a previous day, ensure the _working_ project in _OpenShift_ is selected by executing the following command:
-+
-[source,bash,subs="attributes+"]
-----
-oc project {namespace}
-----
-+
-{empty} +
-
-. Push the configuration to _OpenShift_
-+
-Recreate the _Secret_ and _ConfigMap_ to include both JSLTs. +
-Run the following `oc` command:
-+
-[source, subs=]
-----
-oc create secret generic stage3 --from-file=stage3.properties
-oc create cm stage3-transform --from-file=maps
-<br>
-----
-{empty} +
-
-. Create the _Kafka_ topic
-+ 
-Run the following command:
-+
-[source, subs=]
-----
-mkdir kafka
-touch kafka/room_x.yaml
-<br>
-----
-+
-{empty} +
-+
-Edit your `room_x.yaml` file under the `kafka` directory. Add the following definition
-+
-```yaml
-kind: KafkaTopic
-apiVersion: kafka.strimzi.io/v1beta2
-metadata:
-  name: roomx
-  labels:
-    strimzi.io/cluster: my-cluster
-```
-+
-[IMPORTANT]
-====
-Keep the name `roomx` for your _KafkaTopic_, do not change its value, it simplifies the copy/paste actions all along the lab exercises.
-====
-+
 [NOTE]
 ====
-The YAML source above defines a new _Kafka_ topic with name `roomx`. This is the topic all _Camel_ producers and consumers will use.
+It's possible you made mistakes in decoupling the data flows.
+
+* If you feel confident with your flows, ignore this note, and carry on with the deployment process.
+* If you prefer to take the safe route, run the following command to reset your flows to a ready-to-deploy state:
++
+--
+{copypaste}
+[subs=attributes]
+----
+step 6
+----
+--
 ====
+
+
+=== Deploy Matrix to Kafka
+
+{blank}
+
+. To start with, make sure you have stopped you local Camel instance. +
+If it is still running, press kbd:[Ctrl+C] to stop it.
 +
-{empty} +
-+
-Push the definition to _OpenShift_ with the following command:
-+
-```bash
-oc apply -f kafka/room_x.yaml
-```
 {empty} +
 
-. Deploy the YAML definition containing your new _Kamelet Binding_
-.. Run the following `oc` command to deploy the integration:
+. Run the deployment
 +
-[source, subs=]
-----
-oc apply -f flows/m2k.yaml
-oc apply -f flows/k2r.yaml
-oc apply -f flows/r2k.yaml
-oc apply -f flows/k2m.yaml<br>
-----
+Use the command below to deploy on _OpenShift_:
 +
-NOTE: Be patient, this action will take some time to complete as the operator needs to download all related dependencies, build the applications and create the images before the integrations can be deployed.
+--
+{copypaste}
+----
+labdeploy m2k \
+matrix.properties
+----
+--
++
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run m2k/* \
+matrix.properties \
+--name m2k \
+--property quarkus.config.locations=matrix.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
++
+{blank}
++
+NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
++
+{empty} +
 
-.. Wait for readyness
+
+. Inspect the deployment status
 +
-Check the deployment of all pods and their logs to ensure all is in healthy state.
+You can monitor the state of the resource with the following command:
 +
-You can run the following command to check their state:
+--
+{copypaste}
+----
+oc get deployment/m2k
+----
+--
 +
-```bash
-oc get klb
-```
-+
-{empty} +
-+
-When the pods are ready, the command should return:
+When the deployment is ready, the command outputs something similar to:
 +
 ----
-NAME   PHASE   REPLICAS
-m2k    Ready   1
-k2m    Ready   1
-k2r    Ready   1
-r2k    Ready   1
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+m2k    1/1     1            1           23s 
 ----
 +
 {empty} +
+
+{empty} +
+
+
+=== Deploy Kafka to Matrix
+
+{blank}
+
+. Run the deployment
++
+Use the command below to deploy on _OpenShift_:
++
+--
+{copypaste}
+----
+labdeploy k2m \
+matrix.properties
+----
+--
++
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run k2m/* \
+matrix.properties \
+--name k2m \
+--property quarkus.config.locations=matrix.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
++
+{blank}
++
+NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
++
+{empty} +
+
+
+. Inspect the deployment status
++
+You can monitor the state of the resource with the following command:
++
+--
+{copypaste}
+----
+oc get deployment/k2m
+----
+--
++
+When the deployment is ready, the command outputs something similar to:
++
+----
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+k2m    1/1     1            1           25s 
+----
++
+{empty} +
+{empty} +
+{empty} +
+
+
+=== Deploy Rocket.Chat to Kafka
+
+{blank}
+
+. Run the deployment
++
+Use the command below to deploy on _OpenShift_:
++
+--
+{copypaste}
+----
+labdeploy r2k \
+rocketchat.properties
+----
+--
++
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run r2k/* \
+rocketchat.properties \
+--name r2k \
+--property quarkus.config.locations=rocketchat.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
++
+{blank}
++
+NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
++
+{empty} +
+
+
+. Inspect the deployment status
++
+You can monitor the state of the resource with the following command:
++
+--
+{copypaste}
+----
+oc get deployment/r2k
+----
+--
++
+When the deployment is ready, the command outputs something similar to:
++
+----
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+r2k    1/1     1            1           20s 
+----
++
+{empty} +
+{empty} +
+{empty} +
+
+
+=== Deploy Kafka to Rocket.Chat
+
+{blank}
+
+. Run the deployment
++
+Use the command below to deploy on _OpenShift_:
++
+--
+{copypaste}
+----
+labdeploy k2r \
+rocketchat.properties
+----
+--
++
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run k2r/* \
+rocketchat.properties \
+--name k2r \
+--property quarkus.config.locations=rocketchat.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
++
+{blank}
++
+NOTE: Be patient, this action may take some time to complete (could take up to 10mn the first time).
++
+{empty} +
+
+
+. Inspect the deployment status
++
+You can monitor the state of the resource with the following command:
++
+--
+{copypaste}
+----
+oc get deployment/k2r
+----
+--
++
+When the deployment is ready, the command outputs something similar to:
++
+----
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+k2r    1/1     1            1           31s 
+----
++
+{empty} +
+{empty} +
+{empty} +
+
+
+=== View and test your deployment
+
+{blank}
+
+. Check your deployment from the _Developer_ console
 +
 Looking from your console's topology view, you should see something similar to:
 +
-image::images/topology-view.png[align="left", width=80%]
+image::images/new/topology-view.jpg[align="left", width=80%]
 +
 {empty} +
+
 
 . Send messages to test the system.
 +
