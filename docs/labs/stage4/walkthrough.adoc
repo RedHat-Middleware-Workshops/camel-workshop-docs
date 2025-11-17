@@ -384,30 +384,10 @@ CAUTION: The server is open to the public, please be mindful of your actions, do
 
 {empty} +
 
-[TIP]
---
-As an alterative, you could create your own _Discord_ server, and be able to complete the workshop with the same below instructions.
-
-From _Discord_, to create your own server:
-
-. Click the `+` button (add a server).
-. select `Create My Own`.
-. Then select `For me and my friends` (private server). 
-
-{blank}
-
-You will need to create your own _App_ (Bot) to send/fetch messages from the rooms in the server. You can find instructions on how to create your _App_ following the link below:
-
-====
-- link:https://github.com/RedHat-Middleware-Workshops/workshop-camel3/blob/v2.0/docs/labs/stage4/walkthrough.adoc#creating-your-own-app-for-discord/invite/discord[Create your own Discord App,window="_blank"]
-====
---
-{empty} +
-
 
 === Join your Discord room (channel).
 
-. Your dedicated _Discord_ room
+. Use your dedicated _Discord_ room
 + 
 A number of rooms have been made available for this workshop. 
 +
@@ -420,13 +400,14 @@ Your assigned room number is:
 +
 {empty} +
 
-=== Connecting Camel to Discord
+=== How Camel connects to Discord
 
 To connect from _Camel_ to the chat platform, an App needs to be registered in _Discord_. Apps in _Discord_ are automatically member of all channels in the server.
 
 * An App has been made available for all students to share.
 +
-TIP: To configure _Camel_ you will need the _Discord_ App credentials. Later, you will find the credentials following the lab instructions.
+NOTE: To configure _Camel_ you will need the _Discord_ App credentials. +
+Later, you will find the credentials following the lab instructions.
 
 {empty} +
 
@@ -496,13 +477,9 @@ There are 4 key processing steps necessary:
 * *Set Authorization* +
 	Include an HTTP header with the security token
 
-* *HTTP invokation* +
+* *HTTP call to Discord* +
   Trigger the HTTP call using the _Camel_ HTTP component
 ====
-
-{empty} +
-
-Obviously, developing this process is the task of an experienced _Camel_ developer. When the _Kamelet_ is fully implemented, it gets deployed along the rest of _Kamelets_ in the catalogue, which allows non-_Camel_ users (the _Kubernetes_ user) to consume it inside _Kamelet Bindings_.
 
 {empty} +
 
@@ -1187,12 +1164,13 @@ Copy and Paste the values below to define the given field entries:
 concat("**",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],"**: ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
-====
++
 {blank}
 +
 The mapping rendering should be similar to:
 +
 image::images/new/mapping-discord.png[align="left", width=70%]
+====
 +
 {empty} +
 
@@ -1712,7 +1690,7 @@ For a manual creation process:
 * `discord-source.camel.yaml`
 +
 Click to open it in _Kaoto_. +
-It will present a banner informing you no routes are defined.
+It will present a banner informing you *no routes are defined*.
 --
 +
 {empty} +
@@ -1913,7 +1891,7 @@ Click the {cp-btn} button (Copy to clipboard), and paste the code in the text ed
                 steps:
                   - filter:
                       jq:
-                        expression: .d.channel_id != {{discord.room}}
+                        expression: .d.channel_id != "{{discord.room}}"
                       steps:
                         - stop: {}
                   - to:
@@ -2001,9 +1979,10 @@ image::images/stage4-msg-d2k-test-local.png[align="left", width=30%]
 +
 If all goes well you should see in your terminal an output similar to:
 +
+[subs=attributes]
 ++++
 <pre style="line-height: 1;white-space: pre-wrap"><span style="color:grey;font-family: monospace;font-size: 12px;">2025-10-22 13:26:52.744 <span style="color: limegreen">INFO</span> <span style="color: deeppink">2134</span> --- [orker-thread-10] <span style="color: cyan;">discord-source.camel.yaml:87</span><span style="color: white;"> : Discord connection open and session ready.</span>
-2025-10-22 13:26:54.039 <span style="color: limegreen;">INFO</span> <span style="color: deeppink">2134</span> --- [worker-thread-4] <span style="color: cyan">d2k.camel.yaml:11</span><span style="color: white;">            : message from Discord: {"t":"MESSAGE_CREATE","s":3,"op":0,"d":{"type":0,"tts":false,"timestamp":"2025-10-22T13:26:33.903000+00:00","pinned":false,"nonce":"1430658109562421248","mentions":[],"mention_roles":[],"mention_everyone":false,"member":{"roles":[],"premium_since":null,"pending":false,"nick":null,"mute":false,"joined_at":"2025-10-20T13:44:22.302000+00:00","flags":0,"deaf":false,"communication_disabled_until":null,"banner":null,"avatar":null},"id":"1430658110573514966","flags":0,"embeds":[],"edited_timestamp":null,<span style="background-color: #ffff00; color: #000000; padding: 2px 4px;">"content":"test Camel listener"</span>,"components":[],"channel_type":0,"channel_id":"1033097985220952134","author":{"username":"user3_29248","public_flags":0,"primary_guild":null,"id":"1429825714667913388","global_name":"user3","display_name_styles":null,"discriminator":"0","collectibles":null,"clan":null,"avatar_decoration_data":null,"avatar":null},"attachments":[],"guild_id":"1019612394131030036"}}</span></span></pre>
+2025-10-22 13:26:54.039 <span style="color: limegreen;">INFO</span> <span style="color: deeppink">2134</span> --- [worker-thread-4] <span style="color: cyan">d2k.camel.yaml:11</span><span style="color: white;">            : message from Discord: {"t":"MESSAGE_CREATE","s":3,"op":0,"d":{"type":0,"tts":false,"timestamp":"2025-10-22T13:26:33.903000+00:00","pinned":false,"nonce":"1430658109562421248","mentions":[],"mention_roles":[],"mention_everyone":false,"member":{"roles":[],"premium_since":null,"pending":false,"nick":null,"mute":false,"joined_at":"2025-10-20T13:44:22.302000+00:00","flags":0,"deaf":false,"communication_disabled_until":null,"banner":null,"avatar":null},"id":"1430658110573514966","flags":0,"embeds":[],"edited_timestamp":null,<span style="background-color: #ffff00; color: #000000; padding: 2px 4px;">"content":"test Camel listener"</span>,"components":[],"channel_type":0,"channel_id":"1033097985220952134","author":{"username":"{user-username}_29248","public_flags":0,"primary_guild":null,"id":"1429825714667913388","global_name":"{user-username}","display_name_styles":null,"discriminator":"0","collectibles":null,"clan":null,"avatar_decoration_data":null,"avatar":null},"attachments":[],"guild_id":"1019612394131030036"}}</span></span></pre>
 ++++
 +
 NOTE: Find the message content highlighted in yellow.
@@ -2162,7 +2141,7 @@ An advantage with Discord's API is that it provides a flag that signals the mess
 +
 NOTE: As a reminder, a loopback in _Discord_ can happen when we push a message to _Discord_ using our sink _Kamelet_ and _Discord_ notifies our registered _Camel_ bot via websocket.
 +
-1. Click (in the blue area) `To do: Filter`
+1. Click the bar pass:[<code style="background-color: #B0380C; color: white;">&nbsp;To do: Filter&nbsp;</code>]
 +
 You should see the `JQ` expression language selected by default.
 +
@@ -2183,49 +2162,54 @@ NOTE: The expression is much simpler in contrast with _Matrix/Rocket.Chat_ where
 +
 In the new data transformation, the source will be defined with _Discord's_ schema while the target will use the common schema, as the data is to be shared with all other systems in the platform.
 +
-{empty} +
-+
-A. Include the Kaoto data transformation step
+.. Include in your Camel route a Kaoto data transformation step
 +
 --
 From Kaoto: 
 
-. Click the `+` button inside the `To do: Mapping` step
-. Find and select the _Kaoto DataMapper_
-. Click to open the configuration panel
-. Click the `🔧Configure` button
+. Click the kbd:[+] button inside the pass:[<code style="background-color: #4494E5; color: white;">&nbsp;To do: Mapping&nbsp;</code>] step
+. Type `mapper` in the filter to find the _Kaoto DataMapper_
+. Click the _Kaoto DataMapper_ tile
+. Click the mapper to open the configuration panel
+. Click the pass:a[<span {btn-stl-blue}>{map-wrench}  Configure</span>] button
 --
 +
 {empty} +
 
-A. Attach schemas
+.. Next, define the inputs and outputs
 +
 --
 From the DataMapper editor: 
 
 . Define the source:
-.. On `Parameters` click the `+` to add new parameter
-.. Enter `discord` and click the checkmark button kbd:[√]
-.. Click first the Attach schema button, then the blue button, and pick `discord-in.json`.
+.. On **Parameters** click the button kbd:[+] to add new parameter
+.. Enter `discord` and click the checkmark button kbd:[{map-tick}]
+.. Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*discord-in.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 +
 {blank}
 +
 . Define the target
-.. Find the target Body and click on "Attach schema", then the blue button, and pick `common.json`
+.. On the right hand side of the DataMapper screen: +
+Click kbd:[{map-att}] (Attach schema), next click 
+pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of your screen: `support/schemas/*common.json*`.
+.. Click pass:a[<span {btn-stl-blue}>Attach</span>] to complete the action.
 +
 {empty} +
 --
 
-A. Define the data mappings rules
+.. Define the data mappings rules
 +
+====
 Copy and Paste the values below to define the given field entries:
-+
+
 ... `string[@key = timestamp]`: 
 +
 --
 {copypaste}
 ----
-current-dateTime()
+format-dateTime(current-dateTime(),'[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01].[f001]Z')
 ----
 --
 +
@@ -2261,8 +2245,16 @@ $discord-x/fn:map/fn:map[@key='d']/fn:map[@key='author']/fn:string[@key='global_
 $discord-x/fn:map/fn:map[@key='d']/fn:string[@key='content']
 ----
 --
-+
+
 {empty} +
+
+The rendering on the _DataMapper_ should be similar to:
+
+image::images/new/mapping-discord_PENDING.png[align="left", width=70%]
+
+{empty} +
+====
+
 
 That concludes the implementation phase for the main processing flow.
 
@@ -2327,9 +2319,10 @@ image::images/stage4-msg-d2k-test-ocp.png[align="left", width=90%]
 +
 You should also see a log trace on your terminal similar to:
 +
+[subs=attributes]
 ++++
 <pre style="line-height: 1;white-space: pre-wrap"><span style="color:grey;font-family: monospace;font-size: 12px;">2025-10-23 13:37:05.723 <span style="color: limegreen">INFO</span> <span style="color: deeppink">3261</span> --- [worker-thread-1] <span style="color: cyan;">discord-source.camel.yaml:87</span><span style="color: white;"> : Discord connection open and session ready.</span>
-2025-10-23 13:37:40.512 <span style="color: limegreen;">INFO</span> <span style="color: deeppink">3261</span> --- [worker-thread-0] <span style="color: cyan">d2k.camel.yaml:11</span><span style="color: white;">            : {"timestamp":"2025-10-23T13:37:40.49224044Z","source":"discord","user":"user3","text":"<span style="background-color: #ffff00; color: #000000; padding: 0px 0px;">Hello from Discord</span>"}</span></span></pre>
+2025-10-23 13:37:40.512 <span style="color: limegreen;">INFO</span> <span style="color: deeppink">3261</span> --- [worker-thread-0] <span style="color: cyan">d2k.camel.yaml:11</span><span style="color: white;">            : {"timestamp":"2025-10-23T13:37:40.49224044Z","source":"discord","user":"{user-username}","text":"<span style="background-color: #ffff00; color: #000000; padding: 0px 0px;">Hello from Discord</span>"}</span></span></pre>
 ++++
 +
 NOTE: Find the message content highlighted in yellow.
@@ -2346,17 +2339,44 @@ When happy with your previous local run, proceed to deploy the flow on _OpenShif
 
 {empty} +
 
-. Use the command below to deploy the process:
+. Run the deployment
++
+Use the command below to deploy on _OpenShift_:
 +
 --
 {copypaste}
 ----
-cp discord.properties d2k/application.properties && \
-labdeploy d2k
+labdeploy d2k \
+discord.properties
 ----
 --
 +
-NOTE: `discord.properties` is copied inside the project to ensure it's included in the deployment.
+[pass]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<p style="margin-top: 1em;">We provide the script <code>labdeploy</code> to help you read the commands more clearly.</br>
+Under the hood the script calls <i>Camel JBang</i> as per the snippet below:
+<pre>
+camel kubernetes run d2k/* \
+discord.properties \
+--name d2k \
+--property quarkus.config.locations=discord.properties \
+--local-kamelet-dir ../support/kamelets \
+--cluster-type openshift
+</pre></p>
+</details>
++
+{blank}
++
+NOTE: Be patient, this action may take some time to complete.
++
+{empty} +
+
+
+. Inspect the deployment status
 +
 You can monitor the state of the resource with the following command:
 +
@@ -2371,13 +2391,16 @@ When the deployment is ready, the command outputs something similar to:
 +
 ----
 NAME   READY   UP-TO-DATE   AVAILABLE   AGE
-d2k    1/1     1            1           10m 
+d2k    1/1     1            1           31s 
 ----
 +
 {empty} +
-+
 {empty} +
-+
+{empty} +
+
+
+
+
 . Send a message from _Discord_
 +
 From _Discord_, send a message, for example:

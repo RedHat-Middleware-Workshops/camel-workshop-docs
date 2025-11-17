@@ -194,7 +194,7 @@ image::images/prereq.png[align="left", width=100%]
 
 Lab 1 enabled a _Matrix_ to _Rocket.Chat_ data flow. On this second lab we want the flow to work in both directions so that users from both messaging platforms can interact between each other.
 
-The picture below illustrates two data flows interconnecting both chat systems, one for each direction of communication:
+The picture below illustrates two data flows interconnecting both messaging systems, one for each direction of communication:
 
 // image::images/processing-flow.png[title="Data flow",align="center",title-align=center, width=80%]
 image::images/data-flow.png[align="center", width=80%]
@@ -252,7 +252,7 @@ Obviously, the interaction between both platforms would enter in a ping-pong eff
 
 image::images/death-loop.png[align="center", width=60%]
 
-A filtering mechanism needs to be put in place to prevent the interaction from entering in a death loop.
+A filtering mechanism needs to be put in place to prevent the interaction from entering a death loop.
 
 {empty} +
 

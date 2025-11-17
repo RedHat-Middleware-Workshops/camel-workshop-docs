@@ -208,7 +208,6 @@ The picture below illustrates an asynchronous decoupled architecture, via a stre
 
 TIP: At first it seems unnecessary to double the number of data flows, but the benefits outweighs complexity, we gain an easily extensible architecture. In later labs you'll see new additions to the architecture.
 
-// image::images/processing-flow.png[title="Data flow",align="center",title-align=center, width=80%]
 image::images/data-flow.png[align="center", width=90%]
 
 {empty} +
@@ -384,7 +383,6 @@ For the processes from _Matrix_/_Rocket.Chat_ to _Kafka_, the steps remain the s
 The diagram below applies to the data flows (2 of them) from _Matrix_/_Rocket.Chat_ respectively to _Kafka_:
 
 image::images/new/processing-flow-chat2kafka.jpg[align="center", width=90%]
-//image::images/processing-flow-chat2kafka.png[align="center", width=90%]
 
 {empty} +
 
@@ -763,7 +761,6 @@ The main differences are that we are consuming events from _Kafka_ (step 1) and 
 The diagram below applies to the data flows (2 of them) from _Kafka_ to Matrix/Rocket.Chat respectively:
 
 image::images/new/processing-flow-kafka2chat.jpg[align="center", width=90%]
-//image::images/processing-flow-kafka2chat.png[align="center", width=90%]
 
 {empty} +
 
@@ -976,10 +973,6 @@ And you’re done with the Kafka → Rocket.Chat changes.
 === Kafka to Matrix
 
 //Like we did earlier, it's handy to use one of the previous flows as a base to construct the new _Kafka to Matrix_ proces as many of the steps are the same. The picture below shows the original _Rocket.Chat to Matrix_ flow you defined earlier:
-
-//image::images/new/flow-m2r.jpg[align="left", width=60%]
-
-//{blank}
 
 Similarly, the changes you need to apply on this flow are minimal:
 

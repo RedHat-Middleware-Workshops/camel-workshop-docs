@@ -219,7 +219,7 @@ Every lab step you finish adds real value to the platform being built. The furth
 
 {empty} +
 
-image::images/workshop-progress-value.png[align="center", width=60%]
+image::images/new/workshop-progress-value.png[align="center", width=60%]
 
 
 [time=1]
@@ -286,7 +286,7 @@ On the professional side, organisations mandate one common communication platfor
 
 It becomes even more inconvenient when a sales department, for example, needs to communicate with customers. Telephone / email are old fashioned channels that are no longer effective. Sales agents try to stay in close contact with their customers via instant messaging platforms, and of course, each customer uses a different one.
 
-image::images/scenario-problem.png[align="center", width=40%]
+image::images/new/scenario-problem.png[align="center", width=40%]
 
 In the picture above, the _Service Agent_ needs to manage multiple and diverse platform accounts in order to stay in contact with different customers.
 
@@ -294,7 +294,7 @@ The workshop proposes to build a platform that addresses this problem. It would 
 
 The picture below illustrates a system that integrates all platforms and allows communication exchanges between different members from unrelated entities
 
-image::images/scenario-message-hub.png[align="center", width=40%]
+image::images/new/scenario-message-hub.png[align="center", width=40%]
 
 Under such solution, The _Service Agent_ would be abstracted from all external platforms and would simply be another member of the unified platform. 
 
@@ -383,20 +383,19 @@ To access your development environment:
 . You'll be first prompted to choose _OpenShift_ to log in. +
 Click the button `Log in with OpenShift`:
 +
-image:images/000-codeready-login-with-ocp.png[align="left", width=30%]
+image:images/new/devspaces-login-with-ocp.png[align="left", width=30%]
 +
 {empty} +
 
 . Then, log in using your username (`{user-username}`) and your lab password.
 +
-//image:images/000-codeready-login.png[OpenShift Dev Spaces Login, role="integr8ly-img-responsive"]
 image:images/new/devspaces-login.jpg[align="left", width=50%]
 +
 {empty} +
 +
 . Next, authorise access, click `Allow selected permissions`
 +
-image::images/00-crw-dashboard-auth.png[align="left", width=40%]
+image::images/new/devspaces-dashboard-auth.png[align="left", width=40%]
 +
 {empty} +
 +
@@ -499,22 +498,8 @@ Find in your web browser's settings where to enable clipboard permissions. The i
 +
 image::images/new/clipboard-settings.png[width=100%]
 
-// +
-// [TIP]
-// ====
-// If the paste action fails and you see Dev Spaces showing the following notification:
-
-// image::images/clipboard-notification.png[width=50%]
-
-// {blank}
-
-// Find in your web browser's settings where to enable clipboard permissions. The image below shows how to enable them using _Chrome_:
-
-// image::images/clipboard-settings.png[width=100%]
-
-// ====
-
 {empty} +
+
 
 === Tips for a better learning
 

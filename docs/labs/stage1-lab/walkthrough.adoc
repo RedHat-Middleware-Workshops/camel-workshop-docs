@@ -10,6 +10,10 @@
 
 :experimental:
 
+:cp-btn: pass:[<svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"> <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>]
+
+:btn-paste: pass:[<svg fill="#000000" width="1em" height="1em" viewBox="-32 0 512 512" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M128 184c0-30.879 25.122-56 56-56h136V56c0-13.255-10.745-24-24-24h-80.61C204.306 12.89 183.637 0 160 0s-44.306 12.89-55.39 32H24C10.745 32 0 42.745 0 56v336c0 13.255 10.745 24 24 24h104V184zm32-144c13.255 0 24 10.745 24 24s-10.745 24-24 24-24-10.745-24-24 10.745-24 24-24zm184 248h104v200c0 13.255-10.745 24-24 24H184c-13.255 0-24-10.745-24-24V184c0-13.255 10.745-24 24-24h136v104c0 13.2 10.8 24 24 24zm104-38.059V256h-96v-96h6.059a24 24 0 0 1 16.97 7.029l65.941 65.941a24.002 24.002 0 0 1 7.03 16.971z"></path></g></svg>]
+
 :pen-btn: pass:[<svg height="2em" width="2em" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#444" d="M1 11.9l-1 4.1 4.1-1 9.2-9.2-3.1-3.1-9.2 9.2zM1.5 15l-0.4-0.5 0.4-2 2 2-2 0.5zM10.9 4.4l-8.1 8-0.6-0.6 8.1-8 0.6 0.6z"></path><path fill="#444" d="M15.3 0.7c-1.1-1.1-2.6-0.5-2.6-0.5l-1.5 1.5 3.1 3.1 1.5-1.5c0-0.1 0.6-1.5-0.5-2.6zM13.4 1.6l-0.5-0.5c0.6-0.6 1.1-0.1 1.1-0.1l-0.6 0.6z"></path></svg>]
 
 :map-att: pass:[<svg width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="bi bi-box-arrow-in-down-right"> \
@@ -208,10 +212,9 @@ image::images/prereq.png[align="left", width=100%]
 Technical goals and milestones:
 
 * Develop Camel routes with low-code tools
-* Define JSON data transformers.
+* Define JSON data transformations.
 * Use of _Camel JBang_ for fast prototyping
 * Local execution and testing
-* Deployment on OpenShift
 
 {empty} +
 
@@ -564,7 +567,7 @@ Did you see the message sent from _Matrix_ show up in your terminal?
 == Add data transformation 
 {style-all}
 
-You next task is to add a data transformation step in your Camel route.
+Your next task is to add a data transformation step in your Camel route.
 
 Kaoto comes with a visual _DataMapper_ tool you will use to define your _Matrix_ to _Rocket.Chat_ data transformation, as a first introductory exposure to the tool.
 
@@ -603,9 +606,9 @@ Let's get started.
 
 . Include data transformation
 +
-You will extend the _Camel_ route definition to include data transformation to match the JSON structure the target system (_Rocket.Chat_) expects.
+You will extend the _Camel_ route definition by including a data transformation that matches the JSON structure the target system (_Rocket.Chat_) expects.
 +
-NOTE: The first time you define a data mapping, the process feels laborious as you learn the steps. +  
+NOTE: The first time you define a data mapping, the process feels laborious. +  
 With practice, you will create data mappings quickly and intuitively.
 +
 .. Include in your Camel route a Kaoto data transformation step
@@ -981,9 +984,9 @@ Your last task on this chapter will be to integrate _Rocket.Chat_ in the process
 
 . [[step-rocketchat-sink]]Include the Rocket.Chat Kamelet.
 +
-Copy from below the step definition, and paste it at the end of your Camel route.
+As last step in the flow, include the _Rocket.Chat Kamelet_ following the instructions. 
 +
-TIP: Right-click over the _Log_ step and select  `📋 Paste as next step`.
+Click the {cp-btn} button to copy the snippet to the clipboard, and continue below.
 +
 --
 {copypaste}
@@ -1005,7 +1008,14 @@ TIP: Right-click over the _Log_ step and select  `📋 Paste as next step`.
 ----
 --
 +
+Then perform these actions:
++
+--
+1. Right-click the *_LOG_* activity (last step of the flow)
+1. Click the option: kbd:[{btn-paste} Paste as next step]
++
 NOTE: In the next release of Kaoto, copy/paste actions into the canvas will be done in YAML. The current format is still JSON.
+--
 +
 {empty} +
 
