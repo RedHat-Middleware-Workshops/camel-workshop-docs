@@ -524,6 +524,12 @@ $matrix-x/fn:map/fn:string[@key='text']
 ----
 --
 +
+{blank}
++
+The mapping rendering should be similar to:
++
+image::images/new/mapping-matrix-kafka.png[align="left", width=80%]
++
 {empty} +
 
 . *Define Kafka as the target system*
@@ -670,6 +676,10 @@ $rocketchat-x/fn:map/fn:string[@key='user_name']
 $rocketchat-x/fn:map/fn:string[@key='text']
 ----
 --
++
+The mapping rendering should be similar to:
++
+image::images/new/mapping-rocketchat-kafka.png[align="left", width=90%]
 +
 {empty} +
 
@@ -963,6 +973,10 @@ concat("*",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:str
 ----
 --
 +
+The mapping rendering should be similar to:
++
+image::images/new/mapping-kafka-rocketchat.png[align="left", width=70%]
++
 {empty} +
 
 And you’re done with the Kafka → Rocket.Chat changes.
@@ -1123,6 +1137,10 @@ Copy and Paste the values below to define the given field entries:
 concat("<b>",$common-x/fn:map/fn:string[@key='user'], "@", $common-x/fn:map/fn:string[@key='source'],":</b> ", $common-x/fn:map/fn:string[@key='text'])
 ----
 --
++
+The mapping rendering should be similar to:
++
+image::images/new/mapping-kafka-matrix.png[align="left", width=70%]
 +
 {empty} +
 

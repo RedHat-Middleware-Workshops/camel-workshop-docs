@@ -255,9 +255,9 @@ The workshop will center its attention around those most commonly used: *_Camel 
 
 === Full technology stack
 
-Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, and Red Hat Application Foundations unlock the potential for agile, scalable integration solutions, enabling seamless orchestration of containerized workflows, resilient data persistence across pipelines, and rapid deployment of event-driven microservices to modernize hybrid cloud architectures with minimal complexity.
+Below is the stack of technologies you will interact with along the workshop. Combined, they unlock the potential for agile, scalable integration solutions, enabling seamless orchestration of containerized workflows, resilient data persistence across pipelines, and rapid deployment of event-driven microservices to modernize hybrid cloud architectures with minimal complexity.
 
-* Red Hat Application Foundations
+* **Red Hat Application Foundations**: A set of components engineered to help build, deploy, and operate applications. Among others, it includes the products below you will use in the workshop:
 
 ** **Red Hat build of Apache Camel**: A versatile toolkit for streamlined application integration that simplifies and standardizes the practices of connecting diverse systems that runs in both Quarkus and Spring Boot runtimes.
 
@@ -265,11 +265,11 @@ Red Hat® OpenShift® Container Platform, Red Hat OpenShift Data Foundation, and
 +
 {blank}
 
-* Red Hat Dev Spaces
+* **Red Hat Dev Spaces**: A collaborative Kubernetes-native development solution that delivers OpenShift workspaces and in-browser IDE for rapid cloud application development.
 
-* Red Hat OpenShift
+* **Red Hat OpenShift**: A unified application development platform that lets you build, modernize, and deploy applications at scale on your choice of hybrid cloud infrastructure.
 
-* Red Hat OpenShift Data Foundation
+* **Red Hat OpenShift Data Foundation**: Persistent software-defined storage and essential data services integrated with and optimized for Red Hat OpenShift.
 
 {empty} +
 

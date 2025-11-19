@@ -767,13 +767,37 @@ Get ready to start working !
 [id='closing-words']
 == Closing words
 
-This was only a taster on how to work fast with a few _Camel_ files.
+This was only a brief introduction on how to work fast with a few _Camel_ files. Camel JBang has many more commands to assist you in your development.
+
+It's worth to quickly recap the collection of commands you just used:
+
+* For running Camel, how to:
+** Run single file
+** Run all
+** Run in the background
+** Run in *dev* mode (hot reload)
+
+{blank}
+
+* For troubleshooting/monitoring, how to:
+** List running instances
+** Follow logs
+** Start/Stop routes in process
+** Get route details
+** Send message to endpoint
+
+{blank}
+
+* For stopping Camel, how to:
+** Stop single instance
+** Stop all
+
+{empty} +
+
 
 Continue with other chapters in the workshop to discover, not only what _Camel JBang_ can do for you beyond what you've just seen, but also other companion tools empowering the developer to work fast with _Apache Camel_.
 
 The rest of the workshop will guide you through the process of rapid prototyping using _Apache Camel_, starting with initial concepts, all the way to deploying on _OpenShift_.
 
-
 {empty} +
 
-MAYBE WORTH INCLUDING A RECAP OF ALL THE COMMANDS USED?
