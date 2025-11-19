@@ -1223,12 +1223,11 @@ Click the {cp-btn} button (Copy to clipboard), and paste the code in the text ed
 +
 --
 {copypaste}
-[subs=attributes]
 ----
         - setHeader:
             name: CamelAwsS3Key
             simple:
-              expression: myroom/${date:now:yyyy-MM-dd_HH-mm-ssZ}.csv
+              expression: myroom/${date:now:yyyy-MM-dd_HH-mm-ss}.csv
         - setHeader:
             name: CamelAwsS3ContentType
             constant:
@@ -1236,7 +1235,7 @@ Click the {cp-btn} button (Copy to clipboard), and paste the code in the text ed
         - to:
             uri: aws2-s3
             parameters:
-              bucketNameOrArn: chatrooms-{user-username}
+              bucketNameOrArn: {{s3.bucket}}
 ----
 --
 +
@@ -1250,10 +1249,14 @@ IMPORTANT: Ensure you edit `application.properties` (deployment configuration).
 +
 --
 {copypaste}/configuration/s3/access/secret
+[subs=attributes]
 ----
 # S3 credentials
 camel.component.aws2-s3.accessKey=REPLACE
 camel.component.aws2-s3.secretKey=REPLACE
+
+# S3 bucket
+s3.bucket=room-{user-username}
 ----
 --
 +
