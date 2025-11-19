@@ -667,7 +667,7 @@ image::images/new/mapper-m2r.png[align="center", width=90%]
 +
 .. Define the data mappings from source to target
 +
-Copy and Paste the values below to define the given field entries:
+Copy and Paste (in the *Target*) the values below to define the given field entries:
 +
 ... `string[@key = channel]`: 
 +

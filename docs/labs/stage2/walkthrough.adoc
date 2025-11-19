@@ -588,7 +588,7 @@ pass:a[<span {btn-stl-blue}>{map-import}</span>] and then pick at the top of you
 
 A. Define the data mapping rule
 +
-Copy and Paste the values below to define the given field entries:
+Copy and Paste (in the *Target*) the values below to define the given field entries:
 +
 ... `string[@key = text]`:
 +
