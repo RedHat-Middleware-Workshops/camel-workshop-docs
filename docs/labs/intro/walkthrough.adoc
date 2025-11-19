@@ -441,6 +441,10 @@ image::images/new/devspaces-get-started.png[Dev Spaces Get Started screen, role=
 +
 NOTE: This IDE is based on _Microsoft VS Code_. It will look familiar if you have already used it.
 +
+You might get extra tabs opening, close them all:
++
+image::images/new/close-tabs.jpg[width=30%]
++
 {empty} +
 
 
