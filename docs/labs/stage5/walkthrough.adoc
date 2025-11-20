@@ -1235,7 +1235,7 @@ Click the {cp-btn} button (Copy to clipboard), and paste the code in the text ed
         - to:
             uri: aws2-s3
             parameters:
-              bucketNameOrArn: {{s3.bucket}}
+              bucketNameOrArn: "{{s3.bucket}}"
 ----
 --
 +
@@ -1301,7 +1301,7 @@ And as time passes you'll see new entries (new executions).
 +
 When looking at the _Developer Console_ you will see the _Camel K_ instance transitioning through various colors (phases) indicating the state of the _Cronjob_.
 +
-image::images/cronjob-colors.png[align="center", width=60%]
+image::images/new/cronjob-colors.jpg[align="center", width=60%]
 +
 After the first run (blue color), it will terminate and wait for the next run (green color). This cycle (start/stop) will continue at schedule intervals as per the cronjob configuration.
 +
