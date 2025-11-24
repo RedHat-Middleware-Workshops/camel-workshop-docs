@@ -1,0 +1,49 @@
+:walkthrough: Next Steps
+
+ifdef::env-github[]
+endif::[]
+
+[id='next-steps']
+= Next Steps
+
+Thank you for participating in this workshop! We hope you enjoyed the experience and found it valuable.
+
+Your learning journey with Apache Camel doesn’t have to end here. Below are some excellent resources to help you continue exploring Camel and its integration capabilities with Red Hat technologies.
+
+[time=1]
+== Keep Exploring Apache Camel
+
+{empty} +
+
+* https://www.solutionpatterns.io/solution-pattern-multi-channel-messaging-platform/solution-pattern-multi-channel-messaging-platform[**Build an extendable Multi-Channel Messaging Platform**, window="_blank"] (**Solution Pattern**)
++
+Ready to take it further? This solution pattern builds directly on the scenario you just worked through. It evolves the architecture into a full-fledged customer support collaboration platform, adding multi-level support teams with shared case visibility. +
++
+{blank}
++
+-> Explore this and many other solution patterns https://www.solutionpatterns.io/patterns/[on the Solution Patterns catalog, window="_blank"].
++
+{empty} +
+
+* https://developers.redhat.com/products/red-hat-build-of-apache-camel/overview[**Red Hat build of Apache Camel**, window="_blank"]  **@ Red Hat Developers**
++
+Your one-stop shop for everything related to the Red Hat-supported version of Apache Camel. Discover product capabilities, architecture overviews, and a rich collection of hands-on getting-started guides and tutorials. +
++
+{blank}
++
+-> https://developers.redhat.com/products/redhat-build-of-apache-camel/getting-started[Start the tutorials now, window="_blank"]
++
+{empty} +
+
+* https://camel.solutionpatterns.io[**Enterprise Integration Explorer**, window="_blank"]
++
+An interactive catalog of all components, data formats, and Enterprise Integration Patterns supported by Red Hat build of Apache Camel. Filter by category, read detailed documentation, and try ready-to-run code examples for every item.
++
+{blank}
++
+-> https://camel.solutionpatterns.io[Browse components, window="_blank"] +
+-> https://camel.solutionpatterns.io/#/patterns[Browse patterns, window="_blank"]
++
+{empty} +
+
+We’d love to hear your feedback and see what you build next with Camel! Happy integrating!
