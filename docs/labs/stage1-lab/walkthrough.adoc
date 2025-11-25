@@ -8,7 +8,7 @@
 :url-codeready: http://devspaces.{openshift-app-host}/
 :url-devconsole: {openshift-host}/topology/ns/{namespace}
 
-:images: /walkthroughs/user-walkthroughs-stage1-lab/files/images
+:images: /walkthroughs/camel-workshop-docs-labs-stage1-lab/files/images
 
 :experimental:
 

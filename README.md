@@ -48,11 +48,13 @@ For now, the workshop only contains one module of exercises. New modules will be
 ## Run the docs locally
 
 ```
+LABS=camel-workshop-docs-labs \
 podman run --rm -it -p 5001:5001 --name solex \
--v $PWD/docs/labs:/opt/user-walkthroughs \
+-v $PWD/docs/labs:/opt/$LABS \
 -e NODE_ENV=production \
 -e THREESCALE_WILDCARD_DOMAIN=apps.your-domain.com \
 -e OPENSHIFT_VERSION=4 \
--e WALKTHROUGH_LOCATIONS='/opt/user-walkthroughs' \
+-e WALKTHROUGH_LOCATIONS="/opt/$LABS" \
+-e DATABASE_LOCATION="/opt/$LABS" \
 quay.io/redhatintegration/tutorial-web-app:latest
 ```
