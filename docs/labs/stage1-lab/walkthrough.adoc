@@ -8,6 +8,8 @@
 :url-codeready: http://devspaces.{openshift-app-host}/
 :url-devconsole: {openshift-host}/topology/ns/{namespace}
 
+:images: /walkthroughs/user-walkthroughs-stage1-lab/files/images
+
 :experimental:
 
 :cp-btn: pass:[<svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"> <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path></svg>]
@@ -412,6 +414,8 @@ Under your `lab/m2r` directory, find and open the following flow definition:
 +
 The image below shows the Camel route you should see in the canvas:
 +
+{blank}
++
 [TIP]
 ====
 Click the Horizontal layout to match the documentation pictures.
@@ -420,6 +424,27 @@ image::images/new/canvas-horizontal-layout.jpg[align="left", width=40%]
 ====
 +
 image::images/new/route-matrix-log.jpg[align="left", width=30%]
++
+{blank}
++
+[pass,subs=attributes]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext"><b>Warning:</b> If you don't see the rendering above, install <i>Kaoto</i> manually. Click for more information</span>
+  </summary>
+  <div style="border: 2px solid #d0d7de; border-radius: 6px; padding: 0 12px 12px; margin: 1.5em 0;">
+<p style="margin-top: 1em;">Follow the steps below to ensure your <i>Kaoto</i> extension is installed in VS Code.</br>
+<ol>
+  <li>Open the <i>Extensions</i> view.</li>
+  <li>Find the <i>Kaoto</i> extension and click <b>Install</b>.</li>
+  <li>On the confirmation prompt, click "<b>Trust Publisher &amp; Install</b>".</li>
+  <li>Go back to the <i>Explorer</i> view.</li>
+  <li>Click <code>m2r.camel.yaml</code> to open the file in <i>Kaoto</i>.</li>
+</ol>
+<img src="{images}/new/kaoto-extension-install.jpg"/>
+</p></div>
+</details>
 +
 {blank}
 +
