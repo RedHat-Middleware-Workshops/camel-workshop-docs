@@ -318,12 +318,12 @@ To join the lab's Discord server using a temporary account (Unclaimed account), 
 +
 IMPORTANT: Discord performs an age verification, ensure you enter a birth date for 18+ or older.
 
-.. In the invitation screen, you will be prompted to enter a `USERNAME`:
+.. In the invitation screen, you will be prompted to enter a `Display Name`:
 +
-image::images/discord-join-step1.png[align="left", width=80%]
+image::images/new/discord-join-step1.jpg[align="left", width=40%]
 +
 ====
-. Enter your username, for example:
+. Enter your user name:
 +
 --
 {copypaste}
@@ -333,9 +333,12 @@ image::images/discord-join-step1.png[align="left", width=80%]
 ----
 --
 +
-You can also choose any other username of your liking.
+. An age verification is also requested. There's no need to enter a real one, just ensure the birthday matches an individual of 18+ years old.
++
+Enter for example: `January`, `1`, `2000`
++
 . Tick the agreement box.
-. Click the _Continue_ button.
+. Click the button *_Create Account_*.
 ====
 +
 {empty} +
@@ -346,32 +349,16 @@ image::images/discord-join-step2.png[align="left", width=80%]
 +
 --
 . Tick the box _"I'm a human"_.
-. Select the tiles accordingly.
+. Solve the puzzles presented to you.
 . Click the _Verify_ button.
---
-+
-{empty} +
-
-.. An age verification process will pop up. +
-The window will prompt you to enter your birthday. There's no need to enter a real one, just ensure the birthday matches an individual of 18+ years old.
-+
-image::images/discord-join-step3.png[align="left", width=50%]
-+
---
-. Select a month, day and year. +
-For example:
-- `January`, `1`, `2000`
-+
-{blank}
-+
-. Then click _Done_.
 --
 +
 {empty} +
 
 .. A final popup window will prompt you to claim the account. Simply ignore it by closing the popup
 +
-image::images/discord-join-step4.png[align="left", width=80%]
+//image::images/discord-join-step4.png[align="left", width=80%]
+image::images/new/discord-join-step4.jpg[align="left", width=70%]
 +
 --
 . Click the cross in the upper right corner.
