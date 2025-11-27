@@ -175,12 +175,19 @@ ifdef::env-github[]
 endif::[]
 
 [id='lab2-matrix-rocketchat-two-ways']
-// = Lab 2 - Matrix ⇔ Rocket.Chat (two ways)
 = Lab 2 - Enable two way interactions
 
-// = [[kubernetes-user]] The Kubernetes user deployment flow
-
 Enable two-way communication between Matrix and Rocket.Chat chat platforms.
+
+
+[type=walkthroughResource,serviceName=openshift]
+.Doc System
+****
+[subs=attributes]
+++++
+<div style="padding-left: 20px">{docserver-status}<div>
+++++
+****
 
 
 Prerequisites: +
@@ -520,6 +527,26 @@ step 3
 ----
 --
 +
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
+
 .. Find and open your `r2m` flow in your `lab` directory:
 +
 --

@@ -183,12 +183,19 @@ ifdef::env-github[]
 endif::[]
 
 [id='lab3-matrix-kafka-rocketchat']
-// = Lab 3 - Matrix ⇔ Kafka ⇔ Rocket.Chat (via streams)
 = Lab 3 - Decoupled Re-Architecture
 
-// = [[kubernetes-user]] The Kubernetes user deployment flow
-
 Open the architecture by decoupling the messaging systems using streaming capabilities with Streams for Apache Kafka.
+
+
+[type=walkthroughResource,serviceName=openshift]
+.Doc System
+****
+[subs=attributes]
+++++
+<div style="padding-left: 20px">{docserver-status}<div>
+++++
+****
 
 
 Prerequisites: +
@@ -249,9 +256,10 @@ Technical goals and milestones:
 {empty} +
 
 
-[time=2]
+[time=1]
 [id="setup"]
 == Setup the Lab working folder
+{style-all}
 
 [type=taskResource]
 .Credentials
@@ -294,6 +302,27 @@ image::images/crw-close-tabs.png[align="left", width=100%]
 step 5
 ----
 --
++
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
++
 {empty} +
 
 . Check your lab folder
@@ -1014,6 +1043,26 @@ NOTE: You might find the remaining task repetitive. You can skip it to accelerat
 step 6
 ----
 --
+
+pass:[<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 ====
 
 For a manual creation process, continue with the instructions below. +
@@ -1197,6 +1246,26 @@ It's possible you made mistakes in decoupling the data flows.
 step 6
 ----
 --
++
+pass:[<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 ====
 
 

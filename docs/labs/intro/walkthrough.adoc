@@ -164,7 +164,7 @@ Start from here to familiarise yourself with the goals of this workshop and the 
 
 
 [type=walkthroughResource,serviceName=openshift]
-.Invite System
+.Doc System
 ****
 [subs=attributes]
 ++++

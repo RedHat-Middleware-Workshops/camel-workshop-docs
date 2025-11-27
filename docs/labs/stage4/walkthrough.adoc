@@ -199,13 +199,19 @@ ifdef::env-github[]
 endif::[]
 
 [id='lab4-discord-integration']
-// = Lab 4 - Discord Integration
 = Lab 4 - Extend the platform with new systems
 
 Extend the solution by integrating Discord using the common interface
 
-//Use Camel K to integrate additional chat systems to the platform. 
-// toc::[]
+
+[type=walkthroughResource,serviceName=openshift]
+.Doc System
+****
+[subs=attributes]
+++++
+<div style="padding-left: 20px">{docserver-status}<div>
+++++
+****
 
 Prerequisites: +
 --
@@ -506,6 +512,26 @@ image::images/crw-close-tabs.png[align="left", width=100%]
 step 7
 ----
 --
++
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 
 {empty} +
 
@@ -1008,6 +1034,26 @@ image::images/crw-close-tabs.png[align="left", width=100%]
 step 10
 ----
 --
++
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 
 {empty} +
 
@@ -1647,6 +1693,26 @@ image::images/crw-close-tabs.png[align="left", width=100%]
 step 12
 ----
 --
++
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 
 {empty} +
 
@@ -2062,6 +2128,26 @@ image::images/crw-close-tabs.png[align="left", width=100%]
 step 14
 ----
 --
++
+TIP: pass:[Run the command above anytime to reset the exercise. <details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext">Click for more information</span>
+  </summary>
+<div style="margin-top: 1em; margin-left: 2em">
+<p>
+The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
+<div class="ulist">
+  <ul>
+    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>steps</strong> – list all available steps in the lab</li>
+    <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
+    <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
+    <li><strong>rw</strong> – rewind to the <strong>previous</strong> step</li>
+  </ul>
+</div>
+</p></div>
+</details>]
 
 {empty} +
 

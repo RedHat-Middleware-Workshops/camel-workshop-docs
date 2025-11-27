@@ -247,7 +247,7 @@ Confirm by clicking on _"Continue"_.
 Finally, you'll notice, looking at your _Matrix_ screen, a pending invitation to join your room. +
 Follow the steps below to accept your invitation:
 +
-image::images/matrix-room-accept-invite.png[align="left", width=80%]
+image::images/new/matrix-room-accept-invite.jpg[align="left", width=60%]
 +
 --
 . Click on your room.
@@ -287,7 +287,7 @@ Click on the link below to open the Login page in _Rocket.Chat_ (opens a new tab
 
 . You will be prompted to enter your credentials, as shown below:
 +
-image::images/rchat-login-credentials.png[align="left", width=50%]
+image::images/rchat-login-credentials.png[align="left", width=40%]
 +
 {blank}
 +
@@ -322,7 +322,7 @@ REPLACE
 
 . When you login, you'll see your home page in _Rocket.Chat_, and your room listed in the left panel of your screen, as shown below:
 +
-image::images/rchat-room.png[align="left", width=50%]
+image::images/rchat-room.png[align="left", width=40%]
 
 {empty} +
 

@@ -193,7 +193,7 @@ Impersonate the Camel developer to complete Lab-1's Matrix to Rocket.Chat proces
 
 
 [type=walkthroughResource,serviceName=openshift]
-.Invite System
+.Doc System
 ****
 [subs=attributes]
 ++++
@@ -221,7 +221,7 @@ Technical goals and milestones:
 {empty} +
 
 
-[time=2]
+[time=1]
 [id="kaoto-overview"]
 == Quick overview of Kaoto 
 {style-all}
@@ -258,7 +258,7 @@ You will start using Kaoto in the next lab section to work on the Camel routes. 
 {empty} +
 
 
-[time=10]
+[time=8]
 [id="local"]
 == Start local development 
 {style-all}
@@ -370,20 +370,6 @@ NOTE: The command will initialise the lab with a couple of files.
 ====
 
 
-// {empty} +
-
-[NOTE]
-====
-The lab has a collection of handy scripts you'll need to use when instructed, such as:
-
-- *start* / *restart*
-- *ff* (fast-forward to the next step)
-- *rw* (rewind to the previous step)
-- *step* (jump to step)
-- *chat* (curl-based script to interact with _Camel_)
-====
-
-{empty} +
 
 === Your files
 
@@ -968,7 +954,7 @@ Your next task will be to complete the process by connecting the flow to _Rocket
 Did you see the message successfully transformed into Rocket.Chat format?
 
 
-[time=10]
+[time=5]
 [id="connect-backend"]
 == Connect the backend 
 {style-all}
