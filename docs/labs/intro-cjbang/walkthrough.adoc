@@ -75,7 +75,7 @@
 
 :copypaste: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
-  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="4">function example() { \
+  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="1">function example() { \
   console.log("Hello {replace-with-previous}!"); \
   return true; \
 }</textarea> \
@@ -104,6 +104,8 @@
   source.remove(); \
   tokens.remove(); \
   this.remove(); \
+  txtarea.style.height = 'auto'; \
+  txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
 }"> \
 ]
 

@@ -45,6 +45,11 @@
     C84.947,411.878,84.947,426.419,75.98,435.38z"/> \
 </g></svg>]
 
+:btn-download: pass:[<svg width="2em" height="2em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g transform="translate(128 128) scale(0.5)"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></g></svg>]
+
+:ico-download: pass:[<svg fill="white" width="1em" height="1em" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/></svg>]
+
+
 :btn-stl-blue: pass:[style="display:inline-block; padding:10px 22px; background:#0366CB; color:white; font:normal 14px Arial,sans-serif; border-radius:40px; cursor:default; user-select:none; text-decoration:none;"]
 
 // WORKS
@@ -114,7 +119,7 @@
 
 :copypaste: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
-  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="4">function example() { \
+  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="1">function example() { \
   console.log("Hello {replace-with-previous}!"); \
   return true; \
 }</textarea> \
@@ -143,6 +148,8 @@
   source.remove(); \
   tokens.remove(); \
   this.remove(); \
+  txtarea.style.height = 'auto'; \
+  txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
 }"> \
 ]
 
@@ -1099,9 +1106,9 @@ Press kbd:[Ctrl+C] to stop your Camel instance.
 
 If all went well, you can consider the local development for this first flow done.
 
-However, this flow only moves messages in one direction. In the next chapter you will enable a bi-directional data flow between the two systems, but it won’t be as straightforward as you might think.
+However, this flow only moves messages in one direction. Your next goal will be to enable a bi-directional data flow between the two systems, but it won’t be as straightforward as you might think.
 
-Jump to the next chapter to find out !
+To find out, finish this lab with the next documentation exercise and move to the next chapter.
 
 {empty} +
 
@@ -1109,7 +1116,122 @@ Jump to the next chapter to find out !
 Did you see the message in _Matrix_ showing up in _Rocket.Chat_?
 
 [type=verificationSuccess]
-You have now completed Stage 1 !!
+Finish this chapter by completing the next task.
 
 [type=verificationFail]
 Review your steps in the exercise and try again.
+
+
+
+
+
+[time=5]
+[id="documentation"]
+== Generate flow documentation 
+{style-all}
+
+Your final task in this chapter is to generate documentation for the _Matrix_ -> _Rocket.Chat_ integration you have built.
+
+TIP: Running short on time? A quick read of the instructions below is enough to move on.
+
+In real-world organizations, maintaining accurate and up-to-date documentation for application integrations is essential. When done manually, this process is time-consuming, error-prone, and documentation quickly becomes outdated or incomplete.
+
+Kaoto can automatically generate clean, Markdown-formatted documentation that describes your Camel integration routes. Follow the steps below to create this documentation for your project.
+
+{empty} +
+
+=== Generate and download
+
+. Click the button kbd:[{btn-download}] located in the top button bar in Kaoto. +
+The action will open a window where you can see a preview of the generated documentation.
++
+{empty} +
+
+. Click pass:a[<span {btn-stl-blue}>{ico-download} &nbsp; Download</span>] to obtain a local backup. +
+It will package and download (ZIP) the documation to your machine.
++
+-> Save the ZIP file in your local drive, for example under `Downloads`.
++
+{empty} +
+
+
+=== Open and visualise the documentation
+
+{blank}
+
+. Create a directory where to upload the ZIP file
++
+--
+{copypaste}
+----
+mkdir docs
+----
+--
++
+{empty} +
+
+
+. From the left panel (file explorer), right-click the new folder you created: +
+pass:[<div style="padding-left: 0rem;"><code style="background-color: black; color: lightgrey"> workshop ❯ lab ❯ docs </code></div>] +
+Then choose the option pass:[<code style="background-color: #0277D4; color: white;">&nbsp;Upload...&nbsp;</code>], locate and select the ZIP file `route-export.zip` you previously saved, and complete the action to upload.
++
+{empty} +
+
+. Unzip and delete the package with:
++
+--
+{copypaste}
+----
+unzip docs/route-export.zip -d docs
+rm docs/route-export.zip
+----
+--
++
+{empty} +
+
+. Right-click the _Markdown_ document: +
+pass:[<div style="padding-left: 0rem;"><code style="background-color: black; color: lightgrey"> workshop ❯ lab ❯ docs ❯ <span style="color: white;"><b>route-export.md</b></span> </code></div>] +
+Then choose the option pass:[<code style="background-color: #0277D4; color: white;">&nbsp;Open Preview&nbsp;</code>]
++
+{empty} +
++
+The _Markdown_ document will open as shown below:
++
+image::images/new/kaoto-route-docs.png[align="left", width=60%]
++
+[NOTE]
+--
+Above you see:
+
+* A visual diagram rendering the Camel route
+* Details about each one of the steps in the process.
+--
+
+{empty} +
+
+[type=taskResource]
+.Credentials
+****
+* *username:* `{user-username}`
+//* *password:* `{user-password}`
+****
+[type=taskResource]
+.Red Hat OpenShift Dev Spaces
+****
+* link:{url-codeready}[Console, window="_blank"]
+****
+[type=taskResource]
+.Red Hat OpenShift Developer Console
+****
+* link:{url-devconsole}[Topology View, window="_blank"]
+****
+[type=taskResource]
+.Matrix
+****
+* link:{url-element}[Matrix Web Client, window="_blank"]
+****
+[type=taskResource]
+.Rocket.Chat
+****
+* link:{url-rocketchat}[Rocket.Chat Web Client, window="_blank"]
+****

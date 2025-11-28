@@ -40,13 +40,6 @@
 :style-details:  .triangle::before {content: "▶";} details[open] .triangle::before {content: "▼";}
 :style-open-close: {style-summary}{style-triangle}{style-details} 
 
-
-
-//:style-summary: summary {cursor: pointer; list-style: none;}
-//:style-triangle: .triangle::before {content: "▶"; margin-right: .5em;}
-//:style-details: details[open] .triangle::before {content: "▼";} details[open] p {margin-top: 1em;}
-//:style-open-close: {style-summary}{style-triangle}{style-details} 
-
 :style-preview: pre {background-color: #272822; color: white; padding: 5px 15px; font-size: 15px}
 :style-indent: .indent2 {padding-left: 2rem;}
 :style-all: pass:a[<style>{style-kbd}{style-preview}{style-indent}{style-open-close}</style>]
@@ -120,6 +113,8 @@
   source.remove(); \
   tokens.remove(); \
   this.remove(); \
+  txtarea.style.height = 'auto'; \
+  txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
 }"> \
 ]
 

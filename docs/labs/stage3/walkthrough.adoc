@@ -121,7 +121,7 @@
 
 :copypaste: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
-  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="4">function example() { \
+  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="1">function example() { \
   console.log("Hello {replace-with-previous}!"); \
   return true; \
 }</textarea> \
@@ -150,6 +150,8 @@
   source.remove(); \
   tokens.remove(); \
   this.remove(); \
+  txtarea.style.height = 'auto'; \
+  txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
 }"> \
 ]
 
@@ -313,7 +315,7 @@ TIP: pass:[Run the command above anytime to reset the exercise. <details>
 The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
 <div class="ulist">
   <ul>
-    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>step N</strong> – reset the lab to the beginning of step N</li>
     <li><strong>steps</strong> – list all available steps in the lab</li>
     <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
     <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
@@ -1054,7 +1056,7 @@ pass:[<details>
 The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
 <div class="ulist">
   <ul>
-    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>step N</strong> – reset the lab to the beginning of step N</li>
     <li><strong>steps</strong> – list all available steps in the lab</li>
     <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
     <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
@@ -1257,7 +1259,7 @@ pass:[<details>
 The workshop includes handy helper scripts that let you jump to any step or reset the lab to a known good state:
 <div class="ulist">
   <ul>
-    <li><p><strong>step N</strong>  – reset the lab to the beginning of step N</p></li>
+    <li><strong>step N</strong> – reset the lab to the beginning of step N</li>
     <li><strong>steps</strong> – list all available steps in the lab</li>
     <li><strong>start</strong> or <strong>restart</strong> – go to the very beginning (equivalent to <code>step 1</code>)</li>
     <li><strong>ff</strong> – fast-forward to the <strong>next</strong> step</li>
@@ -1269,6 +1271,21 @@ The workshop includes handy helper scripts that let you jump to any step or rese
 ====
 
 
+[TIP]
+====
+For the best learning experience, we recommend deploying each integration manually by following the guided sections below. +
+If you're running short on time, you can let the lab deploy everything automatically instead:
+
+. First make sure you run the above **step 6** command (this prepares the environment).  
+. Then run this single command to deploy all flows from this chapter automatically:
++
+--
+{copypaste}
+----
+labdeploy
+----
+--
+====
 === Deploy Matrix to Kafka
 
 {blank}
