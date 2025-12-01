@@ -347,7 +347,7 @@ Before you start this lab, make sure you close in your editor all the tabs (sour
 +
 {blank}
 +
-image::images/crw-close-tabs.png[align="left", width=100%]
+image::images/new/dev-close-tabs.png[align="left", width=100%]
 +
 {blank}
 

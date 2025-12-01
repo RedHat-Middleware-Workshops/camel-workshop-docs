@@ -285,7 +285,7 @@ The following set of instructions prepare the set of files you will be working w
 +
 Before you start this second lab, make sure you close in your editor all the tabs (source files) from the previous exercise.
 +
-image::images/crw-close-tabs.png[align="left", width=100%]
+image::images/new/dev-close-tabs.png[align="left", width=100%]
 +
 {blank}
 +
