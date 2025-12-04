@@ -8,7 +8,7 @@
 :url-codeready: http://devspaces.{openshift-app-host}/
 :url-devconsole: {openshift-host}/topology/ns/{namespace}
 
-:images: /walkthroughs/camel-workshop-docs-labs-stage1-lab/files/images
+:images: {imagesdir}images
 
 :experimental:
 
@@ -1257,8 +1257,45 @@ Then perform these actions:
 NOTE: In the next release of Kaoto, copy/paste actions into the canvas will be done in YAML. The current format is still JSON.
 --
 +
+The image below shows you the complete Camel route:
++
+image::images/new/route-matrix-to-rc.png[align="left", width=40%]
++
+{blank}
++
+[pass,subs=attributes]
+<details>
+  <summary>
+    <span class="triangle"></span>
+    <span class="sumtext"><b>TIP:</b> You can customise the label under each step. Click for more information</span>
+  </summary>
+  <div style="border: 2px solid #d0d7de; border-radius: 6px; padding: 0 12px 12px; margin: 1.5em 0;">
+<p style="margin-top: 1em;">Follow the steps below to configure each step description.</br>
+<ol>
+  <li>Click on the step you want to rename.</li>
+  <li>Select <i>All</i> in the configuration panel:
+<span style="display: inline-flex; border: 1px solid #b3b3b3; border-radius: 5px; overflow: hidden; font-family: 'Segoe UI', sans-serif; font-weight: 550; font-size: 14px; cursor: pointer;margin-top: 5px;margin-left: 20px;">
+  <span style="padding: 8px 24px; background-color: #ffffff; color: #1a1a1a;">Required</span>
+  <span style="padding: 8px 48px; background-color: #0277D4; color: #ffffff;">All</span>
+  <span style="padding: 8px 24px; background-color: #ffffff; color: #1a1a1a;">Modified</span>
+</span>
+  </li>
+  <li>Find and edit the following parameter:
+    <span style="display: inline-flex; align-items: center; font-family: 'Segoe UI', sans-serif; font-size: 24px; color: #000;margin-left: 5px;">
+    Description
+    <svg style="width: 24px; height: 24px; fill: #757575; margin-left: 8px;" viewBox="0 0 24 24">
+        <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
+    </svg>
+</span>
+  </li><br/>
+  <li>Repeat these actions for each step you want to rename.</li>
+</ol><br/>
+This example shows the same process with more meaningful labels:
+<img src="{imagesdir}images/new/route-matrix-to-rc-custom.png" style="width: 50%;margin-left: 10px;"/>
+</p></div>
+</details>
++
 {empty} +
-
 
 . Configure the _Rocket.Chat_ credentials
 +
