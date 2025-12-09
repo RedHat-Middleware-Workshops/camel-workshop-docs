@@ -79,7 +79,7 @@
 
 
 :url-docserver: https://docserver-webapp.{openshift-app-host}
-//:url-docserver: https://docserver-webapp.apps.cluster-mqpjp.dynamic.redhatworkshops.io/
+//:url-docserver: https://docserver-webapp.apps.cluster-bhnnw.dynamic.redhatworkshops.io/
 //:url-docserver: http://0.0.0.0:8080
 
 :docserver-status: pass:a[<img hidden="true" src="invalid-image.jpg" onerror=" \
@@ -104,7 +104,7 @@
     {freplace} \
     fetch('{url-docserver}'+params.trim()) \
         .then(response => response.text()) \
-        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
+        .then(data => {target.firstChild.data=replaceTokens(text, data);target.style.height = (target.scrollHeight) + 'px';}) \
         .catch(error => room = 'Error fetching data: ' + error.message); \
 }]
 
@@ -435,7 +435,7 @@ image::images/new/route-matrix-log.jpg[align="left", width=30%]
   <li>Go back to the <i>Explorer</i> view.</li>
   <li>Click <code>m2r.camel.yaml</code> to open the file in <i>Kaoto</i>.</li>
 </ol>
-<img src="{images}/new/kaoto-extension-install.jpg"/>
+<img src="{imagesdir}images/new/kaoto-extension-install.jpg"/>
 </p></div>
 </details>
 +

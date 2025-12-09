@@ -8,7 +8,7 @@
 :url-filestash: https://filestash-filestash.{openshift-app-host}
 
 :url-docserver: https://docserver-webapp.{openshift-app-host}
-//:url-docserver: https://docserver-webapp.apps.cluster-d9jg6.dynamic.redhatworkshops.io
+//:url-docserver: https://docserver-webapp.apps.cluster-bhnnw.dynamic.redhatworkshops.io/
 
 :experimental:
 
@@ -62,7 +62,7 @@
     {freplace} \
     fetch('{url-docserver}'+params.trim()) \
         .then(response => response.text()) \
-        .then(data => {target.firstChild.data=replaceTokens(text, data);}) \
+        .then(data => {target.firstChild.data=replaceTokens(text, data);target.style.height = (target.scrollHeight) + 'px';}) \
         .catch(error => room = 'Error fetching data: ' + error.message); \
 }]
 
@@ -816,9 +816,10 @@ Make sure you save all the changes done (automatic by default in _OpenShift Dev 
 {empty} +
 
 
-You should find in the Kaoto canvas all the routes rendered as follows:
+You should find in the _Kaoto_ canvas all the routes rendered as follows:
 
-PENDING IMAGE TO BE ADDED.
+image::images/new/archiving-flows.png[]
+
 
 {empty} +
 
@@ -1220,8 +1221,6 @@ Camel finishes this round and shutsdown automatically.
 == Deploy in OpenShift
 {style-all}
 
-**WORK IN PROGRESS** +
-PENDING TO BE DEFINED
 
 [type=taskResource]
 .Credentials

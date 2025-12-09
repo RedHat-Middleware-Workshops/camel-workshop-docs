@@ -81,7 +81,7 @@
 :docserver-status: pass:a[<img hidden="true" src="invalid-image.jpg" onerror=" \
         fetch('{url-docserver}/status') \
         .then(response => response.text()) \
-        .then(data => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:lime;display:inline-block&quot;></div><p>&nbsp;</p>') \
+        .then(data => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:lime;display:inline-block&quot;></div><p>&nbsp;</p>;') \
         .catch(error => this.parentElement.innerHTML = 'Status: <div style=&quot;width:15px;height:15px;border-radius:50%;background:red;display:inline-block&quot;></div><p>&nbsp;</p>') \
       ">]
 
@@ -1463,81 +1463,75 @@ Hello from Matrix
 
   <!-- Main Flex Container -->
   <div style="display: flex; align-items: flex-end; margin-: -200px;">
-    
     <!-- Arrow Column -->
     <div style="margin-right: -200px; margin-bottom: 35px;">
-        
-
-    <!-- Content Column -->
-    <div style="display: flex; flex-direction: column; align-items: flex-start;">
-      <div class="platform-row">
-        <!-- Matrix Icon -->
-        <div class="icon-container">
-          <div class="icon-box matrix-bg" style="margin-top: 5px; transform: scale(1);">
-            <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-              <g transform="translate(-11 -11) scale(0.09)">
-                <path stroke-width="30" d="m153.25 277.15c.47-46.35 37.79-81.6 81.6-81.6m0-42.3c46.35.47 81.6 37.79 81.6 81.6m42.3 0c-.47 46.35-37.79 81.6-81.6 81.6m0 42.3c-46.35 0-81.6-37.79-81.6-81.6"/>
-              </g>
-            </svg>
+      <!-- Content Column -->
+      <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        <div class="platform-row">
+          <!-- Matrix Icon -->
+          <div class="icon-container">
+            <div class="icon-box matrix-bg" style="margin-top: 5px; transform: scale(1);">
+              <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <g transform="translate(-11 -11) scale(0.09)">
+                  <path stroke-width="30" d="m153.25 277.15c.47-46.35 37.79-81.6 81.6-81.6m0-42.3c46.35.47 81.6 37.79 81.6 81.6m42.3 0c-.47 46.35-37.79 81.6-81.6 81.6m0 42.3c-46.35 0-81.6-37.79-81.6-81.6"/>
+                </g>
+              </svg>
+            </div>
+            <span class="icon-label">Matrix</span>
           </div>
-          <span class="icon-label">Matrix</span>
-        </div>
-
-        <!-- Matrix Message Box -->
-        <div style="border: 1px solid #ddd; border-radius: 4px; background: #fff; width: 260px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display: flex; flex-direction: column; padding: 5px 5px; gap: 2px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-          <div style="display: flex; align-items: center;">
-            <div style="width: 30px; height: 30px; background-color: #4a90e2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 16px; flex-shrink: 0;">
-              U
+          <!-- Matrix Message Box -->
+          <div style="border: 1px solid #ddd; border-radius: 4px; background: #fff; width: 260px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display: flex; flex-direction: column; padding: 5px 5px; gap: 2px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <div style="display: flex; align-items: center;">
+              <div style="width: 30px; height: 30px; background-color: #4a90e2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 16px; flex-shrink: 0;">
+                U
+              </div>
+              <div style="margin-left: 12px; font-weight: bold; font-size: 15px; color: #00d781; line-height: 1;">
+                {user-username}
+              </div>
             </div>
-            <div style="margin-left: 12px; font-weight: bold; font-size: 15px; color: #00d781; line-height: 1;">
-              {user-username}
-            </div>
-          </div>
-          <div style="background-color: #eee; display: flex; align-items: baseline; padding: 5px 0px;">
-            <div style="width: 30px; text-align: center; font-size: 10px; color: #6c757d; flex-shrink: 0;">
-              22:25
-            </div>
-            <div style="margin-left: 12px; font-size: 15px; color: #333; line-height: .5;">
-              Hello from Matrix
+            <div style="background-color: #eee; display: flex; align-items: baseline; padding: 5px 0px;">
+              <div style="width: 30px; text-align: center; font-size: 10px; color: #6c757d; flex-shrink: 0;">
+                22:25
+              </div>
+              <div style="margin-left: 12px; font-size: 15px; color: #333; line-height: .5;">
+                Hello from Matrix
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
-        <div style="margin-left: 100px; margin-top: -20px" class="platform-row">
-      <svg width="120" height="120" viewBox="0 0 130 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-        <path d="M20 10H45V80C45 113.137 71.8629 140 105 140H120V120L150 150L120 180V160H105C58.0558 160 20 121.944 20 75V10Z" fill="#EDEDED" stroke="#777" stroke-width="2"/>
-      </svg>
-
-    <!-- Content Column -->
-    <div style="display: flex; flex-direction: column; align-items: flex-start;">
-      <div class="platform-row" style="margin-top: 75px; margin-left: -60px">
-        <div class="icon-container" >
-          <div class="icon-box rocket-bg" style="margin-top: -5px; margin-left: 750px" >
-            <svg width="45" height="45" viewBox="0 0 24 24" fill="white">
-              <g transform="translate(-2 -2) scale(.9)">
-              <path d="M 7.5488281 5 C 6.2638281 5 5.055 5.3086094 4 5.8496094 C 5.422467 6.9694938 6.4322525 8.5274703 6.8359375 10.300781 C 5.0652471 11.854193 4 13.838545 4 16 C 4 18.1 5.0028438 20.110797 6.8398438 21.716797 C 6.5498438 22.966797 5.9480312 24.134047 5.0820312 25.123047 L 4.0136719 26.345703 L 5.5859375 26.751953 C 6.2259375 26.917953 6.8868281 27 7.5488281 27 C 9.7768281 27 11.841828 26.197516 13.423828 24.728516 C 14.425828 24.908516 15.458 25 16.5 25 C 23.393 25 29 20.962 29 16 C 29 11.038 23.393 7 16.5 7 C 15.440923 7 14.418235 7.1058017 13.435547 7.2851562 C 11.913547 5.8774278 9.8442485 5 7.5488281 5 z M 16.5 9 C 22.29 9 27 12.14 27 16 C 27 19.86 22.29 23 16.5 23 C 15.412 23 14.338594 22.888969 13.308594 22.667969 L 12.757812 22.548828 L 12.371094 22.957031 C 11.147094 24.252031 9.469625 24.976 7.640625 25 C 8.290625 23.917 8.727875 22.724516 8.921875 21.478516 L 9.0136719 20.896484 L 8.5488281 20.535156 C 6.9058281 19.256156 6 17.646 6 16 C 6 12.14 10.71 9 16.5 9 z M 11.5 15 A 1.5 1.5 0 0 0 11.5 18 A 1.5 1.5 0 0 0 11.5 15 z M 16.5 15 A 1.5 1.5 0 0 0 16.5 18 A 1.5 1.5 0 0 0 16.5 15 z M 21.5 15 A 1.5 1.5 0 0 0 21.5 18 A 1.5 1.5 0 0 0 21.5 15 z"/>
-            </svg>
-          </div>
-          <span class="icon-label" style="margin-left: 750px">rocket.chat</span>
-        </div>
-        <div style="border: 1px solid #ddd; border-radius: 4px; background: #fff; width: 320px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; display: flex; flex-direction: row; align-items: flex-start; padding: 8px 10px; gap: 10px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;background-color: #F2F3F5">    
-          <div style="width: 32px; height: 32px; background-color: #6c757d; color: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; flex-shrink: 0;">
-            U
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: center; ">
-            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; line-height: 1.2;">
-              <span style="font-weight: bold; font-size: 14px; color: #333;">{user-username}</span>
-              <span style="font-size: 11px; color: #aaa;">10:25 PM</span>
+      <div style="margin-left: 100px; margin-top: -20px" class="platform-row">
+        <svg width="120" height="120" viewBox="0 0 130 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+          <path d="M20 10H45V80C45 113.137 71.8629 140 105 140H120V120L150 150L120 180V160H105C58.0558 160 20 121.944 20 75V10Z" fill="#EDEDED" stroke="#777" stroke-width="2"/>
+        </svg>
+        <!-- Content Column -->
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+          <div class="platform-row" style="margin-top: 75px; margin-left: -60px">
+            <div class="icon-container" >
+              <div class="icon-box rocket-bg" style="margin-top: -5px; margin-left: 750px" >
+                <svg width="45" height="45" viewBox="0 0 24 24" fill="white">
+                  <g transform="translate(-2 -2) scale(.9)">
+                  <path d="M 7.5488281 5 C 6.2638281 5 5.055 5.3086094 4 5.8496094 C 5.422467 6.9694938 6.4322525 8.5274703 6.8359375 10.300781 C 5.0652471 11.854193 4 13.838545 4 16 C 4 18.1 5.0028438 20.110797 6.8398438 21.716797 C 6.5498438 22.966797 5.9480312 24.134047 5.0820312 25.123047 L 4.0136719 26.345703 L 5.5859375 26.751953 C 6.2259375 26.917953 6.8868281 27 7.5488281 27 C 9.7768281 27 11.841828 26.197516 13.423828 24.728516 C 14.425828 24.908516 15.458 25 16.5 25 C 23.393 25 29 20.962 29 16 C 29 11.038 23.393 7 16.5 7 C 15.440923 7 14.418235 7.1058017 13.435547 7.2851562 C 11.913547 5.8774278 9.8442485 5 7.5488281 5 z M 16.5 9 C 22.29 9 27 12.14 27 16 C 27 19.86 22.29 23 16.5 23 C 15.412 23 14.338594 22.888969 13.308594 22.667969 L 12.757812 22.548828 L 12.371094 22.957031 C 11.147094 24.252031 9.469625 24.976 7.640625 25 C 8.290625 23.917 8.727875 22.724516 8.921875 21.478516 L 9.0136719 20.896484 L 8.5488281 20.535156 C 6.9058281 19.256156 6 17.646 6 16 C 6 12.14 10.71 9 16.5 9 z M 11.5 15 A 1.5 1.5 0 0 0 11.5 18 A 1.5 1.5 0 0 0 11.5 15 z M 16.5 15 A 1.5 1.5 0 0 0 16.5 18 A 1.5 1.5 0 0 0 16.5 15 z M 21.5 15 A 1.5 1.5 0 0 0 21.5 18 A 1.5 1.5 0 0 0 21.5 15 z"/>
+                </svg>
+              </div>
+              <span class="icon-label" style="margin-left: 750px">rocket.chat</span>
             </div>
-            <div style="font-size: 14px; color: #333; line-height: 1; margin: 0; padding: 0;">
-              <strong>{user-username}@matrix: </strong>Hello from Matrix
+            <div style="border: 1px solid #ddd; border-radius: 4px; background: #fff; width: 320px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); position: relative; display: flex; flex-direction: row; align-items: flex-start; padding: 8px 10px; gap: 10px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;background-color: #F2F3F5">    
+              <div style="width: 32px; height: 32px; background-color: #6c757d; color: white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; flex-shrink: 0;">
+                U
+              </div>
+              <div style="display: flex; flex-direction: column; justify-content: center; ">
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; line-height: 1.2;">
+                  <span style="font-weight: bold; font-size: 14px; color: #333;">{user-username}</span>
+                  <span style="font-size: 11px; color: #aaa;">10:25 PM</span>
+                </div>
+                <div style="font-size: 14px; color: #333; line-height: 1; margin: 0; padding: 0;">
+                  <strong>{user-username}@matrix: </strong>Hello from Matrix
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
       </div>
     </div>
   </div>
