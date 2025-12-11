@@ -163,6 +163,38 @@
 }"> \
 ]
 
+:fcopy-no-new-line: pass:a[function copy(el) { \
+  el.previousElementSibling.select(); \
+  text = el.previousElementSibling.textContent; \
+  console.log(text); \
+  navigator.clipboard.writeText(text) \
+        .then(response => console.log('Text with carriage return copied to clipboard!')) \
+        .catch(err => console.error('Failed to copy: ', err)); \
+}]
+
+:copy-open: pass:a[ \
+<div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
+  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="1">]
+
+:copy-close: pass:a[</textarea> \
+  <button class="mytooltip" onclick="{fcopy-no-new-line} copy(this);" style="border: none; background-color: white; padding: 5px 15px; border-bottom: 1px solid transparent; transition: border-bottom-color 0.2s;"> \
+    <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"> \
+      <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path> \
+    </svg> \
+    <span class="mytooltiptext">Copy to clipboard</span> \
+  </button> \
+  <style> \
+.mytooltip{position:relative;display:inline-block;border-bottom:1px dotted black}.mytooltip .mytooltiptext{visibility:hidden;width:120px;background-color:#555;color:#fff;text-align:center;border-radius:6px;padding:5px 0;position:absolute;z-index:1;bottom:125%;left:50%;margin-left:-60px;opacity:0;transition:opacity 0.3s}.mytooltip .mytooltiptext::after{content:"";position:absolute;top:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:#555 transparent transparent transparent}.mytooltip:hover .mytooltiptext{visibility:visible;opacity:1} \
+  </style> \
+</div> \
+<img hidden="true" src="invalid-image.jpg" onerror="{ \
+  let txtarea = this.parentElement.querySelector('textarea'); \
+  txtarea.value = txtarea.value.slice(0, -1); \
+  this.remove(); \
+  txtarea.style.height = 'auto'; \
+  txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
+}">]
+
 :snippet: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
 </div> \
@@ -335,11 +367,9 @@ image::images/new/discord-join-step1.jpg[align="left", width=40%]
 . Enter your user name:
 +
 --
-{copypaste}
-[subs=attributes]
-----
+{copy-open}
 {user-username}
-----
+{copy-close}
 --
 +
 . An age verification is also requested. There's no need to enter a real one, just ensure the birthday matches an individual of 18+ years old.
@@ -509,11 +539,9 @@ image::images/new/dev-close-tabs.png[align="left", width=100%]
 * Next, prepare your lab by issuing the following command:
 +
 --
-{copypaste}
-[subs=attributes]
-----
+{copy-open}
 step 7
-----
+{copy-close}
 --
 +
 TIP: pass:[Run the command above anytime to reset the exercise. <details>
@@ -549,10 +577,9 @@ Follow the steps below to create your base _Discord_ sink _Kamelet_
 [.underline]#*Only*# if you want to skip (fast-forward) this section, execute in your terminal the commands below:
 
 --
-{copypaste}
-----
+{copy-open}
 ff
-----
+{copy-close}
 --
 ====
 
@@ -1048,11 +1075,9 @@ image::images/new/dev-close-tabs.png[align="left", width=100%]
 * Next, prepare your lab by issuing the following command:
 +
 --
-{copypaste}
-[subs=attributes]
-----
+{copy-open}
 step 10
-----
+{copy-close}
 --
 +
 TIP: pass:[Run the command above anytime to reset the exercise. <details>
@@ -2467,7 +2492,8 @@ NOTE: Find the message content highlighted in yellow.
 
 You have completed the definition of your **_Discord_ consumer**, the equivalent of the source _Kamelets_ for _Matrix/Rocket.Chat_. Now you can use it as your source of _Discord_ events.
 
-{empty} +
+NOTE: Stop _Camel JBang_ when done +
+Press kbd:[Ctrl+C], from your terminal, to stop the running _Camel_ process.
 
 
 === Checkpoint
@@ -2481,11 +2507,7 @@ Very good !
 [type=verificationFail]
 Inspect in the pod logs to troubleshoot.
 
-TIP: Stop _Camel JBang_ when done +
-Press kbd:[Ctrl+C], from your terminal, to stop the running _Camel_ process.
 
-
-{empty} +
 
 
 [time=5]
@@ -2545,11 +2567,9 @@ image::images/new/dev-close-tabs.png[align="left", width=100%]
 * Next, prepare your lab by issuing the following command:
 +
 --
-{copypaste}
-[subs=attributes]
-----
+{copy-open}
 step 14
-----
+{copy-close}
 --
 +
 TIP: pass:[Run the command above anytime to reset the exercise. <details>
@@ -2772,7 +2792,6 @@ Like you did before, use _Camel JBang_ to validate your implementation.
 
 . Run _Camel_
 +
-_Camel JBang_ allows you to run your application in the background. +
 Issue the following command:
 +
 --
@@ -3024,6 +3043,9 @@ You should also see a log trace on your terminal similar to:
 ++++
 +
 NOTE: Find the message content highlighted in yellow.
++
+NOTE: Stop _Camel JBang_ when done +
+Press kbd:[Ctrl+C], from your terminal, to stop the running _Camel_ process.
 +
 {empty} +
 

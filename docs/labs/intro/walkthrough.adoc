@@ -77,17 +77,16 @@
   el.previousElementSibling.select(); \
   text = el.previousElementSibling.textContent; \
   console.log(text); \
-  navigator.clipboard.writeText(text + '\n') \
+  navigator.clipboard.writeText(text) \
         .then(response => console.log('Text with carriage return copied to clipboard!')) \
         .catch(err => console.error('Failed to copy: ', err)); \
 }]
 
-:copypaste: pass:a[ \
+:copy-open: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
-  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="4">function example() { \
-  console.log("Hello {replace-with-previous}!"); \
-  return true; \
-}</textarea> \
+  <textarea readonly style="field-sizing: content;border: none; background-color: #f0f0f0; width: 100%; resize: none; font-size:14px; font-family: monospace;padding: 5px 15px" rows="1">]
+
+:copy-close: pass:a[</textarea> \
   <button class="mytooltip" onclick="{fcopy} copy(this);" style="border: none; background-color: white; padding: 5px 15px; border-bottom: 1px solid transparent; transition: border-bottom-color 0.2s;"> \
     <svg fill="currentColor" height="1em" width="1em" viewBox="0 0 448 512" aria-hidden="true" role="img" style="vertical-align: -0.125em;"> \
       <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z"></path> \
@@ -99,24 +98,14 @@
   </style> \
 </div> \
 <img hidden="true" src="invalid-image.jpg" onerror="{ \
-  {fdocserver} \
   let txtarea = this.parentElement.querySelector('textarea'); \
-  let div = this.closest('.paragraph'); \
-  if(!div.closest('.openblock')){div = div.parentElement} \
-  let source = div.nextElementSibling; \
-  let pre = source.querySelector('pre'); \
-  let text = pre.textContent; \
-  let lineCount = text.split('\n').length; \
-  let tokens = this.nextSibling; \
-  console.log('tokens: [' +tokens.data.trim()+']'); \
-  if(tokens.data.trim()!=''){docserver(txtarea,text,tokens.data);} else {txtarea.firstChild.data=text;} \
-  source.remove(); \
-  tokens.remove(); \
+  txtarea.value = txtarea.value.slice(0, -1); \
   this.remove(); \
   txtarea.style.height = 'auto'; \
   txtarea.style.height = (txtarea.scrollHeight) + 'px'; \
 }"> \
 ]
+
 
 :snippet: pass:a[ \
 <div style="border: 1px solid #f0f0f0; border-bottom-color: #8a8d90; display: flex; align-items: flex-start;"> \
@@ -468,11 +457,10 @@ image::images/new/copypaste.png[width=60%]
 . Try it with:
 +
 --
-{copypaste}
-----
+{copy-open}
 echo "this is a multiline \
 copy/paste test"
-----
+{copy-close}
 --
 +
 [NOTE]
